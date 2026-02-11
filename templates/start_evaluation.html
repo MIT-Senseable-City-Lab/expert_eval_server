@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bumblebee Evaluation - Welcome</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .info-box {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #34495e;
+        }
+
+        .info-value {
+            color: #2c3e50;
+        }
+
+        .instructions {
+            margin-bottom: 30px;
+        }
+
+        .instructions h2 {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+            color: #34495e;
+            line-height: 1.8;
+        }
+
+        .instructions li {
+            margin-bottom: 10px;
+        }
+
+        .workflow-box {
+            background: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .workflow-box h3 {
+            color: #2980b9;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .workflow-box ul {
+            margin-left: 20px;
+            color: #34495e;
+        }
+
+        .time-estimate {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .time-estimate strong {
+            color: #856404;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .footer {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐝 Bumblebee Image Evaluation</h1>
+        <p class="subtitle">Expert Evaluation of AI-Generated Bumblebee Images</p>
+
+        <div class="info-box">
+            <div class="info-item">
+                <span class="info-label">Participant ID:</span>
+                <span class="info-value">{{ pid }}</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Assigned Subset:</span>
+                <span class="info-value">{{ subset_id }} (User #{{ subset_number }})</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Total Images:</span>
+                <span class="info-value">{{ total_images }}</span>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h2>📋 Instructions</h2>
+            <p style="margin-bottom: 15px;">You will evaluate {{ total_images }} AI-generated bumblebee images using a two-stage process:</p>
+
+            <div class="workflow-box">
+                <h3>Stage 1: Blind Species Identification (~20 seconds)</h3>
+                <ul>
+                    <li>Identify the family, genus, and species WITHOUT seeing reference images</li>
+                    <li>Use dropdowns for family and genus</li>
+                    <li>Enter species name or "Unknown"</li>
+                </ul>
+            </div>
+
+            <div class="workflow-box">
+                <h3>Stage 2: Detailed Evaluation (~60 seconds)</h3>
+                <ul>
+                    <li>After revealing ground truth, evaluate morphological accuracy</li>
+                    <li>Rate 6 morphological features (1-5 scale)</li>
+                    <li>Assess diagnostic completeness</li>
+                    <li>Identify any visual defects or artifacts</li>
+                </ul>
+            </div>
+
+            <div class="time-estimate">
+                <strong>⏱️ Estimated Time:</strong> ~60-70 minutes total (~1.2-1.4 minutes per image)
+            </div>
+
+            <ol>
+                <li><strong>Review each image carefully</strong> before making your assessments</li>
+                <li><strong>Stage 1 is blind</strong> - no reference images or ground truth shown</li>
+                <li><strong>After Stage 1 submission</strong>, ground truth and reference images will be revealed</li>
+                <li><strong>Complete all evaluations</strong> to receive your completion code</li>
+                <li><strong>You can click any image</strong> to view it in fullscreen</li>
+            </ol>
+        </div>
+
+        <a href="{{ url_for('evaluate') }}" class="btn">Begin Evaluation</a>
+
+        <div class="footer">
+            <p>Thank you for participating in this research study!</p>
+            <p>If you encounter any technical issues, please contact the research team.</p>
+        </div>
+    </div>
+</body>
+</html>
