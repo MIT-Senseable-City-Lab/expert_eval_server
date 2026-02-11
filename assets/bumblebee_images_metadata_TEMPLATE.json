@@ -1,0 +1,92 @@
+{
+  "_comment": "Template for bumblebee evaluation metadata - adapt this for your actual dataset",
+  "_dataset_info": {
+    "total_species": 16,
+    "family": "Apidae",
+    "genus": "Bombus",
+    "data_source": "GBIF_MA_BUMBLEBEES",
+    "reference_images_path": "SYNTHETIC_BUMBLEBEES/references/"
+  },
+  "0": {
+    "image_path": "bumblebees/generated/Bombus_impatiens_custom_001.png",
+    "ground_truth": {
+      "family": "Apidae",
+      "genus": "Bombus",
+      "species": "Bombus impatiens",
+      "common_name": "Common Eastern Bumble Bee"
+    },
+    "model": "custom_v2",
+    "generation_metadata": {
+      "angle": "dorsal",
+      "gender": "female",
+      "prompt_template": "simone.json",
+      "morphological_description": "Bumblebee with yellow and black banding, fuzzy thorax"
+    },
+    "reference_images": [
+      "references/Bombus_impatiens/ref_001.jpg",
+      "references/Bombus_impatiens/ref_002.jpg",
+      "references/Bombus_impatiens/ref_003.jpg"
+    ]
+  },
+  "1": {
+    "image_path": "bumblebees/generated/Bombus_impatiens_baseline_001.png",
+    "ground_truth": {
+      "family": "Apidae",
+      "genus": "Bombus",
+      "species": "Bombus impatiens",
+      "common_name": "Common Eastern Bumble Bee"
+    },
+    "model": "baseline",
+    "generation_metadata": {
+      "angle": "lateral",
+      "gender": "female",
+      "prompt_template": "baseline",
+      "morphological_description": "Bumblebee with yellow and black banding, fuzzy thorax"
+    },
+    "reference_images": [
+      "references/Bombus_impatiens/ref_001.jpg",
+      "references/Bombus_impatiens/ref_002.jpg",
+      "references/Bombus_impatiens/ref_003.jpg"
+    ]
+  },
+  "2": {
+    "image_path": "bumblebees/generated/Bombus_sandersoni_custom_001.png",
+    "ground_truth": {
+      "family": "Apidae",
+      "genus": "Bombus",
+      "species": "Bombus sandersoni",
+      "common_name": "Sanderson's Bumble Bee"
+    },
+    "model": "custom_v2",
+    "generation_metadata": {
+      "angle": "dorsal",
+      "gender": "female",
+      "prompt_template": "simone.json",
+      "morphological_description": "Smaller bumblebee, T1-2 yellow, T3-5 black, black between wing bases"
+    },
+    "reference_images": [
+      "references/Bombus_sandersoni/Bombus-sandersoni-5335.jpeg",
+      "references/Bombus_sandersoni/sandersoni_photo.jpg"
+    ]
+  },
+  "3": {
+    "image_path": "bumblebees/generated/Bombus_ternarius_Say_custom_001.png",
+    "ground_truth": {
+      "family": "Apidae",
+      "genus": "Bombus",
+      "species": "Bombus ternarius",
+      "common_name": "Tri-colored Bumblebee"
+    },
+    "model": "custom_v2",
+    "generation_metadata": {
+      "angle": "frontal",
+      "gender": "male",
+      "prompt_template": "simone.json",
+      "morphological_description": "Yellow face, tri-color abdomen (T1 yellow, T2-3 orange, T4 yellow, T5 black)"
+    },
+    "reference_images": [
+      "references/Bombus_ternarius_Say/medium.jpg",
+      "references/Bombus_ternarius_Say/INS018-00110.jpg"
+    ]
+  }
+}
