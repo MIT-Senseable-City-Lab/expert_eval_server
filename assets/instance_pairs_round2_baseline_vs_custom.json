@@ -1,0 +1,3602 @@
+{
+    "0": [
+        "round2_custom/backpack/000_a_backpack_on_a_wooden_bench_42.png"
+    ],
+    "1": [
+        "round2_baseline/backpack/000_a_backpack_on_a_wooden_bench_42.png"
+    ],
+    "2": [
+        "round2_custom/backpack/001_a_backpack_beside_hiking_boots_42.png"
+    ],
+    "3": [
+        "round2_baseline/backpack/001_a_backpack_beside_hiking_boots_42.png"
+    ],
+    "4": [
+        "round2_custom/backpack/002_a_backpack_on_a_classroom_desk_42.png"
+    ],
+    "5": [
+        "round2_baseline/backpack/002_a_backpack_on_a_classroom_desk_42.png"
+    ],
+    "6": [
+        "round2_custom/backpack/003_a_backpack_leaning_against_a_wall_42.png"
+    ],
+    "7": [
+        "round2_baseline/backpack/003_a_backpack_leaning_against_a_wall_42.png"
+    ],
+    "8": [
+        "round2_custom/backpack/004_a_backpack_placed_on_a_tiled_floor_42.png"
+    ],
+    "9": [
+        "round2_baseline/backpack/004_a_backpack_placed_on_a_tiled_floor_42.png"
+    ],
+    "10": [
+        "round2_custom/backpack/005_a_backpack_beside_a_water_bottle_42.png"
+    ],
+    "11": [
+        "round2_baseline/backpack/005_a_backpack_beside_a_water_bottle_42.png"
+    ],
+    "12": [
+        "round2_custom/backpack/006_a_backpack_under_bright_sunlight_42.png"
+    ],
+    "13": [
+        "round2_baseline/backpack/006_a_backpack_under_bright_sunlight_42.png"
+    ],
+    "14": [
+        "round2_custom/backpack/007_a_backpack_on_a_bedspread_42.png"
+    ],
+    "15": [
+        "round2_baseline/backpack/007_a_backpack_on_a_bedspread_42.png"
+    ],
+    "16": [
+        "round2_custom/backpack/008_a_backpack_hanging_from_a_hook_42.png"
+    ],
+    "17": [
+        "round2_baseline/backpack/008_a_backpack_hanging_from_a_hook_42.png"
+    ],
+    "18": [
+        "round2_custom/backpack/009_a_backpack_next_to_travel_luggage_42.png"
+    ],
+    "19": [
+        "round2_baseline/backpack/009_a_backpack_next_to_travel_luggage_42.png"
+    ],
+    "20": [
+        "round2_custom/backpack/010_a_backpack_on_a_white_background_42.png"
+    ],
+    "21": [
+        "round2_baseline/backpack/010_a_backpack_on_a_white_background_42.png"
+    ],
+    "22": [
+        "round2_custom/backpack/011_a_backpack_in_a_train_station_42.png"
+    ],
+    "23": [
+        "round2_baseline/backpack/011_a_backpack_in_a_train_station_42.png"
+    ],
+    "24": [
+        "round2_custom/backpack/012_a_backpack_lying_on_grass_42.png"
+    ],
+    "25": [
+        "round2_baseline/backpack/012_a_backpack_lying_on_grass_42.png"
+    ],
+    "26": [
+        "round2_custom/backpack/013_a_backpack_near_a_mountain_trail_42.png"
+    ],
+    "27": [
+        "round2_baseline/backpack/013_a_backpack_near_a_mountain_trail_42.png"
+    ],
+    "28": [
+        "round2_custom/backpack/014_a_backpack_in_a_school_hallway_42.png"
+    ],
+    "29": [
+        "round2_baseline/backpack/014_a_backpack_in_a_school_hallway_42.png"
+    ],
+    "30": [
+        "round2_custom/backpack/015_a_backpack_under_warm_indoor_light_42.png"
+    ],
+    "31": [
+        "round2_baseline/backpack/015_a_backpack_under_warm_indoor_light_42.png"
+    ],
+    "32": [
+        "round2_custom/backpack/016_a_backpack_beside_a_laptop_and_notebook_42.png"
+    ],
+    "33": [
+        "round2_baseline/backpack/016_a_backpack_beside_a_laptop_and_notebook_42.png"
+    ],
+    "34": [
+        "round2_custom/backpack/017_a_backpack_on_a_rocky_surface_42.png"
+    ],
+    "35": [
+        "round2_baseline/backpack/017_a_backpack_on_a_rocky_surface_42.png"
+    ],
+    "36": [
+        "round2_custom/backpack/018_a_backpack_by_a_door_entrance_42.png"
+    ],
+    "37": [
+        "round2_baseline/backpack/018_a_backpack_by_a_door_entrance_42.png"
+    ],
+    "38": [
+        "round2_custom/backpack/019_a_backpack_on_a_concrete_step_42.png"
+    ],
+    "39": [
+        "round2_baseline/backpack/019_a_backpack_on_a_concrete_step_42.png"
+    ],
+    "40": [
+        "round2_custom/backpack_dog/000_a_backpack_on_a_wooden_bench_42.png"
+    ],
+    "41": [
+        "round2_baseline/backpack_dog/000_a_backpack_on_a_wooden_bench_42.png"
+    ],
+    "42": [
+        "round2_custom/backpack_dog/001_a_backpack_beside_hiking_boots_42.png"
+    ],
+    "43": [
+        "round2_baseline/backpack_dog/001_a_backpack_beside_hiking_boots_42.png"
+    ],
+    "44": [
+        "round2_custom/backpack_dog/002_a_backpack_on_a_classroom_desk_42.png"
+    ],
+    "45": [
+        "round2_baseline/backpack_dog/002_a_backpack_on_a_classroom_desk_42.png"
+    ],
+    "46": [
+        "round2_custom/backpack_dog/003_a_backpack_leaning_against_a_wall_42.png"
+    ],
+    "47": [
+        "round2_baseline/backpack_dog/003_a_backpack_leaning_against_a_wall_42.png"
+    ],
+    "48": [
+        "round2_custom/backpack_dog/004_a_backpack_placed_on_a_tiled_floor_42.png"
+    ],
+    "49": [
+        "round2_baseline/backpack_dog/004_a_backpack_placed_on_a_tiled_floor_42.png"
+    ],
+    "50": [
+        "round2_custom/backpack_dog/005_a_backpack_beside_a_water_bottle_42.png"
+    ],
+    "51": [
+        "round2_baseline/backpack_dog/005_a_backpack_beside_a_water_bottle_42.png"
+    ],
+    "52": [
+        "round2_custom/backpack_dog/006_a_backpack_under_bright_sunlight_42.png"
+    ],
+    "53": [
+        "round2_baseline/backpack_dog/006_a_backpack_under_bright_sunlight_42.png"
+    ],
+    "54": [
+        "round2_custom/backpack_dog/007_a_backpack_on_a_bedspread_42.png"
+    ],
+    "55": [
+        "round2_baseline/backpack_dog/007_a_backpack_on_a_bedspread_42.png"
+    ],
+    "56": [
+        "round2_custom/backpack_dog/008_a_backpack_hanging_from_a_hook_42.png"
+    ],
+    "57": [
+        "round2_baseline/backpack_dog/008_a_backpack_hanging_from_a_hook_42.png"
+    ],
+    "58": [
+        "round2_custom/backpack_dog/009_a_backpack_next_to_travel_luggage_42.png"
+    ],
+    "59": [
+        "round2_baseline/backpack_dog/009_a_backpack_next_to_travel_luggage_42.png"
+    ],
+    "60": [
+        "round2_custom/backpack_dog/010_a_backpack_on_a_white_background_42.png"
+    ],
+    "61": [
+        "round2_baseline/backpack_dog/010_a_backpack_on_a_white_background_42.png"
+    ],
+    "62": [
+        "round2_custom/backpack_dog/011_a_backpack_in_a_train_station_42.png"
+    ],
+    "63": [
+        "round2_baseline/backpack_dog/011_a_backpack_in_a_train_station_42.png"
+    ],
+    "64": [
+        "round2_custom/backpack_dog/012_a_backpack_lying_on_grass_42.png"
+    ],
+    "65": [
+        "round2_baseline/backpack_dog/012_a_backpack_lying_on_grass_42.png"
+    ],
+    "66": [
+        "round2_custom/backpack_dog/013_a_backpack_near_a_mountain_trail_42.png"
+    ],
+    "67": [
+        "round2_baseline/backpack_dog/013_a_backpack_near_a_mountain_trail_42.png"
+    ],
+    "68": [
+        "round2_custom/backpack_dog/014_a_backpack_in_a_school_hallway_42.png"
+    ],
+    "69": [
+        "round2_baseline/backpack_dog/014_a_backpack_in_a_school_hallway_42.png"
+    ],
+    "70": [
+        "round2_custom/backpack_dog/015_a_backpack_under_warm_indoor_light_42.png"
+    ],
+    "71": [
+        "round2_baseline/backpack_dog/015_a_backpack_under_warm_indoor_light_42.png"
+    ],
+    "72": [
+        "round2_custom/backpack_dog/016_a_backpack_beside_a_laptop_and_notebook_42.png"
+    ],
+    "73": [
+        "round2_baseline/backpack_dog/016_a_backpack_beside_a_laptop_and_notebook_42.png"
+    ],
+    "74": [
+        "round2_custom/backpack_dog/017_a_backpack_on_a_rocky_surface_42.png"
+    ],
+    "75": [
+        "round2_baseline/backpack_dog/017_a_backpack_on_a_rocky_surface_42.png"
+    ],
+    "76": [
+        "round2_custom/backpack_dog/018_a_backpack_by_a_door_entrance_42.png"
+    ],
+    "77": [
+        "round2_baseline/backpack_dog/018_a_backpack_by_a_door_entrance_42.png"
+    ],
+    "78": [
+        "round2_custom/backpack_dog/019_a_backpack_on_a_concrete_step_42.png"
+    ],
+    "79": [
+        "round2_baseline/backpack_dog/019_a_backpack_on_a_concrete_step_42.png"
+    ],
+    "80": [
+        "round2_custom/bear_plushie/000_a_stuffed_animal_on_a_childs_bed_42.png"
+    ],
+    "81": [
+        "round2_baseline/bear_plushie/000_a_stuffed_animal_on_a_childs_bed_42.png"
+    ],
+    "82": [
+        "round2_custom/bear_plushie/001_a_stuffed_animal_sitting_on_a_shelf_42.png"
+    ],
+    "83": [
+        "round2_baseline/bear_plushie/001_a_stuffed_animal_sitting_on_a_shelf_42.png"
+    ],
+    "84": [
+        "round2_custom/bear_plushie/002_a_stuffed_animal_near_a_pillow_42.png"
+    ],
+    "85": [
+        "round2_baseline/bear_plushie/002_a_stuffed_animal_near_a_pillow_42.png"
+    ],
+    "86": [
+        "round2_custom/bear_plushie/003_a_stuffed_animal_in_soft_daylight_42.png"
+    ],
+    "87": [
+        "round2_baseline/bear_plushie/003_a_stuffed_animal_in_soft_daylight_42.png"
+    ],
+    "88": [
+        "round2_custom/bear_plushie/004_a_stuffed_animal_beside_a_book_42.png"
+    ],
+    "89": [
+        "round2_baseline/bear_plushie/004_a_stuffed_animal_beside_a_book_42.png"
+    ],
+    "90": [
+        "round2_custom/bear_plushie/005_a_stuffed_animal_lying_on_a_rug_42.png"
+    ],
+    "91": [
+        "round2_baseline/bear_plushie/005_a_stuffed_animal_lying_on_a_rug_42.png"
+    ],
+    "92": [
+        "round2_custom/bear_plushie/006_a_stuffed_animal_on_a_chair_42.png"
+    ],
+    "93": [
+        "round2_baseline/bear_plushie/006_a_stuffed_animal_on_a_chair_42.png"
+    ],
+    "94": [
+        "round2_custom/bear_plushie/007_a_stuffed_animal_outdoors_on_grass_42.png"
+    ],
+    "95": [
+        "round2_baseline/bear_plushie/007_a_stuffed_animal_outdoors_on_grass_42.png"
+    ],
+    "96": [
+        "round2_custom/bear_plushie/008_a_stuffed_animal_under_a_blanket_42.png"
+    ],
+    "97": [
+        "round2_baseline/bear_plushie/008_a_stuffed_animal_under_a_blanket_42.png"
+    ],
+    "98": [
+        "round2_custom/bear_plushie/009_a_stuffed_animal_in_a_nursery_room_42.png"
+    ],
+    "99": [
+        "round2_baseline/bear_plushie/009_a_stuffed_animal_in_a_nursery_room_42.png"
+    ],
+    "100": [
+        "round2_custom/bear_plushie/010_a_stuffed_animal_near_a_lamp_42.png"
+    ],
+    "101": [
+        "round2_baseline/bear_plushie/010_a_stuffed_animal_near_a_lamp_42.png"
+    ],
+    "102": [
+        "round2_custom/bear_plushie/011_a_stuffed_animal_on_a_wooden_table_42.png"
+    ],
+    "103": [
+        "round2_baseline/bear_plushie/011_a_stuffed_animal_on_a_wooden_table_42.png"
+    ],
+    "104": [
+        "round2_custom/bear_plushie/012_a_stuffed_animal_against_a_pastel_wall_42.png"
+    ],
+    "105": [
+        "round2_baseline/bear_plushie/012_a_stuffed_animal_against_a_pastel_wall_42.png"
+    ],
+    "106": [
+        "round2_custom/bear_plushie/013_a_stuffed_animal_under_warm_lighting_42.png"
+    ],
+    "107": [
+        "round2_baseline/bear_plushie/013_a_stuffed_animal_under_warm_lighting_42.png"
+    ],
+    "108": [
+        "round2_custom/bear_plushie/014_a_stuffed_animal_beside_a_toy_box_42.png"
+    ],
+    "109": [
+        "round2_baseline/bear_plushie/014_a_stuffed_animal_beside_a_toy_box_42.png"
+    ],
+    "110": [
+        "round2_custom/bear_plushie/015_a_stuffed_animal_on_a_sofa_arm_42.png"
+    ],
+    "111": [
+        "round2_baseline/bear_plushie/015_a_stuffed_animal_on_a_sofa_arm_42.png"
+    ],
+    "112": [
+        "round2_custom/bear_plushie/016_a_stuffed_animal_near_other_plush_toys_42.png"
+    ],
+    "113": [
+        "round2_baseline/bear_plushie/016_a_stuffed_animal_near_other_plush_toys_42.png"
+    ],
+    "114": [
+        "round2_custom/bear_plushie/017_a_stuffed_animal_on_a_white_background_42.png"
+    ],
+    "115": [
+        "round2_baseline/bear_plushie/017_a_stuffed_animal_on_a_white_background_42.png"
+    ],
+    "116": [
+        "round2_custom/bear_plushie/018_a_stuffed_animal_sitting_by_a_window_42.png"
+    ],
+    "117": [
+        "round2_baseline/bear_plushie/018_a_stuffed_animal_sitting_by_a_window_42.png"
+    ],
+    "118": [
+        "round2_custom/bear_plushie/019_a_stuffed_animal_beside_a_cup_of_coffee_42.png"
+    ],
+    "119": [
+        "round2_baseline/bear_plushie/019_a_stuffed_animal_beside_a_cup_of_coffee_42.png"
+    ],
+    "120": [
+        "round2_custom/berry_bowl/000_a_bowl_on_a_wooden_table_42.png"
+    ],
+    "121": [
+        "round2_baseline/berry_bowl/000_a_bowl_on_a_wooden_table_42.png"
+    ],
+    "122": [
+        "round2_custom/berry_bowl/001_a_bowl_filled_with_fruit_42.png"
+    ],
+    "123": [
+        "round2_baseline/berry_bowl/001_a_bowl_filled_with_fruit_42.png"
+    ],
+    "124": [
+        "round2_custom/berry_bowl/002_a_bowl_on_a_white_countertop_42.png"
+    ],
+    "125": [
+        "round2_baseline/berry_bowl/002_a_bowl_on_a_white_countertop_42.png"
+    ],
+    "126": [
+        "round2_custom/berry_bowl/003_a_bowl_beside_a_glass_of_water_42.png"
+    ],
+    "127": [
+        "round2_baseline/berry_bowl/003_a_bowl_beside_a_glass_of_water_42.png"
+    ],
+    "128": [
+        "round2_custom/berry_bowl/004_a_bowl_on_a_marble_surface_42.png"
+    ],
+    "129": [
+        "round2_baseline/berry_bowl/004_a_bowl_on_a_marble_surface_42.png"
+    ],
+    "130": [
+        "round2_custom/berry_bowl/005_a_bowl_with_reflections_of_light_42.png"
+    ],
+    "131": [
+        "round2_baseline/berry_bowl/005_a_bowl_with_reflections_of_light_42.png"
+    ],
+    "132": [
+        "round2_custom/berry_bowl/006_a_bowl_next_to_a_fork_and_napkin_42.png"
+    ],
+    "133": [
+        "round2_baseline/berry_bowl/006_a_bowl_next_to_a_fork_and_napkin_42.png"
+    ],
+    "134": [
+        "round2_custom/berry_bowl/007_a_bowl_in_a_kitchen_setting_42.png"
+    ],
+    "135": [
+        "round2_baseline/berry_bowl/007_a_bowl_in_a_kitchen_setting_42.png"
+    ],
+    "136": [
+        "round2_custom/berry_bowl/008_a_bowl_on_a_tray_42.png"
+    ],
+    "137": [
+        "round2_baseline/berry_bowl/008_a_bowl_on_a_tray_42.png"
+    ],
+    "138": [
+        "round2_custom/berry_bowl/009_a_bowl_on_a_dining_tablecloth_42.png"
+    ],
+    "139": [
+        "round2_baseline/berry_bowl/009_a_bowl_on_a_dining_tablecloth_42.png"
+    ],
+    "140": [
+        "round2_custom/berry_bowl/010_a_bowl_near_a_window_with_sunlight_42.png"
+    ],
+    "141": [
+        "round2_baseline/berry_bowl/010_a_bowl_near_a_window_with_sunlight_42.png"
+    ],
+    "142": [
+        "round2_custom/berry_bowl/011_a_bowl_on_a_picnic_table_42.png"
+    ],
+    "143": [
+        "round2_baseline/berry_bowl/011_a_bowl_on_a_picnic_table_42.png"
+    ],
+    "144": [
+        "round2_custom/berry_bowl/012_a_bowl_surrounded_by_ingredients_42.png"
+    ],
+    "145": [
+        "round2_baseline/berry_bowl/012_a_bowl_surrounded_by_ingredients_42.png"
+    ],
+    "146": [
+        "round2_custom/berry_bowl/013_a_bowl_under_warm_indoor_lighting_42.png"
+    ],
+    "147": [
+        "round2_baseline/berry_bowl/013_a_bowl_under_warm_indoor_lighting_42.png"
+    ],
+    "148": [
+        "round2_custom/berry_bowl/014_a_bowl_on_a_patterned_placemat_42.png"
+    ],
+    "149": [
+        "round2_baseline/berry_bowl/014_a_bowl_on_a_patterned_placemat_42.png"
+    ],
+    "150": [
+        "round2_custom/berry_bowl/015_a_bowl_placed_beside_another_bowl_42.png"
+    ],
+    "151": [
+        "round2_baseline/berry_bowl/015_a_bowl_placed_beside_another_bowl_42.png"
+    ],
+    "152": [
+        "round2_custom/berry_bowl/016_a_bowl_filled_with_colorful_items_42.png"
+    ],
+    "153": [
+        "round2_baseline/berry_bowl/016_a_bowl_filled_with_colorful_items_42.png"
+    ],
+    "154": [
+        "round2_custom/berry_bowl/017_a_bowl_in_a_restaurant_setup_42.png"
+    ],
+    "155": [
+        "round2_baseline/berry_bowl/017_a_bowl_in_a_restaurant_setup_42.png"
+    ],
+    "156": [
+        "round2_custom/berry_bowl/018_a_bowl_on_a_concrete_surface_42.png"
+    ],
+    "157": [
+        "round2_baseline/berry_bowl/018_a_bowl_on_a_concrete_surface_42.png"
+    ],
+    "158": [
+        "round2_custom/berry_bowl/019_a_bowl_with_subtle_shadows_42.png"
+    ],
+    "159": [
+        "round2_baseline/berry_bowl/019_a_bowl_with_subtle_shadows_42.png"
+    ],
+    "160": [
+        "round2_custom/can/000_a_can_on_a_metal_table_42.png"
+    ],
+    "161": [
+        "round2_baseline/can/000_a_can_on_a_metal_table_42.png"
+    ],
+    "162": [
+        "round2_custom/can/001_a_can_placed_on_grass_42.png"
+    ],
+    "163": [
+        "round2_baseline/can/001_a_can_placed_on_grass_42.png"
+    ],
+    "164": [
+        "round2_custom/can/002_a_can_on_a_wooden_surface_42.png"
+    ],
+    "165": [
+        "round2_baseline/can/002_a_can_on_a_wooden_surface_42.png"
+    ],
+    "166": [
+        "round2_custom/can/003_a_can_beside_a_glass_of_water_42.png"
+    ],
+    "167": [
+        "round2_baseline/can/003_a_can_beside_a_glass_of_water_42.png"
+    ],
+    "168": [
+        "round2_custom/can/004_a_can_near_a_wall_42.png"
+    ],
+    "169": [
+        "round2_baseline/can/004_a_can_near_a_wall_42.png"
+    ],
+    "170": [
+        "round2_custom/can/005_a_can_under_bright_daylight_42.png"
+    ],
+    "171": [
+        "round2_baseline/can/005_a_can_under_bright_daylight_42.png"
+    ],
+    "172": [
+        "round2_custom/can/006_a_can_on_a_kitchen_counter_42.png"
+    ],
+    "173": [
+        "round2_baseline/can/006_a_can_on_a_kitchen_counter_42.png"
+    ],
+    "174": [
+        "round2_custom/can/007_a_can_beside_a_plate_of_food_42.png"
+    ],
+    "175": [
+        "round2_baseline/can/007_a_can_beside_a_plate_of_food_42.png"
+    ],
+    "176": [
+        "round2_custom/can/008_a_can_reflecting_light_42.png"
+    ],
+    "177": [
+        "round2_baseline/can/008_a_can_reflecting_light_42.png"
+    ],
+    "178": [
+        "round2_custom/can/009_a_can_near_a_recycling_bin_42.png"
+    ],
+    "179": [
+        "round2_baseline/can/009_a_can_near_a_recycling_bin_42.png"
+    ],
+    "180": [
+        "round2_custom/can/010_a_can_on_a_white_background_42.png"
+    ],
+    "181": [
+        "round2_baseline/can/010_a_can_on_a_white_background_42.png"
+    ],
+    "182": [
+        "round2_custom/can/011_a_can_lying_on_its_side_42.png"
+    ],
+    "183": [
+        "round2_baseline/can/011_a_can_lying_on_its_side_42.png"
+    ],
+    "184": [
+        "round2_custom/can/012_a_can_on_a_picnic_blanket_42.png"
+    ],
+    "185": [
+        "round2_baseline/can/012_a_can_on_a_picnic_blanket_42.png"
+    ],
+    "186": [
+        "round2_custom/can/013_a_can_next_to_a_paper_cup_42.png"
+    ],
+    "187": [
+        "round2_baseline/can/013_a_can_next_to_a_paper_cup_42.png"
+    ],
+    "188": [
+        "round2_custom/can/014_a_can_on_a_tiled_surface_42.png"
+    ],
+    "189": [
+        "round2_baseline/can/014_a_can_on_a_tiled_surface_42.png"
+    ],
+    "190": [
+        "round2_custom/can/015_a_can_under_soft_indoor_lighting_42.png"
+    ],
+    "191": [
+        "round2_baseline/can/015_a_can_under_soft_indoor_lighting_42.png"
+    ],
+    "192": [
+        "round2_custom/can/016_a_can_with_condensation_on_it_42.png"
+    ],
+    "193": [
+        "round2_baseline/can/016_a_can_with_condensation_on_it_42.png"
+    ],
+    "194": [
+        "round2_custom/can/017_a_can_near_other_cans_42.png"
+    ],
+    "195": [
+        "round2_baseline/can/017_a_can_near_other_cans_42.png"
+    ],
+    "196": [
+        "round2_custom/can/018_a_can_on_a_sandy_surface_42.png"
+    ],
+    "197": [
+        "round2_baseline/can/018_a_can_on_a_sandy_surface_42.png"
+    ],
+    "198": [
+        "round2_custom/can/019_a_can_on_a_countertop_under_sunlight_42.png"
+    ],
+    "199": [
+        "round2_baseline/can/019_a_can_on_a_countertop_under_sunlight_42.png"
+    ],
+    "200": [
+        "round2_custom/candle/000_a_candle_on_a_wooden_shelf_42.png"
+    ],
+    "201": [
+        "round2_baseline/candle/000_a_candle_on_a_wooden_shelf_42.png"
+    ],
+    "202": [
+        "round2_custom/candle/001_a_candle_beside_a_mirror_42.png"
+    ],
+    "203": [
+        "round2_baseline/candle/001_a_candle_beside_a_mirror_42.png"
+    ],
+    "204": [
+        "round2_custom/candle/002_a_candle_lit_in_a_dark_room_42.png"
+    ],
+    "205": [
+        "round2_baseline/candle/002_a_candle_lit_in_a_dark_room_42.png"
+    ],
+    "206": [
+        "round2_custom/candle/003_a_candle_on_a_marble_surface_42.png"
+    ],
+    "207": [
+        "round2_baseline/candle/003_a_candle_on_a_marble_surface_42.png"
+    ],
+    "208": [
+        "round2_custom/candle/004_a_candle_near_a_plant_pot_42.png"
+    ],
+    "209": [
+        "round2_baseline/candle/004_a_candle_near_a_plant_pot_42.png"
+    ],
+    "210": [
+        "round2_custom/candle/005_a_candle_on_a_bedside_table_42.png"
+    ],
+    "211": [
+        "round2_baseline/candle/005_a_candle_on_a_bedside_table_42.png"
+    ],
+    "212": [
+        "round2_custom/candle/006_a_candle_with_soft_wax_dripping_42.png"
+    ],
+    "213": [
+        "round2_baseline/candle/006_a_candle_with_soft_wax_dripping_42.png"
+    ],
+    "214": [
+        "round2_custom/candle/007_a_candle_beside_a_book_42.png"
+    ],
+    "215": [
+        "round2_baseline/candle/007_a_candle_beside_a_book_42.png"
+    ],
+    "216": [
+        "round2_custom/candle/008_a_candle_under_warm_light_42.png"
+    ],
+    "217": [
+        "round2_baseline/candle/008_a_candle_under_warm_light_42.png"
+    ],
+    "218": [
+        "round2_custom/candle/009_a_candle_in_a_glass_holder_42.png"
+    ],
+    "219": [
+        "round2_baseline/candle/009_a_candle_in_a_glass_holder_42.png"
+    ],
+    "220": [
+        "round2_custom/candle/010_a_candle_near_a_window_at_sunset_42.png"
+    ],
+    "221": [
+        "round2_baseline/candle/010_a_candle_near_a_window_at_sunset_42.png"
+    ],
+    "222": [
+        "round2_custom/candle/011_a_candle_surrounded_by_petals_42.png"
+    ],
+    "223": [
+        "round2_baseline/candle/011_a_candle_surrounded_by_petals_42.png"
+    ],
+    "224": [
+        "round2_custom/candle/012_a_candle_on_a_dining_table_42.png"
+    ],
+    "225": [
+        "round2_baseline/candle/012_a_candle_on_a_dining_table_42.png"
+    ],
+    "226": [
+        "round2_custom/candle/013_a_candle_reflecting_on_glass_42.png"
+    ],
+    "227": [
+        "round2_baseline/candle/013_a_candle_reflecting_on_glass_42.png"
+    ],
+    "228": [
+        "round2_custom/candle/014_a_candle_beside_a_cup_of_tea_42.png"
+    ],
+    "229": [
+        "round2_baseline/candle/014_a_candle_beside_a_cup_of_tea_42.png"
+    ],
+    "230": [
+        "round2_custom/candle/015_a_candle_in_a_bathroom_setting_42.png"
+    ],
+    "231": [
+        "round2_baseline/candle/015_a_candle_in_a_bathroom_setting_42.png"
+    ],
+    "232": [
+        "round2_custom/candle/016_a_candle_on_a_rug_with_shadows_42.png"
+    ],
+    "233": [
+        "round2_baseline/candle/016_a_candle_on_a_rug_with_shadows_42.png"
+    ],
+    "234": [
+        "round2_custom/candle/017_a_candle_under_natural_daylight_42.png"
+    ],
+    "235": [
+        "round2_baseline/candle/017_a_candle_under_natural_daylight_42.png"
+    ],
+    "236": [
+        "round2_custom/candle/018_a_candle_beside_a_picture_frame_42.png"
+    ],
+    "237": [
+        "round2_baseline/candle/018_a_candle_beside_a_picture_frame_42.png"
+    ],
+    "238": [
+        "round2_custom/candle/019_a_candle_on_a_tiled_surface_42.png"
+    ],
+    "239": [
+        "round2_baseline/candle/019_a_candle_on_a_tiled_surface_42.png"
+    ],
+    "240": [
+        "round2_custom/cat/000_a_cat_sitting_on_a_windowsill_42.png"
+    ],
+    "241": [
+        "round2_baseline/cat/000_a_cat_sitting_on_a_windowsill_42.png"
+    ],
+    "242": [
+        "round2_custom/cat/001_a_cat_sleeping_on_a_chair_42.png"
+    ],
+    "243": [
+        "round2_baseline/cat/001_a_cat_sleeping_on_a_chair_42.png"
+    ],
+    "244": [
+        "round2_custom/cat/002_a_cat_walking_on_wooden_flooring_42.png"
+    ],
+    "245": [
+        "round2_baseline/cat/002_a_cat_walking_on_wooden_flooring_42.png"
+    ],
+    "246": [
+        "round2_custom/cat/003_a_cat_playing_with_a_toy_42.png"
+    ],
+    "247": [
+        "round2_baseline/cat/003_a_cat_playing_with_a_toy_42.png"
+    ],
+    "248": [
+        "round2_custom/cat/004_a_cat_resting_on_a_sofa_42.png"
+    ],
+    "249": [
+        "round2_baseline/cat/004_a_cat_resting_on_a_sofa_42.png"
+    ],
+    "250": [
+        "round2_custom/cat/005_a_cat_near_a_bowl_of_food_42.png"
+    ],
+    "251": [
+        "round2_baseline/cat/005_a_cat_near_a_bowl_of_food_42.png"
+    ],
+    "252": [
+        "round2_custom/cat/006_a_cat_under_sunlight_42.png"
+    ],
+    "253": [
+        "round2_baseline/cat/006_a_cat_under_sunlight_42.png"
+    ],
+    "254": [
+        "round2_custom/cat/007_a_cat_sitting_beside_a_book_42.png"
+    ],
+    "255": [
+        "round2_baseline/cat/007_a_cat_sitting_beside_a_book_42.png"
+    ],
+    "256": [
+        "round2_custom/cat/008_a_cat_curled_up_on_a_blanket_42.png"
+    ],
+    "257": [
+        "round2_baseline/cat/008_a_cat_curled_up_on_a_blanket_42.png"
+    ],
+    "258": [
+        "round2_custom/cat/009_a_cat_looking_out_a_window_42.png"
+    ],
+    "259": [
+        "round2_baseline/cat/009_a_cat_looking_out_a_window_42.png"
+    ],
+    "260": [
+        "round2_custom/cat/010_a_cat_on_a_rug_42.png"
+    ],
+    "261": [
+        "round2_baseline/cat/010_a_cat_on_a_rug_42.png"
+    ],
+    "262": [
+        "round2_custom/cat/011_a_cat_in_a_garden_42.png"
+    ],
+    "263": [
+        "round2_baseline/cat/011_a_cat_in_a_garden_42.png"
+    ],
+    "264": [
+        "round2_custom/cat/012_a_cat_lying_on_concrete_42.png"
+    ],
+    "265": [
+        "round2_baseline/cat/012_a_cat_lying_on_concrete_42.png"
+    ],
+    "266": [
+        "round2_custom/cat/013_a_cat_hiding_under_furniture_42.png"
+    ],
+    "267": [
+        "round2_baseline/cat/013_a_cat_hiding_under_furniture_42.png"
+    ],
+    "268": [
+        "round2_custom/cat/014_a_cat_near_a_laptop_42.png"
+    ],
+    "269": [
+        "round2_baseline/cat/014_a_cat_near_a_laptop_42.png"
+    ],
+    "270": [
+        "round2_custom/cat/015_a_cat_in_a_cozy_indoor_setting_42.png"
+    ],
+    "271": [
+        "round2_baseline/cat/015_a_cat_in_a_cozy_indoor_setting_42.png"
+    ],
+    "272": [
+        "round2_custom/cat/016_a_cat_beside_a_plant_pot_42.png"
+    ],
+    "273": [
+        "round2_baseline/cat/016_a_cat_beside_a_plant_pot_42.png"
+    ],
+    "274": [
+        "round2_custom/cat/017_a_cat_illuminated_by_lamp_light_42.png"
+    ],
+    "275": [
+        "round2_baseline/cat/017_a_cat_illuminated_by_lamp_light_42.png"
+    ],
+    "276": [
+        "round2_custom/cat/018_a_cat_sitting_on_a_white_surface_42.png"
+    ],
+    "277": [
+        "round2_baseline/cat/018_a_cat_sitting_on_a_white_surface_42.png"
+    ],
+    "278": [
+        "round2_custom/cat/019_a_cat_yawning_near_curtains_42.png"
+    ],
+    "279": [
+        "round2_baseline/cat/019_a_cat_yawning_near_curtains_42.png"
+    ],
+    "280": [
+        "round2_custom/cat2/000_a_cat_sitting_on_a_windowsill_42.png"
+    ],
+    "281": [
+        "round2_baseline/cat2/000_a_cat_sitting_on_a_windowsill_42.png"
+    ],
+    "282": [
+        "round2_custom/cat2/001_a_cat_sleeping_on_a_chair_42.png"
+    ],
+    "283": [
+        "round2_baseline/cat2/001_a_cat_sleeping_on_a_chair_42.png"
+    ],
+    "284": [
+        "round2_custom/cat2/002_a_cat_walking_on_wooden_flooring_42.png"
+    ],
+    "285": [
+        "round2_baseline/cat2/002_a_cat_walking_on_wooden_flooring_42.png"
+    ],
+    "286": [
+        "round2_custom/cat2/003_a_cat_playing_with_a_toy_42.png"
+    ],
+    "287": [
+        "round2_baseline/cat2/003_a_cat_playing_with_a_toy_42.png"
+    ],
+    "288": [
+        "round2_custom/cat2/004_a_cat_resting_on_a_sofa_42.png"
+    ],
+    "289": [
+        "round2_baseline/cat2/004_a_cat_resting_on_a_sofa_42.png"
+    ],
+    "290": [
+        "round2_custom/cat2/005_a_cat_near_a_bowl_of_food_42.png"
+    ],
+    "291": [
+        "round2_baseline/cat2/005_a_cat_near_a_bowl_of_food_42.png"
+    ],
+    "292": [
+        "round2_custom/cat2/006_a_cat_under_sunlight_42.png"
+    ],
+    "293": [
+        "round2_baseline/cat2/006_a_cat_under_sunlight_42.png"
+    ],
+    "294": [
+        "round2_custom/cat2/007_a_cat_sitting_beside_a_book_42.png"
+    ],
+    "295": [
+        "round2_baseline/cat2/007_a_cat_sitting_beside_a_book_42.png"
+    ],
+    "296": [
+        "round2_custom/cat2/008_a_cat_curled_up_on_a_blanket_42.png"
+    ],
+    "297": [
+        "round2_baseline/cat2/008_a_cat_curled_up_on_a_blanket_42.png"
+    ],
+    "298": [
+        "round2_custom/cat2/009_a_cat_looking_out_a_window_42.png"
+    ],
+    "299": [
+        "round2_baseline/cat2/009_a_cat_looking_out_a_window_42.png"
+    ],
+    "300": [
+        "round2_custom/cat2/010_a_cat_on_a_rug_42.png"
+    ],
+    "301": [
+        "round2_baseline/cat2/010_a_cat_on_a_rug_42.png"
+    ],
+    "302": [
+        "round2_custom/cat2/011_a_cat_in_a_garden_42.png"
+    ],
+    "303": [
+        "round2_baseline/cat2/011_a_cat_in_a_garden_42.png"
+    ],
+    "304": [
+        "round2_custom/cat2/012_a_cat_lying_on_concrete_42.png"
+    ],
+    "305": [
+        "round2_baseline/cat2/012_a_cat_lying_on_concrete_42.png"
+    ],
+    "306": [
+        "round2_custom/cat2/013_a_cat_hiding_under_furniture_42.png"
+    ],
+    "307": [
+        "round2_baseline/cat2/013_a_cat_hiding_under_furniture_42.png"
+    ],
+    "308": [
+        "round2_custom/cat2/014_a_cat_near_a_laptop_42.png"
+    ],
+    "309": [
+        "round2_baseline/cat2/014_a_cat_near_a_laptop_42.png"
+    ],
+    "310": [
+        "round2_custom/cat2/015_a_cat_in_a_cozy_indoor_setting_42.png"
+    ],
+    "311": [
+        "round2_baseline/cat2/015_a_cat_in_a_cozy_indoor_setting_42.png"
+    ],
+    "312": [
+        "round2_custom/cat2/016_a_cat_beside_a_plant_pot_42.png"
+    ],
+    "313": [
+        "round2_baseline/cat2/016_a_cat_beside_a_plant_pot_42.png"
+    ],
+    "314": [
+        "round2_custom/cat2/017_a_cat_illuminated_by_lamp_light_42.png"
+    ],
+    "315": [
+        "round2_baseline/cat2/017_a_cat_illuminated_by_lamp_light_42.png"
+    ],
+    "316": [
+        "round2_custom/cat2/018_a_cat_sitting_on_a_white_surface_42.png"
+    ],
+    "317": [
+        "round2_baseline/cat2/018_a_cat_sitting_on_a_white_surface_42.png"
+    ],
+    "318": [
+        "round2_custom/cat2/019_a_cat_yawning_near_curtains_42.png"
+    ],
+    "319": [
+        "round2_baseline/cat2/019_a_cat_yawning_near_curtains_42.png"
+    ],
+    "320": [
+        "round2_custom/clock/000_a_clock_hanging_on_a_wall_42.png"
+    ],
+    "321": [
+        "round2_baseline/clock/000_a_clock_hanging_on_a_wall_42.png"
+    ],
+    "322": [
+        "round2_custom/clock/001_a_clock_on_a_bedside_table_42.png"
+    ],
+    "323": [
+        "round2_baseline/clock/001_a_clock_on_a_bedside_table_42.png"
+    ],
+    "324": [
+        "round2_custom/clock/002_a_clock_with_a_wooden_frame_42.png"
+    ],
+    "325": [
+        "round2_baseline/clock/002_a_clock_with_a_wooden_frame_42.png"
+    ],
+    "326": [
+        "round2_custom/clock/003_a_clock_under_sunlight_42.png"
+    ],
+    "327": [
+        "round2_baseline/clock/003_a_clock_under_sunlight_42.png"
+    ],
+    "328": [
+        "round2_custom/clock/004_a_clock_near_a_plant_42.png"
+    ],
+    "329": [
+        "round2_baseline/clock/004_a_clock_near_a_plant_42.png"
+    ],
+    "330": [
+        "round2_custom/clock/005_a_clock_on_a_white_wall_42.png"
+    ],
+    "331": [
+        "round2_baseline/clock/005_a_clock_on_a_white_wall_42.png"
+    ],
+    "332": [
+        "round2_custom/clock/006_a_clock_reflecting_light_42.png"
+    ],
+    "333": [
+        "round2_baseline/clock/006_a_clock_reflecting_light_42.png"
+    ],
+    "334": [
+        "round2_custom/clock/007_a_clock_beside_a_lamp_42.png"
+    ],
+    "335": [
+        "round2_baseline/clock/007_a_clock_beside_a_lamp_42.png"
+    ],
+    "336": [
+        "round2_custom/clock/008_a_clock_on_a_desk_42.png"
+    ],
+    "337": [
+        "round2_baseline/clock/008_a_clock_on_a_desk_42.png"
+    ],
+    "338": [
+        "round2_custom/clock/009_a_clock_near_a_window_42.png"
+    ],
+    "339": [
+        "round2_baseline/clock/009_a_clock_near_a_window_42.png"
+    ],
+    "340": [
+        "round2_custom/clock/010_a_clock_on_a_brick_wall_42.png"
+    ],
+    "341": [
+        "round2_baseline/clock/010_a_clock_on_a_brick_wall_42.png"
+    ],
+    "342": [
+        "round2_custom/clock/011_a_clock_above_a_fireplace_42.png"
+    ],
+    "343": [
+        "round2_baseline/clock/011_a_clock_above_a_fireplace_42.png"
+    ],
+    "344": [
+        "round2_custom/clock/012_a_clock_on_a_bookshelf_42.png"
+    ],
+    "345": [
+        "round2_baseline/clock/012_a_clock_on_a_bookshelf_42.png"
+    ],
+    "346": [
+        "round2_custom/clock/013_a_clock_next_to_a_mirror_42.png"
+    ],
+    "347": [
+        "round2_baseline/clock/013_a_clock_next_to_a_mirror_42.png"
+    ],
+    "348": [
+        "round2_custom/clock/014_a_clock_in_a_kitchen_setting_42.png"
+    ],
+    "349": [
+        "round2_baseline/clock/014_a_clock_in_a_kitchen_setting_42.png"
+    ],
+    "350": [
+        "round2_custom/clock/015_a_clock_photographed_close-up_42.png"
+    ],
+    "351": [
+        "round2_baseline/clock/015_a_clock_photographed_close-up_42.png"
+    ],
+    "352": [
+        "round2_custom/clock/016_a_clock_in_an_office_space_42.png"
+    ],
+    "353": [
+        "round2_baseline/clock/016_a_clock_in_an_office_space_42.png"
+    ],
+    "354": [
+        "round2_custom/clock/017_a_clock_under_warm_indoor_lighting_42.png"
+    ],
+    "355": [
+        "round2_baseline/clock/017_a_clock_under_warm_indoor_lighting_42.png"
+    ],
+    "356": [
+        "round2_custom/clock/018_a_clock_beside_a_framed_picture_42.png"
+    ],
+    "357": [
+        "round2_baseline/clock/018_a_clock_beside_a_framed_picture_42.png"
+    ],
+    "358": [
+        "round2_custom/clock/019_a_clock_on_a_tiled_background_42.png"
+    ],
+    "359": [
+        "round2_baseline/clock/019_a_clock_on_a_tiled_background_42.png"
+    ],
+    "360": [
+        "round2_custom/colorful_sneaker/000_a_sneaker_on_a_white_background_42.png"
+    ],
+    "361": [
+        "round2_baseline/colorful_sneaker/000_a_sneaker_on_a_white_background_42.png"
+    ],
+    "362": [
+        "round2_custom/colorful_sneaker/001_a_sneaker_beside_another_sneaker_42.png"
+    ],
+    "363": [
+        "round2_baseline/colorful_sneaker/001_a_sneaker_beside_another_sneaker_42.png"
+    ],
+    "364": [
+        "round2_custom/colorful_sneaker/002_a_sneaker_on_a_wooden_floor_42.png"
+    ],
+    "365": [
+        "round2_baseline/colorful_sneaker/002_a_sneaker_on_a_wooden_floor_42.png"
+    ],
+    "366": [
+        "round2_custom/colorful_sneaker/003_a_sneaker_placed_on_grass_42.png"
+    ],
+    "367": [
+        "round2_baseline/colorful_sneaker/003_a_sneaker_placed_on_grass_42.png"
+    ],
+    "368": [
+        "round2_custom/colorful_sneaker/004_a_sneaker_under_studio_lighting_42.png"
+    ],
+    "369": [
+        "round2_baseline/colorful_sneaker/004_a_sneaker_under_studio_lighting_42.png"
+    ],
+    "370": [
+        "round2_custom/colorful_sneaker/005_a_sneaker_near_a_wall_42.png"
+    ],
+    "371": [
+        "round2_baseline/colorful_sneaker/005_a_sneaker_near_a_wall_42.png"
+    ],
+    "372": [
+        "round2_custom/colorful_sneaker/006_a_sneaker_beside_a_backpack_42.png"
+    ],
+    "373": [
+        "round2_baseline/colorful_sneaker/006_a_sneaker_beside_a_backpack_42.png"
+    ],
+    "374": [
+        "round2_custom/colorful_sneaker/007_a_sneaker_on_a_marble_surface_42.png"
+    ],
+    "375": [
+        "round2_baseline/colorful_sneaker/007_a_sneaker_on_a_marble_surface_42.png"
+    ],
+    "376": [
+        "round2_custom/colorful_sneaker/008_a_sneaker_on_a_tiled_floor_42.png"
+    ],
+    "377": [
+        "round2_baseline/colorful_sneaker/008_a_sneaker_on_a_tiled_floor_42.png"
+    ],
+    "378": [
+        "round2_custom/colorful_sneaker/009_a_sneaker_reflecting_sunlight_42.png"
+    ],
+    "379": [
+        "round2_baseline/colorful_sneaker/009_a_sneaker_reflecting_sunlight_42.png"
+    ],
+    "380": [
+        "round2_custom/colorful_sneaker/010_a_sneaker_on_a_rug_near_a_bed_42.png"
+    ],
+    "381": [
+        "round2_baseline/colorful_sneaker/010_a_sneaker_on_a_rug_near_a_bed_42.png"
+    ],
+    "382": [
+        "round2_custom/colorful_sneaker/011_a_sneaker_on_a_metal_shelf_42.png"
+    ],
+    "383": [
+        "round2_baseline/colorful_sneaker/011_a_sneaker_on_a_metal_shelf_42.png"
+    ],
+    "384": [
+        "round2_custom/colorful_sneaker/012_a_sneaker_beside_a_water_bottle_42.png"
+    ],
+    "385": [
+        "round2_baseline/colorful_sneaker/012_a_sneaker_beside_a_water_bottle_42.png"
+    ],
+    "386": [
+        "round2_custom/colorful_sneaker/013_a_sneaker_in_a_store_display_42.png"
+    ],
+    "387": [
+        "round2_baseline/colorful_sneaker/013_a_sneaker_in_a_store_display_42.png"
+    ],
+    "388": [
+        "round2_custom/colorful_sneaker/014_a_sneaker_next_to_a_pair_of_socks_42.png"
+    ],
+    "389": [
+        "round2_baseline/colorful_sneaker/014_a_sneaker_next_to_a_pair_of_socks_42.png"
+    ],
+    "390": [
+        "round2_custom/colorful_sneaker/015_a_sneaker_outdoors_on_pavement_42.png"
+    ],
+    "391": [
+        "round2_baseline/colorful_sneaker/015_a_sneaker_outdoors_on_pavement_42.png"
+    ],
+    "392": [
+        "round2_custom/colorful_sneaker/016_a_sneaker_under_warm_lighting_42.png"
+    ],
+    "393": [
+        "round2_baseline/colorful_sneaker/016_a_sneaker_under_warm_lighting_42.png"
+    ],
+    "394": [
+        "round2_custom/colorful_sneaker/017_a_sneaker_beside_a_book_42.png"
+    ],
+    "395": [
+        "round2_baseline/colorful_sneaker/017_a_sneaker_beside_a_book_42.png"
+    ],
+    "396": [
+        "round2_custom/colorful_sneaker/018_a_sneaker_near_a_mirror_42.png"
+    ],
+    "397": [
+        "round2_baseline/colorful_sneaker/018_a_sneaker_near_a_mirror_42.png"
+    ],
+    "398": [
+        "round2_custom/colorful_sneaker/019_a_sneaker_on_a_concrete_surface_42.png"
+    ],
+    "399": [
+        "round2_baseline/colorful_sneaker/019_a_sneaker_on_a_concrete_surface_42.png"
+    ],
+    "400": [
+        "round2_custom/dog/000_a_dog_sitting_on_grass_42.png"
+    ],
+    "401": [
+        "round2_baseline/dog/000_a_dog_sitting_on_grass_42.png"
+    ],
+    "402": [
+        "round2_custom/dog/001_a_dog_running_in_a_park_42.png"
+    ],
+    "403": [
+        "round2_baseline/dog/001_a_dog_running_in_a_park_42.png"
+    ],
+    "404": [
+        "round2_custom/dog/002_a_dog_lying_on_a_bed_42.png"
+    ],
+    "405": [
+        "round2_baseline/dog/002_a_dog_lying_on_a_bed_42.png"
+    ],
+    "406": [
+        "round2_custom/dog/003_a_dog_beside_a_person_42.png"
+    ],
+    "407": [
+        "round2_baseline/dog/003_a_dog_beside_a_person_42.png"
+    ],
+    "408": [
+        "round2_custom/dog/004_a_dog_standing_on_a_path_42.png"
+    ],
+    "409": [
+        "round2_baseline/dog/004_a_dog_standing_on_a_path_42.png"
+    ],
+    "410": [
+        "round2_custom/dog/005_a_dog_under_sunlight_42.png"
+    ],
+    "411": [
+        "round2_baseline/dog/005_a_dog_under_sunlight_42.png"
+    ],
+    "412": [
+        "round2_custom/dog/006_a_dog_near_a_water_bowl_42.png"
+    ],
+    "413": [
+        "round2_baseline/dog/006_a_dog_near_a_water_bowl_42.png"
+    ],
+    "414": [
+        "round2_custom/dog/007_a_dog_sitting_beside_a_plant_42.png"
+    ],
+    "415": [
+        "round2_baseline/dog/007_a_dog_sitting_beside_a_plant_42.png"
+    ],
+    "416": [
+        "round2_custom/dog/008_a_dog_indoors_on_a_rug_42.png"
+    ],
+    "417": [
+        "round2_baseline/dog/008_a_dog_indoors_on_a_rug_42.png"
+    ],
+    "418": [
+        "round2_custom/dog/009_a_dog_playing_with_a_ball_42.png"
+    ],
+    "419": [
+        "round2_baseline/dog/009_a_dog_playing_with_a_ball_42.png"
+    ],
+    "420": [
+        "round2_custom/dog/010_a_dog_at_the_beach_42.png"
+    ],
+    "421": [
+        "round2_baseline/dog/010_a_dog_at_the_beach_42.png"
+    ],
+    "422": [
+        "round2_custom/dog/011_a_dog_lying_on_concrete_42.png"
+    ],
+    "423": [
+        "round2_baseline/dog/011_a_dog_lying_on_concrete_42.png"
+    ],
+    "424": [
+        "round2_custom/dog/012_a_dog_in_a_backyard_42.png"
+    ],
+    "425": [
+        "round2_baseline/dog/012_a_dog_in_a_backyard_42.png"
+    ],
+    "426": [
+        "round2_custom/dog/013_a_dog_under_warm_light_42.png"
+    ],
+    "427": [
+        "round2_baseline/dog/013_a_dog_under_warm_light_42.png"
+    ],
+    "428": [
+        "round2_custom/dog/014_a_dog_next_to_a_chair_42.png"
+    ],
+    "429": [
+        "round2_baseline/dog/014_a_dog_next_to_a_chair_42.png"
+    ],
+    "430": [
+        "round2_custom/dog/015_a_dog_near_a_window_42.png"
+    ],
+    "431": [
+        "round2_baseline/dog/015_a_dog_near_a_window_42.png"
+    ],
+    "432": [
+        "round2_custom/dog/016_a_dog_with_a_leash_on_42.png"
+    ],
+    "433": [
+        "round2_baseline/dog/016_a_dog_with_a_leash_on_42.png"
+    ],
+    "434": [
+        "round2_custom/dog/017_a_dog_sitting_near_shoes_42.png"
+    ],
+    "435": [
+        "round2_baseline/dog/017_a_dog_sitting_near_shoes_42.png"
+    ],
+    "436": [
+        "round2_custom/dog/018_a_dog_running_through_tall_grass_42.png"
+    ],
+    "437": [
+        "round2_baseline/dog/018_a_dog_running_through_tall_grass_42.png"
+    ],
+    "438": [
+        "round2_custom/dog/019_a_dog_under_soft_daylight_42.png"
+    ],
+    "439": [
+        "round2_baseline/dog/019_a_dog_under_soft_daylight_42.png"
+    ],
+    "440": [
+        "round2_custom/dog2/000_a_dog_sitting_on_grass_42.png"
+    ],
+    "441": [
+        "round2_baseline/dog2/000_a_dog_sitting_on_grass_42.png"
+    ],
+    "442": [
+        "round2_custom/dog2/001_a_dog_running_in_a_park_42.png"
+    ],
+    "443": [
+        "round2_baseline/dog2/001_a_dog_running_in_a_park_42.png"
+    ],
+    "444": [
+        "round2_custom/dog2/002_a_dog_lying_on_a_bed_42.png"
+    ],
+    "445": [
+        "round2_baseline/dog2/002_a_dog_lying_on_a_bed_42.png"
+    ],
+    "446": [
+        "round2_custom/dog2/003_a_dog_beside_a_person_42.png"
+    ],
+    "447": [
+        "round2_baseline/dog2/003_a_dog_beside_a_person_42.png"
+    ],
+    "448": [
+        "round2_custom/dog2/004_a_dog_standing_on_a_path_42.png"
+    ],
+    "449": [
+        "round2_baseline/dog2/004_a_dog_standing_on_a_path_42.png"
+    ],
+    "450": [
+        "round2_custom/dog2/005_a_dog_under_sunlight_42.png"
+    ],
+    "451": [
+        "round2_baseline/dog2/005_a_dog_under_sunlight_42.png"
+    ],
+    "452": [
+        "round2_custom/dog2/006_a_dog_near_a_water_bowl_42.png"
+    ],
+    "453": [
+        "round2_baseline/dog2/006_a_dog_near_a_water_bowl_42.png"
+    ],
+    "454": [
+        "round2_custom/dog2/007_a_dog_sitting_beside_a_plant_42.png"
+    ],
+    "455": [
+        "round2_baseline/dog2/007_a_dog_sitting_beside_a_plant_42.png"
+    ],
+    "456": [
+        "round2_custom/dog2/008_a_dog_indoors_on_a_rug_42.png"
+    ],
+    "457": [
+        "round2_baseline/dog2/008_a_dog_indoors_on_a_rug_42.png"
+    ],
+    "458": [
+        "round2_custom/dog2/009_a_dog_playing_with_a_ball_42.png"
+    ],
+    "459": [
+        "round2_baseline/dog2/009_a_dog_playing_with_a_ball_42.png"
+    ],
+    "460": [
+        "round2_custom/dog2/010_a_dog_at_the_beach_42.png"
+    ],
+    "461": [
+        "round2_baseline/dog2/010_a_dog_at_the_beach_42.png"
+    ],
+    "462": [
+        "round2_custom/dog2/011_a_dog_lying_on_concrete_42.png"
+    ],
+    "463": [
+        "round2_baseline/dog2/011_a_dog_lying_on_concrete_42.png"
+    ],
+    "464": [
+        "round2_custom/dog2/012_a_dog_in_a_backyard_42.png"
+    ],
+    "465": [
+        "round2_baseline/dog2/012_a_dog_in_a_backyard_42.png"
+    ],
+    "466": [
+        "round2_custom/dog2/013_a_dog_under_warm_light_42.png"
+    ],
+    "467": [
+        "round2_baseline/dog2/013_a_dog_under_warm_light_42.png"
+    ],
+    "468": [
+        "round2_custom/dog2/014_a_dog_next_to_a_chair_42.png"
+    ],
+    "469": [
+        "round2_baseline/dog2/014_a_dog_next_to_a_chair_42.png"
+    ],
+    "470": [
+        "round2_custom/dog2/015_a_dog_near_a_window_42.png"
+    ],
+    "471": [
+        "round2_baseline/dog2/015_a_dog_near_a_window_42.png"
+    ],
+    "472": [
+        "round2_custom/dog2/016_a_dog_with_a_leash_on_42.png"
+    ],
+    "473": [
+        "round2_baseline/dog2/016_a_dog_with_a_leash_on_42.png"
+    ],
+    "474": [
+        "round2_custom/dog2/017_a_dog_sitting_near_shoes_42.png"
+    ],
+    "475": [
+        "round2_baseline/dog2/017_a_dog_sitting_near_shoes_42.png"
+    ],
+    "476": [
+        "round2_custom/dog2/018_a_dog_running_through_tall_grass_42.png"
+    ],
+    "477": [
+        "round2_baseline/dog2/018_a_dog_running_through_tall_grass_42.png"
+    ],
+    "478": [
+        "round2_custom/dog2/019_a_dog_under_soft_daylight_42.png"
+    ],
+    "479": [
+        "round2_baseline/dog2/019_a_dog_under_soft_daylight_42.png"
+    ],
+    "480": [
+        "round2_custom/dog3/000_a_dog_sitting_on_grass_42.png"
+    ],
+    "481": [
+        "round2_baseline/dog3/000_a_dog_sitting_on_grass_42.png"
+    ],
+    "482": [
+        "round2_custom/dog3/001_a_dog_running_in_a_park_42.png"
+    ],
+    "483": [
+        "round2_baseline/dog3/001_a_dog_running_in_a_park_42.png"
+    ],
+    "484": [
+        "round2_custom/dog3/002_a_dog_lying_on_a_bed_42.png"
+    ],
+    "485": [
+        "round2_baseline/dog3/002_a_dog_lying_on_a_bed_42.png"
+    ],
+    "486": [
+        "round2_custom/dog3/003_a_dog_beside_a_person_42.png"
+    ],
+    "487": [
+        "round2_baseline/dog3/003_a_dog_beside_a_person_42.png"
+    ],
+    "488": [
+        "round2_custom/dog3/004_a_dog_standing_on_a_path_42.png"
+    ],
+    "489": [
+        "round2_baseline/dog3/004_a_dog_standing_on_a_path_42.png"
+    ],
+    "490": [
+        "round2_custom/dog3/005_a_dog_under_sunlight_42.png"
+    ],
+    "491": [
+        "round2_baseline/dog3/005_a_dog_under_sunlight_42.png"
+    ],
+    "492": [
+        "round2_custom/dog3/006_a_dog_near_a_water_bowl_42.png"
+    ],
+    "493": [
+        "round2_baseline/dog3/006_a_dog_near_a_water_bowl_42.png"
+    ],
+    "494": [
+        "round2_custom/dog3/007_a_dog_sitting_beside_a_plant_42.png"
+    ],
+    "495": [
+        "round2_baseline/dog3/007_a_dog_sitting_beside_a_plant_42.png"
+    ],
+    "496": [
+        "round2_custom/dog3/008_a_dog_indoors_on_a_rug_42.png"
+    ],
+    "497": [
+        "round2_baseline/dog3/008_a_dog_indoors_on_a_rug_42.png"
+    ],
+    "498": [
+        "round2_custom/dog3/009_a_dog_playing_with_a_ball_42.png"
+    ],
+    "499": [
+        "round2_baseline/dog3/009_a_dog_playing_with_a_ball_42.png"
+    ],
+    "500": [
+        "round2_custom/dog3/010_a_dog_at_the_beach_42.png"
+    ],
+    "501": [
+        "round2_baseline/dog3/010_a_dog_at_the_beach_42.png"
+    ],
+    "502": [
+        "round2_custom/dog3/011_a_dog_lying_on_concrete_42.png"
+    ],
+    "503": [
+        "round2_baseline/dog3/011_a_dog_lying_on_concrete_42.png"
+    ],
+    "504": [
+        "round2_custom/dog3/012_a_dog_in_a_backyard_42.png"
+    ],
+    "505": [
+        "round2_baseline/dog3/012_a_dog_in_a_backyard_42.png"
+    ],
+    "506": [
+        "round2_custom/dog3/013_a_dog_under_warm_light_42.png"
+    ],
+    "507": [
+        "round2_baseline/dog3/013_a_dog_under_warm_light_42.png"
+    ],
+    "508": [
+        "round2_custom/dog3/014_a_dog_next_to_a_chair_42.png"
+    ],
+    "509": [
+        "round2_baseline/dog3/014_a_dog_next_to_a_chair_42.png"
+    ],
+    "510": [
+        "round2_custom/dog3/015_a_dog_near_a_window_42.png"
+    ],
+    "511": [
+        "round2_baseline/dog3/015_a_dog_near_a_window_42.png"
+    ],
+    "512": [
+        "round2_custom/dog3/016_a_dog_with_a_leash_on_42.png"
+    ],
+    "513": [
+        "round2_baseline/dog3/016_a_dog_with_a_leash_on_42.png"
+    ],
+    "514": [
+        "round2_custom/dog3/017_a_dog_sitting_near_shoes_42.png"
+    ],
+    "515": [
+        "round2_baseline/dog3/017_a_dog_sitting_near_shoes_42.png"
+    ],
+    "516": [
+        "round2_custom/dog3/018_a_dog_running_through_tall_grass_42.png"
+    ],
+    "517": [
+        "round2_baseline/dog3/018_a_dog_running_through_tall_grass_42.png"
+    ],
+    "518": [
+        "round2_custom/dog3/019_a_dog_under_soft_daylight_42.png"
+    ],
+    "519": [
+        "round2_baseline/dog3/019_a_dog_under_soft_daylight_42.png"
+    ],
+    "520": [
+        "round2_custom/dog5/000_a_dog_sitting_on_grass_42.png"
+    ],
+    "521": [
+        "round2_baseline/dog5/000_a_dog_sitting_on_grass_42.png"
+    ],
+    "522": [
+        "round2_custom/dog5/001_a_dog_running_in_a_park_42.png"
+    ],
+    "523": [
+        "round2_baseline/dog5/001_a_dog_running_in_a_park_42.png"
+    ],
+    "524": [
+        "round2_custom/dog5/002_a_dog_lying_on_a_bed_42.png"
+    ],
+    "525": [
+        "round2_baseline/dog5/002_a_dog_lying_on_a_bed_42.png"
+    ],
+    "526": [
+        "round2_custom/dog5/003_a_dog_beside_a_person_42.png"
+    ],
+    "527": [
+        "round2_baseline/dog5/003_a_dog_beside_a_person_42.png"
+    ],
+    "528": [
+        "round2_custom/dog5/004_a_dog_standing_on_a_path_42.png"
+    ],
+    "529": [
+        "round2_baseline/dog5/004_a_dog_standing_on_a_path_42.png"
+    ],
+    "530": [
+        "round2_custom/dog5/005_a_dog_under_sunlight_42.png"
+    ],
+    "531": [
+        "round2_baseline/dog5/005_a_dog_under_sunlight_42.png"
+    ],
+    "532": [
+        "round2_custom/dog5/006_a_dog_near_a_water_bowl_42.png"
+    ],
+    "533": [
+        "round2_baseline/dog5/006_a_dog_near_a_water_bowl_42.png"
+    ],
+    "534": [
+        "round2_custom/dog5/007_a_dog_sitting_beside_a_plant_42.png"
+    ],
+    "535": [
+        "round2_baseline/dog5/007_a_dog_sitting_beside_a_plant_42.png"
+    ],
+    "536": [
+        "round2_custom/dog5/008_a_dog_indoors_on_a_rug_42.png"
+    ],
+    "537": [
+        "round2_baseline/dog5/008_a_dog_indoors_on_a_rug_42.png"
+    ],
+    "538": [
+        "round2_custom/dog5/009_a_dog_playing_with_a_ball_42.png"
+    ],
+    "539": [
+        "round2_baseline/dog5/009_a_dog_playing_with_a_ball_42.png"
+    ],
+    "540": [
+        "round2_custom/dog5/010_a_dog_at_the_beach_42.png"
+    ],
+    "541": [
+        "round2_baseline/dog5/010_a_dog_at_the_beach_42.png"
+    ],
+    "542": [
+        "round2_custom/dog5/011_a_dog_lying_on_concrete_42.png"
+    ],
+    "543": [
+        "round2_baseline/dog5/011_a_dog_lying_on_concrete_42.png"
+    ],
+    "544": [
+        "round2_custom/dog5/012_a_dog_in_a_backyard_42.png"
+    ],
+    "545": [
+        "round2_baseline/dog5/012_a_dog_in_a_backyard_42.png"
+    ],
+    "546": [
+        "round2_custom/dog5/013_a_dog_under_warm_light_42.png"
+    ],
+    "547": [
+        "round2_baseline/dog5/013_a_dog_under_warm_light_42.png"
+    ],
+    "548": [
+        "round2_custom/dog5/014_a_dog_next_to_a_chair_42.png"
+    ],
+    "549": [
+        "round2_baseline/dog5/014_a_dog_next_to_a_chair_42.png"
+    ],
+    "550": [
+        "round2_custom/dog5/015_a_dog_near_a_window_42.png"
+    ],
+    "551": [
+        "round2_baseline/dog5/015_a_dog_near_a_window_42.png"
+    ],
+    "552": [
+        "round2_custom/dog5/016_a_dog_with_a_leash_on_42.png"
+    ],
+    "553": [
+        "round2_baseline/dog5/016_a_dog_with_a_leash_on_42.png"
+    ],
+    "554": [
+        "round2_custom/dog5/017_a_dog_sitting_near_shoes_42.png"
+    ],
+    "555": [
+        "round2_baseline/dog5/017_a_dog_sitting_near_shoes_42.png"
+    ],
+    "556": [
+        "round2_custom/dog5/018_a_dog_running_through_tall_grass_42.png"
+    ],
+    "557": [
+        "round2_baseline/dog5/018_a_dog_running_through_tall_grass_42.png"
+    ],
+    "558": [
+        "round2_custom/dog5/019_a_dog_under_soft_daylight_42.png"
+    ],
+    "559": [
+        "round2_baseline/dog5/019_a_dog_under_soft_daylight_42.png"
+    ],
+    "560": [
+        "round2_custom/dog6/000_a_dog_sitting_on_grass_42.png"
+    ],
+    "561": [
+        "round2_baseline/dog6/000_a_dog_sitting_on_grass_42.png"
+    ],
+    "562": [
+        "round2_custom/dog6/001_a_dog_running_in_a_park_42.png"
+    ],
+    "563": [
+        "round2_baseline/dog6/001_a_dog_running_in_a_park_42.png"
+    ],
+    "564": [
+        "round2_custom/dog6/002_a_dog_lying_on_a_bed_42.png"
+    ],
+    "565": [
+        "round2_baseline/dog6/002_a_dog_lying_on_a_bed_42.png"
+    ],
+    "566": [
+        "round2_custom/dog6/003_a_dog_beside_a_person_42.png"
+    ],
+    "567": [
+        "round2_baseline/dog6/003_a_dog_beside_a_person_42.png"
+    ],
+    "568": [
+        "round2_custom/dog6/004_a_dog_standing_on_a_path_42.png"
+    ],
+    "569": [
+        "round2_baseline/dog6/004_a_dog_standing_on_a_path_42.png"
+    ],
+    "570": [
+        "round2_custom/dog6/005_a_dog_under_sunlight_42.png"
+    ],
+    "571": [
+        "round2_baseline/dog6/005_a_dog_under_sunlight_42.png"
+    ],
+    "572": [
+        "round2_custom/dog6/006_a_dog_near_a_water_bowl_42.png"
+    ],
+    "573": [
+        "round2_baseline/dog6/006_a_dog_near_a_water_bowl_42.png"
+    ],
+    "574": [
+        "round2_custom/dog6/007_a_dog_sitting_beside_a_plant_42.png"
+    ],
+    "575": [
+        "round2_baseline/dog6/007_a_dog_sitting_beside_a_plant_42.png"
+    ],
+    "576": [
+        "round2_custom/dog6/008_a_dog_indoors_on_a_rug_42.png"
+    ],
+    "577": [
+        "round2_baseline/dog6/008_a_dog_indoors_on_a_rug_42.png"
+    ],
+    "578": [
+        "round2_custom/dog6/009_a_dog_playing_with_a_ball_42.png"
+    ],
+    "579": [
+        "round2_baseline/dog6/009_a_dog_playing_with_a_ball_42.png"
+    ],
+    "580": [
+        "round2_custom/dog6/010_a_dog_at_the_beach_42.png"
+    ],
+    "581": [
+        "round2_baseline/dog6/010_a_dog_at_the_beach_42.png"
+    ],
+    "582": [
+        "round2_custom/dog6/011_a_dog_lying_on_concrete_42.png"
+    ],
+    "583": [
+        "round2_baseline/dog6/011_a_dog_lying_on_concrete_42.png"
+    ],
+    "584": [
+        "round2_custom/dog6/012_a_dog_in_a_backyard_42.png"
+    ],
+    "585": [
+        "round2_baseline/dog6/012_a_dog_in_a_backyard_42.png"
+    ],
+    "586": [
+        "round2_custom/dog6/013_a_dog_under_warm_light_42.png"
+    ],
+    "587": [
+        "round2_baseline/dog6/013_a_dog_under_warm_light_42.png"
+    ],
+    "588": [
+        "round2_custom/dog6/014_a_dog_next_to_a_chair_42.png"
+    ],
+    "589": [
+        "round2_baseline/dog6/014_a_dog_next_to_a_chair_42.png"
+    ],
+    "590": [
+        "round2_custom/dog6/015_a_dog_near_a_window_42.png"
+    ],
+    "591": [
+        "round2_baseline/dog6/015_a_dog_near_a_window_42.png"
+    ],
+    "592": [
+        "round2_custom/dog6/016_a_dog_with_a_leash_on_42.png"
+    ],
+    "593": [
+        "round2_baseline/dog6/016_a_dog_with_a_leash_on_42.png"
+    ],
+    "594": [
+        "round2_custom/dog6/017_a_dog_sitting_near_shoes_42.png"
+    ],
+    "595": [
+        "round2_baseline/dog6/017_a_dog_sitting_near_shoes_42.png"
+    ],
+    "596": [
+        "round2_custom/dog6/018_a_dog_running_through_tall_grass_42.png"
+    ],
+    "597": [
+        "round2_baseline/dog6/018_a_dog_running_through_tall_grass_42.png"
+    ],
+    "598": [
+        "round2_custom/dog6/019_a_dog_under_soft_daylight_42.png"
+    ],
+    "599": [
+        "round2_baseline/dog6/019_a_dog_under_soft_daylight_42.png"
+    ],
+    "600": [
+        "round2_custom/dog7/000_a_dog_sitting_on_grass_42.png"
+    ],
+    "601": [
+        "round2_baseline/dog7/000_a_dog_sitting_on_grass_42.png"
+    ],
+    "602": [
+        "round2_custom/dog7/001_a_dog_running_in_a_park_42.png"
+    ],
+    "603": [
+        "round2_baseline/dog7/001_a_dog_running_in_a_park_42.png"
+    ],
+    "604": [
+        "round2_custom/dog7/002_a_dog_lying_on_a_bed_42.png"
+    ],
+    "605": [
+        "round2_baseline/dog7/002_a_dog_lying_on_a_bed_42.png"
+    ],
+    "606": [
+        "round2_custom/dog7/003_a_dog_beside_a_person_42.png"
+    ],
+    "607": [
+        "round2_baseline/dog7/003_a_dog_beside_a_person_42.png"
+    ],
+    "608": [
+        "round2_custom/dog7/004_a_dog_standing_on_a_path_42.png"
+    ],
+    "609": [
+        "round2_baseline/dog7/004_a_dog_standing_on_a_path_42.png"
+    ],
+    "610": [
+        "round2_custom/dog7/005_a_dog_under_sunlight_42.png"
+    ],
+    "611": [
+        "round2_baseline/dog7/005_a_dog_under_sunlight_42.png"
+    ],
+    "612": [
+        "round2_custom/dog7/006_a_dog_near_a_water_bowl_42.png"
+    ],
+    "613": [
+        "round2_baseline/dog7/006_a_dog_near_a_water_bowl_42.png"
+    ],
+    "614": [
+        "round2_custom/dog7/007_a_dog_sitting_beside_a_plant_42.png"
+    ],
+    "615": [
+        "round2_baseline/dog7/007_a_dog_sitting_beside_a_plant_42.png"
+    ],
+    "616": [
+        "round2_custom/dog7/008_a_dog_indoors_on_a_rug_42.png"
+    ],
+    "617": [
+        "round2_baseline/dog7/008_a_dog_indoors_on_a_rug_42.png"
+    ],
+    "618": [
+        "round2_custom/dog7/009_a_dog_playing_with_a_ball_42.png"
+    ],
+    "619": [
+        "round2_baseline/dog7/009_a_dog_playing_with_a_ball_42.png"
+    ],
+    "620": [
+        "round2_custom/dog7/010_a_dog_at_the_beach_42.png"
+    ],
+    "621": [
+        "round2_baseline/dog7/010_a_dog_at_the_beach_42.png"
+    ],
+    "622": [
+        "round2_custom/dog7/011_a_dog_lying_on_concrete_42.png"
+    ],
+    "623": [
+        "round2_baseline/dog7/011_a_dog_lying_on_concrete_42.png"
+    ],
+    "624": [
+        "round2_custom/dog7/012_a_dog_in_a_backyard_42.png"
+    ],
+    "625": [
+        "round2_baseline/dog7/012_a_dog_in_a_backyard_42.png"
+    ],
+    "626": [
+        "round2_custom/dog7/013_a_dog_under_warm_light_42.png"
+    ],
+    "627": [
+        "round2_baseline/dog7/013_a_dog_under_warm_light_42.png"
+    ],
+    "628": [
+        "round2_custom/dog7/014_a_dog_next_to_a_chair_42.png"
+    ],
+    "629": [
+        "round2_baseline/dog7/014_a_dog_next_to_a_chair_42.png"
+    ],
+    "630": [
+        "round2_custom/dog7/015_a_dog_near_a_window_42.png"
+    ],
+    "631": [
+        "round2_baseline/dog7/015_a_dog_near_a_window_42.png"
+    ],
+    "632": [
+        "round2_custom/dog7/016_a_dog_with_a_leash_on_42.png"
+    ],
+    "633": [
+        "round2_baseline/dog7/016_a_dog_with_a_leash_on_42.png"
+    ],
+    "634": [
+        "round2_custom/dog7/017_a_dog_sitting_near_shoes_42.png"
+    ],
+    "635": [
+        "round2_baseline/dog7/017_a_dog_sitting_near_shoes_42.png"
+    ],
+    "636": [
+        "round2_custom/dog7/018_a_dog_running_through_tall_grass_42.png"
+    ],
+    "637": [
+        "round2_baseline/dog7/018_a_dog_running_through_tall_grass_42.png"
+    ],
+    "638": [
+        "round2_custom/dog7/019_a_dog_under_soft_daylight_42.png"
+    ],
+    "639": [
+        "round2_baseline/dog7/019_a_dog_under_soft_daylight_42.png"
+    ],
+    "640": [
+        "round2_custom/dog8/000_a_dog_sitting_on_grass_42.png"
+    ],
+    "641": [
+        "round2_baseline/dog8/000_a_dog_sitting_on_grass_42.png"
+    ],
+    "642": [
+        "round2_custom/dog8/001_a_dog_running_in_a_park_42.png"
+    ],
+    "643": [
+        "round2_baseline/dog8/001_a_dog_running_in_a_park_42.png"
+    ],
+    "644": [
+        "round2_custom/dog8/002_a_dog_lying_on_a_bed_42.png"
+    ],
+    "645": [
+        "round2_baseline/dog8/002_a_dog_lying_on_a_bed_42.png"
+    ],
+    "646": [
+        "round2_custom/dog8/003_a_dog_beside_a_person_42.png"
+    ],
+    "647": [
+        "round2_baseline/dog8/003_a_dog_beside_a_person_42.png"
+    ],
+    "648": [
+        "round2_custom/dog8/004_a_dog_standing_on_a_path_42.png"
+    ],
+    "649": [
+        "round2_baseline/dog8/004_a_dog_standing_on_a_path_42.png"
+    ],
+    "650": [
+        "round2_custom/dog8/005_a_dog_under_sunlight_42.png"
+    ],
+    "651": [
+        "round2_baseline/dog8/005_a_dog_under_sunlight_42.png"
+    ],
+    "652": [
+        "round2_custom/dog8/006_a_dog_near_a_water_bowl_42.png"
+    ],
+    "653": [
+        "round2_baseline/dog8/006_a_dog_near_a_water_bowl_42.png"
+    ],
+    "654": [
+        "round2_custom/dog8/007_a_dog_sitting_beside_a_plant_42.png"
+    ],
+    "655": [
+        "round2_baseline/dog8/007_a_dog_sitting_beside_a_plant_42.png"
+    ],
+    "656": [
+        "round2_custom/dog8/008_a_dog_indoors_on_a_rug_42.png"
+    ],
+    "657": [
+        "round2_baseline/dog8/008_a_dog_indoors_on_a_rug_42.png"
+    ],
+    "658": [
+        "round2_custom/dog8/009_a_dog_playing_with_a_ball_42.png"
+    ],
+    "659": [
+        "round2_baseline/dog8/009_a_dog_playing_with_a_ball_42.png"
+    ],
+    "660": [
+        "round2_custom/dog8/010_a_dog_at_the_beach_42.png"
+    ],
+    "661": [
+        "round2_baseline/dog8/010_a_dog_at_the_beach_42.png"
+    ],
+    "662": [
+        "round2_custom/dog8/011_a_dog_lying_on_concrete_42.png"
+    ],
+    "663": [
+        "round2_baseline/dog8/011_a_dog_lying_on_concrete_42.png"
+    ],
+    "664": [
+        "round2_custom/dog8/012_a_dog_in_a_backyard_42.png"
+    ],
+    "665": [
+        "round2_baseline/dog8/012_a_dog_in_a_backyard_42.png"
+    ],
+    "666": [
+        "round2_custom/dog8/013_a_dog_under_warm_light_42.png"
+    ],
+    "667": [
+        "round2_baseline/dog8/013_a_dog_under_warm_light_42.png"
+    ],
+    "668": [
+        "round2_custom/dog8/014_a_dog_next_to_a_chair_42.png"
+    ],
+    "669": [
+        "round2_baseline/dog8/014_a_dog_next_to_a_chair_42.png"
+    ],
+    "670": [
+        "round2_custom/dog8/015_a_dog_near_a_window_42.png"
+    ],
+    "671": [
+        "round2_baseline/dog8/015_a_dog_near_a_window_42.png"
+    ],
+    "672": [
+        "round2_custom/dog8/016_a_dog_with_a_leash_on_42.png"
+    ],
+    "673": [
+        "round2_baseline/dog8/016_a_dog_with_a_leash_on_42.png"
+    ],
+    "674": [
+        "round2_custom/dog8/017_a_dog_sitting_near_shoes_42.png"
+    ],
+    "675": [
+        "round2_baseline/dog8/017_a_dog_sitting_near_shoes_42.png"
+    ],
+    "676": [
+        "round2_custom/dog8/018_a_dog_running_through_tall_grass_42.png"
+    ],
+    "677": [
+        "round2_baseline/dog8/018_a_dog_running_through_tall_grass_42.png"
+    ],
+    "678": [
+        "round2_custom/dog8/019_a_dog_under_soft_daylight_42.png"
+    ],
+    "679": [
+        "round2_baseline/dog8/019_a_dog_under_soft_daylight_42.png"
+    ],
+    "680": [
+        "round2_custom/duck_toy/000_a_toy_on_a_carpeted_floor_42.png"
+    ],
+    "681": [
+        "round2_baseline/duck_toy/000_a_toy_on_a_carpeted_floor_42.png"
+    ],
+    "682": [
+        "round2_custom/duck_toy/001_a_toy_sitting_on_a_table_42.png"
+    ],
+    "683": [
+        "round2_baseline/duck_toy/001_a_toy_sitting_on_a_table_42.png"
+    ],
+    "684": [
+        "round2_custom/duck_toy/002_a_toy_in_a_childs_hand_42.png"
+    ],
+    "685": [
+        "round2_baseline/duck_toy/002_a_toy_in_a_childs_hand_42.png"
+    ],
+    "686": [
+        "round2_custom/duck_toy/003_a_toy_near_other_toys_42.png"
+    ],
+    "687": [
+        "round2_baseline/duck_toy/003_a_toy_near_other_toys_42.png"
+    ],
+    "688": [
+        "round2_custom/duck_toy/004_a_toy_on_a_colorful_rug_42.png"
+    ],
+    "689": [
+        "round2_baseline/duck_toy/004_a_toy_on_a_colorful_rug_42.png"
+    ],
+    "690": [
+        "round2_custom/duck_toy/005_a_toy_under_warm_light_42.png"
+    ],
+    "691": [
+        "round2_baseline/duck_toy/005_a_toy_under_warm_light_42.png"
+    ],
+    "692": [
+        "round2_custom/duck_toy/006_a_toy_beside_a_book_42.png"
+    ],
+    "693": [
+        "round2_baseline/duck_toy/006_a_toy_beside_a_book_42.png"
+    ],
+    "694": [
+        "round2_custom/duck_toy/007_a_toy_in_a_playroom_42.png"
+    ],
+    "695": [
+        "round2_baseline/duck_toy/007_a_toy_in_a_playroom_42.png"
+    ],
+    "696": [
+        "round2_custom/duck_toy/008_a_toy_on_a_shelf_42.png"
+    ],
+    "697": [
+        "round2_baseline/duck_toy/008_a_toy_on_a_shelf_42.png"
+    ],
+    "698": [
+        "round2_custom/duck_toy/009_a_toy_outdoors_on_grass_42.png"
+    ],
+    "699": [
+        "round2_baseline/duck_toy/009_a_toy_outdoors_on_grass_42.png"
+    ],
+    "700": [
+        "round2_custom/duck_toy/010_a_toy_next_to_building_blocks_42.png"
+    ],
+    "701": [
+        "round2_baseline/duck_toy/010_a_toy_next_to_building_blocks_42.png"
+    ],
+    "702": [
+        "round2_custom/duck_toy/011_a_toy_lying_on_sand_42.png"
+    ],
+    "703": [
+        "round2_baseline/duck_toy/011_a_toy_lying_on_sand_42.png"
+    ],
+    "704": [
+        "round2_custom/duck_toy/012_a_toy_in_a_bedroom_setting_42.png"
+    ],
+    "705": [
+        "round2_baseline/duck_toy/012_a_toy_in_a_bedroom_setting_42.png"
+    ],
+    "706": [
+        "round2_custom/duck_toy/013_a_toy_on_a_white_background_42.png"
+    ],
+    "707": [
+        "round2_baseline/duck_toy/013_a_toy_on_a_white_background_42.png"
+    ],
+    "708": [
+        "round2_custom/duck_toy/014_a_toy_near_a_window_with_sunlight_42.png"
+    ],
+    "709": [
+        "round2_baseline/duck_toy/014_a_toy_near_a_window_with_sunlight_42.png"
+    ],
+    "710": [
+        "round2_custom/duck_toy/015_a_toy_on_a_wooden_surface_42.png"
+    ],
+    "711": [
+        "round2_baseline/duck_toy/015_a_toy_on_a_wooden_surface_42.png"
+    ],
+    "712": [
+        "round2_custom/duck_toy/016_a_toy_under_dim_lighting_42.png"
+    ],
+    "713": [
+        "round2_baseline/duck_toy/016_a_toy_under_dim_lighting_42.png"
+    ],
+    "714": [
+        "round2_custom/duck_toy/017_a_toy_beside_a_lamp_42.png"
+    ],
+    "715": [
+        "round2_baseline/duck_toy/017_a_toy_beside_a_lamp_42.png"
+    ],
+    "716": [
+        "round2_custom/duck_toy/018_a_toy_reflected_on_glass_42.png"
+    ],
+    "717": [
+        "round2_baseline/duck_toy/018_a_toy_reflected_on_glass_42.png"
+    ],
+    "718": [
+        "round2_custom/duck_toy/019_a_toy_near_a_plant_pot_42.png"
+    ],
+    "719": [
+        "round2_baseline/duck_toy/019_a_toy_near_a_plant_pot_42.png"
+    ],
+    "720": [
+        "round2_custom/fancy_boot/000_a_boot_on_a_tiled_floor_42.png"
+    ],
+    "721": [
+        "round2_baseline/fancy_boot/000_a_boot_on_a_tiled_floor_42.png"
+    ],
+    "722": [
+        "round2_custom/fancy_boot/001_a_boot_beside_another_boot_42.png"
+    ],
+    "723": [
+        "round2_baseline/fancy_boot/001_a_boot_beside_another_boot_42.png"
+    ],
+    "724": [
+        "round2_custom/fancy_boot/002_a_boot_on_a_wooden_surface_42.png"
+    ],
+    "725": [
+        "round2_baseline/fancy_boot/002_a_boot_on_a_wooden_surface_42.png"
+    ],
+    "726": [
+        "round2_custom/fancy_boot/003_a_boot_near_a_chair_42.png"
+    ],
+    "727": [
+        "round2_baseline/fancy_boot/003_a_boot_near_a_chair_42.png"
+    ],
+    "728": [
+        "round2_custom/fancy_boot/004_a_boot_in_a_store_setting_42.png"
+    ],
+    "729": [
+        "round2_baseline/fancy_boot/004_a_boot_in_a_store_setting_42.png"
+    ],
+    "730": [
+        "round2_custom/fancy_boot/005_a_boot_under_warm_light_42.png"
+    ],
+    "731": [
+        "round2_baseline/fancy_boot/005_a_boot_under_warm_light_42.png"
+    ],
+    "732": [
+        "round2_custom/fancy_boot/006_a_boot_on_a_concrete_floor_42.png"
+    ],
+    "733": [
+        "round2_baseline/fancy_boot/006_a_boot_on_a_concrete_floor_42.png"
+    ],
+    "734": [
+        "round2_custom/fancy_boot/007_a_boot_with_laces_untied_42.png"
+    ],
+    "735": [
+        "round2_baseline/fancy_boot/007_a_boot_with_laces_untied_42.png"
+    ],
+    "736": [
+        "round2_custom/fancy_boot/008_a_boot_beside_a_backpack_42.png"
+    ],
+    "737": [
+        "round2_baseline/fancy_boot/008_a_boot_beside_a_backpack_42.png"
+    ],
+    "738": [
+        "round2_custom/fancy_boot/009_a_boot_near_a_mirror_42.png"
+    ],
+    "739": [
+        "round2_baseline/fancy_boot/009_a_boot_near_a_mirror_42.png"
+    ],
+    "740": [
+        "round2_custom/fancy_boot/010_a_boot_in_front_of_a_door_42.png"
+    ],
+    "741": [
+        "round2_baseline/fancy_boot/010_a_boot_in_front_of_a_door_42.png"
+    ],
+    "742": [
+        "round2_custom/fancy_boot/011_a_boot_under_sunlight_42.png"
+    ],
+    "743": [
+        "round2_baseline/fancy_boot/011_a_boot_under_sunlight_42.png"
+    ],
+    "744": [
+        "round2_custom/fancy_boot/012_a_boot_on_a_rug_42.png"
+    ],
+    "745": [
+        "round2_baseline/fancy_boot/012_a_boot_on_a_rug_42.png"
+    ],
+    "746": [
+        "round2_custom/fancy_boot/013_a_boot_next_to_a_pair_of_shoes_42.png"
+    ],
+    "747": [
+        "round2_baseline/fancy_boot/013_a_boot_next_to_a_pair_of_shoes_42.png"
+    ],
+    "748": [
+        "round2_custom/fancy_boot/014_a_boot_on_a_white_background_42.png"
+    ],
+    "749": [
+        "round2_baseline/fancy_boot/014_a_boot_on_a_white_background_42.png"
+    ],
+    "750": [
+        "round2_custom/fancy_boot/015_a_boot_placed_on_grass_42.png"
+    ],
+    "751": [
+        "round2_baseline/fancy_boot/015_a_boot_placed_on_grass_42.png"
+    ],
+    "752": [
+        "round2_custom/fancy_boot/016_a_boot_beside_a_wall_42.png"
+    ],
+    "753": [
+        "round2_baseline/fancy_boot/016_a_boot_beside_a_wall_42.png"
+    ],
+    "754": [
+        "round2_custom/fancy_boot/017_a_boot_near_a_coat_rack_42.png"
+    ],
+    "755": [
+        "round2_baseline/fancy_boot/017_a_boot_near_a_coat_rack_42.png"
+    ],
+    "756": [
+        "round2_custom/fancy_boot/018_a_boot_under_dim_indoor_lighting_42.png"
+    ],
+    "757": [
+        "round2_baseline/fancy_boot/018_a_boot_under_dim_indoor_lighting_42.png"
+    ],
+    "758": [
+        "round2_custom/fancy_boot/019_a_boot_resting_by_a_step_42.png"
+    ],
+    "759": [
+        "round2_baseline/fancy_boot/019_a_boot_resting_by_a_step_42.png"
+    ],
+    "760": [
+        "round2_custom/grey_sloth_plushie/000_a_stuffed_animal_on_a_childs_bed_42.png"
+    ],
+    "761": [
+        "round2_baseline/grey_sloth_plushie/000_a_stuffed_animal_on_a_childs_bed_42.png"
+    ],
+    "762": [
+        "round2_custom/grey_sloth_plushie/001_a_stuffed_animal_sitting_on_a_shelf_42.png"
+    ],
+    "763": [
+        "round2_baseline/grey_sloth_plushie/001_a_stuffed_animal_sitting_on_a_shelf_42.png"
+    ],
+    "764": [
+        "round2_custom/grey_sloth_plushie/002_a_stuffed_animal_near_a_pillow_42.png"
+    ],
+    "765": [
+        "round2_baseline/grey_sloth_plushie/002_a_stuffed_animal_near_a_pillow_42.png"
+    ],
+    "766": [
+        "round2_custom/grey_sloth_plushie/003_a_stuffed_animal_in_soft_daylight_42.png"
+    ],
+    "767": [
+        "round2_baseline/grey_sloth_plushie/003_a_stuffed_animal_in_soft_daylight_42.png"
+    ],
+    "768": [
+        "round2_custom/grey_sloth_plushie/004_a_stuffed_animal_beside_a_book_42.png"
+    ],
+    "769": [
+        "round2_baseline/grey_sloth_plushie/004_a_stuffed_animal_beside_a_book_42.png"
+    ],
+    "770": [
+        "round2_custom/grey_sloth_plushie/005_a_stuffed_animal_lying_on_a_rug_42.png"
+    ],
+    "771": [
+        "round2_baseline/grey_sloth_plushie/005_a_stuffed_animal_lying_on_a_rug_42.png"
+    ],
+    "772": [
+        "round2_custom/grey_sloth_plushie/006_a_stuffed_animal_on_a_chair_42.png"
+    ],
+    "773": [
+        "round2_baseline/grey_sloth_plushie/006_a_stuffed_animal_on_a_chair_42.png"
+    ],
+    "774": [
+        "round2_custom/grey_sloth_plushie/007_a_stuffed_animal_outdoors_on_grass_42.png"
+    ],
+    "775": [
+        "round2_baseline/grey_sloth_plushie/007_a_stuffed_animal_outdoors_on_grass_42.png"
+    ],
+    "776": [
+        "round2_custom/grey_sloth_plushie/008_a_stuffed_animal_under_a_blanket_42.png"
+    ],
+    "777": [
+        "round2_baseline/grey_sloth_plushie/008_a_stuffed_animal_under_a_blanket_42.png"
+    ],
+    "778": [
+        "round2_custom/grey_sloth_plushie/009_a_stuffed_animal_in_a_nursery_room_42.png"
+    ],
+    "779": [
+        "round2_baseline/grey_sloth_plushie/009_a_stuffed_animal_in_a_nursery_room_42.png"
+    ],
+    "780": [
+        "round2_custom/grey_sloth_plushie/010_a_stuffed_animal_near_a_lamp_42.png"
+    ],
+    "781": [
+        "round2_baseline/grey_sloth_plushie/010_a_stuffed_animal_near_a_lamp_42.png"
+    ],
+    "782": [
+        "round2_custom/grey_sloth_plushie/011_a_stuffed_animal_on_a_wooden_table_42.png"
+    ],
+    "783": [
+        "round2_baseline/grey_sloth_plushie/011_a_stuffed_animal_on_a_wooden_table_42.png"
+    ],
+    "784": [
+        "round2_custom/grey_sloth_plushie/012_a_stuffed_animal_against_a_pastel_wall_42.png"
+    ],
+    "785": [
+        "round2_baseline/grey_sloth_plushie/012_a_stuffed_animal_against_a_pastel_wall_42.png"
+    ],
+    "786": [
+        "round2_custom/grey_sloth_plushie/013_a_stuffed_animal_under_warm_lighting_42.png"
+    ],
+    "787": [
+        "round2_baseline/grey_sloth_plushie/013_a_stuffed_animal_under_warm_lighting_42.png"
+    ],
+    "788": [
+        "round2_custom/grey_sloth_plushie/014_a_stuffed_animal_beside_a_toy_box_42.png"
+    ],
+    "789": [
+        "round2_baseline/grey_sloth_plushie/014_a_stuffed_animal_beside_a_toy_box_42.png"
+    ],
+    "790": [
+        "round2_custom/grey_sloth_plushie/015_a_stuffed_animal_on_a_sofa_arm_42.png"
+    ],
+    "791": [
+        "round2_baseline/grey_sloth_plushie/015_a_stuffed_animal_on_a_sofa_arm_42.png"
+    ],
+    "792": [
+        "round2_custom/grey_sloth_plushie/016_a_stuffed_animal_near_other_plush_toys_42.png"
+    ],
+    "793": [
+        "round2_baseline/grey_sloth_plushie/016_a_stuffed_animal_near_other_plush_toys_42.png"
+    ],
+    "794": [
+        "round2_custom/grey_sloth_plushie/017_a_stuffed_animal_on_a_white_background_42.png"
+    ],
+    "795": [
+        "round2_baseline/grey_sloth_plushie/017_a_stuffed_animal_on_a_white_background_42.png"
+    ],
+    "796": [
+        "round2_custom/grey_sloth_plushie/018_a_stuffed_animal_sitting_by_a_window_42.png"
+    ],
+    "797": [
+        "round2_baseline/grey_sloth_plushie/018_a_stuffed_animal_sitting_by_a_window_42.png"
+    ],
+    "798": [
+        "round2_custom/grey_sloth_plushie/019_a_stuffed_animal_beside_a_cup_of_coffee_42.png"
+    ],
+    "799": [
+        "round2_baseline/grey_sloth_plushie/019_a_stuffed_animal_beside_a_cup_of_coffee_42.png"
+    ],
+    "800": [
+        "round2_custom/monster_toy/000_a_toy_on_a_carpeted_floor_42.png"
+    ],
+    "801": [
+        "round2_baseline/monster_toy/000_a_toy_on_a_carpeted_floor_42.png"
+    ],
+    "802": [
+        "round2_custom/monster_toy/001_a_toy_sitting_on_a_table_42.png"
+    ],
+    "803": [
+        "round2_baseline/monster_toy/001_a_toy_sitting_on_a_table_42.png"
+    ],
+    "804": [
+        "round2_custom/monster_toy/002_a_toy_in_a_childs_hand_42.png"
+    ],
+    "805": [
+        "round2_baseline/monster_toy/002_a_toy_in_a_childs_hand_42.png"
+    ],
+    "806": [
+        "round2_custom/monster_toy/003_a_toy_near_other_toys_42.png"
+    ],
+    "807": [
+        "round2_baseline/monster_toy/003_a_toy_near_other_toys_42.png"
+    ],
+    "808": [
+        "round2_custom/monster_toy/004_a_toy_on_a_colorful_rug_42.png"
+    ],
+    "809": [
+        "round2_baseline/monster_toy/004_a_toy_on_a_colorful_rug_42.png"
+    ],
+    "810": [
+        "round2_custom/monster_toy/005_a_toy_under_warm_light_42.png"
+    ],
+    "811": [
+        "round2_baseline/monster_toy/005_a_toy_under_warm_light_42.png"
+    ],
+    "812": [
+        "round2_custom/monster_toy/006_a_toy_beside_a_book_42.png"
+    ],
+    "813": [
+        "round2_baseline/monster_toy/006_a_toy_beside_a_book_42.png"
+    ],
+    "814": [
+        "round2_custom/monster_toy/007_a_toy_in_a_playroom_42.png"
+    ],
+    "815": [
+        "round2_baseline/monster_toy/007_a_toy_in_a_playroom_42.png"
+    ],
+    "816": [
+        "round2_custom/monster_toy/008_a_toy_on_a_shelf_42.png"
+    ],
+    "817": [
+        "round2_baseline/monster_toy/008_a_toy_on_a_shelf_42.png"
+    ],
+    "818": [
+        "round2_custom/monster_toy/009_a_toy_outdoors_on_grass_42.png"
+    ],
+    "819": [
+        "round2_baseline/monster_toy/009_a_toy_outdoors_on_grass_42.png"
+    ],
+    "820": [
+        "round2_custom/monster_toy/010_a_toy_next_to_building_blocks_42.png"
+    ],
+    "821": [
+        "round2_baseline/monster_toy/010_a_toy_next_to_building_blocks_42.png"
+    ],
+    "822": [
+        "round2_custom/monster_toy/011_a_toy_lying_on_sand_42.png"
+    ],
+    "823": [
+        "round2_baseline/monster_toy/011_a_toy_lying_on_sand_42.png"
+    ],
+    "824": [
+        "round2_custom/monster_toy/012_a_toy_in_a_bedroom_setting_42.png"
+    ],
+    "825": [
+        "round2_baseline/monster_toy/012_a_toy_in_a_bedroom_setting_42.png"
+    ],
+    "826": [
+        "round2_custom/monster_toy/013_a_toy_on_a_white_background_42.png"
+    ],
+    "827": [
+        "round2_baseline/monster_toy/013_a_toy_on_a_white_background_42.png"
+    ],
+    "828": [
+        "round2_custom/monster_toy/014_a_toy_near_a_window_with_sunlight_42.png"
+    ],
+    "829": [
+        "round2_baseline/monster_toy/014_a_toy_near_a_window_with_sunlight_42.png"
+    ],
+    "830": [
+        "round2_custom/monster_toy/015_a_toy_on_a_wooden_surface_42.png"
+    ],
+    "831": [
+        "round2_baseline/monster_toy/015_a_toy_on_a_wooden_surface_42.png"
+    ],
+    "832": [
+        "round2_custom/monster_toy/016_a_toy_under_dim_lighting_42.png"
+    ],
+    "833": [
+        "round2_baseline/monster_toy/016_a_toy_under_dim_lighting_42.png"
+    ],
+    "834": [
+        "round2_custom/monster_toy/017_a_toy_beside_a_lamp_42.png"
+    ],
+    "835": [
+        "round2_baseline/monster_toy/017_a_toy_beside_a_lamp_42.png"
+    ],
+    "836": [
+        "round2_custom/monster_toy/018_a_toy_reflected_on_glass_42.png"
+    ],
+    "837": [
+        "round2_baseline/monster_toy/018_a_toy_reflected_on_glass_42.png"
+    ],
+    "838": [
+        "round2_custom/monster_toy/019_a_toy_near_a_plant_pot_42.png"
+    ],
+    "839": [
+        "round2_baseline/monster_toy/019_a_toy_near_a_plant_pot_42.png"
+    ],
+    "840": [
+        "round2_custom/pink_sunglasses/000_glasses_on_a_desk_beside_a_laptop_42.png"
+    ],
+    "841": [
+        "round2_baseline/pink_sunglasses/000_glasses_on_a_desk_beside_a_laptop_42.png"
+    ],
+    "842": [
+        "round2_custom/pink_sunglasses/001_glasses_folded_on_a_book_42.png"
+    ],
+    "843": [
+        "round2_baseline/pink_sunglasses/001_glasses_folded_on_a_book_42.png"
+    ],
+    "844": [
+        "round2_custom/pink_sunglasses/002_glasses_on_a_white_surface_42.png"
+    ],
+    "845": [
+        "round2_baseline/pink_sunglasses/002_glasses_on_a_white_surface_42.png"
+    ],
+    "846": [
+        "round2_custom/pink_sunglasses/003_glasses_near_a_lamp_42.png"
+    ],
+    "847": [
+        "round2_baseline/pink_sunglasses/003_glasses_near_a_lamp_42.png"
+    ],
+    "848": [
+        "round2_custom/pink_sunglasses/004_glasses_on_a_marble_table_42.png"
+    ],
+    "849": [
+        "round2_baseline/pink_sunglasses/004_glasses_on_a_marble_table_42.png"
+    ],
+    "850": [
+        "round2_custom/pink_sunglasses/005_glasses_beside_a_notebook_42.png"
+    ],
+    "851": [
+        "round2_baseline/pink_sunglasses/005_glasses_beside_a_notebook_42.png"
+    ],
+    "852": [
+        "round2_custom/pink_sunglasses/006_glasses_on_a_wooden_desk_42.png"
+    ],
+    "853": [
+        "round2_baseline/pink_sunglasses/006_glasses_on_a_wooden_desk_42.png"
+    ],
+    "854": [
+        "round2_custom/pink_sunglasses/007_glasses_near_a_smartphone_42.png"
+    ],
+    "855": [
+        "round2_baseline/pink_sunglasses/007_glasses_near_a_smartphone_42.png"
+    ],
+    "856": [
+        "round2_custom/pink_sunglasses/008_glasses_in_an_open_case_42.png"
+    ],
+    "857": [
+        "round2_baseline/pink_sunglasses/008_glasses_in_an_open_case_42.png"
+    ],
+    "858": [
+        "round2_custom/pink_sunglasses/009_glasses_beside_a_cup_of_coffee_42.png"
+    ],
+    "859": [
+        "round2_baseline/pink_sunglasses/009_glasses_beside_a_cup_of_coffee_42.png"
+    ],
+    "860": [
+        "round2_custom/pink_sunglasses/010_glasses_on_a_sheet_of_paper_42.png"
+    ],
+    "861": [
+        "round2_baseline/pink_sunglasses/010_glasses_on_a_sheet_of_paper_42.png"
+    ],
+    "862": [
+        "round2_custom/pink_sunglasses/011_glasses_near_a_window_42.png"
+    ],
+    "863": [
+        "round2_baseline/pink_sunglasses/011_glasses_near_a_window_42.png"
+    ],
+    "864": [
+        "round2_custom/pink_sunglasses/012_glasses_under_soft_lighting_42.png"
+    ],
+    "865": [
+        "round2_baseline/pink_sunglasses/012_glasses_under_soft_lighting_42.png"
+    ],
+    "866": [
+        "round2_custom/pink_sunglasses/013_glasses_beside_another_pair_42.png"
+    ],
+    "867": [
+        "round2_baseline/pink_sunglasses/013_glasses_beside_another_pair_42.png"
+    ],
+    "868": [
+        "round2_custom/pink_sunglasses/014_glasses_on_a_glass_surface_42.png"
+    ],
+    "869": [
+        "round2_baseline/pink_sunglasses/014_glasses_on_a_glass_surface_42.png"
+    ],
+    "870": [
+        "round2_custom/pink_sunglasses/015_glasses_on_a_patterned_cloth_42.png"
+    ],
+    "871": [
+        "round2_baseline/pink_sunglasses/015_glasses_on_a_patterned_cloth_42.png"
+    ],
+    "872": [
+        "round2_custom/pink_sunglasses/016_glasses_near_a_plant_pot_42.png"
+    ],
+    "873": [
+        "round2_baseline/pink_sunglasses/016_glasses_near_a_plant_pot_42.png"
+    ],
+    "874": [
+        "round2_custom/pink_sunglasses/017_glasses_under_daylight_42.png"
+    ],
+    "875": [
+        "round2_baseline/pink_sunglasses/017_glasses_under_daylight_42.png"
+    ],
+    "876": [
+        "round2_custom/pink_sunglasses/018_glasses_beside_a_candle_42.png"
+    ],
+    "877": [
+        "round2_baseline/pink_sunglasses/018_glasses_beside_a_candle_42.png"
+    ],
+    "878": [
+        "round2_custom/pink_sunglasses/019_glasses_lying_on_a_bedspread_42.png"
+    ],
+    "879": [
+        "round2_baseline/pink_sunglasses/019_glasses_lying_on_a_bedspread_42.png"
+    ],
+    "880": [
+        "round2_custom/poop_emoji/000_a_toy_on_a_carpeted_floor_42.png"
+    ],
+    "881": [
+        "round2_baseline/poop_emoji/000_a_toy_on_a_carpeted_floor_42.png"
+    ],
+    "882": [
+        "round2_custom/poop_emoji/001_a_toy_sitting_on_a_table_42.png"
+    ],
+    "883": [
+        "round2_baseline/poop_emoji/001_a_toy_sitting_on_a_table_42.png"
+    ],
+    "884": [
+        "round2_custom/poop_emoji/002_a_toy_in_a_childs_hand_42.png"
+    ],
+    "885": [
+        "round2_baseline/poop_emoji/002_a_toy_in_a_childs_hand_42.png"
+    ],
+    "886": [
+        "round2_custom/poop_emoji/003_a_toy_near_other_toys_42.png"
+    ],
+    "887": [
+        "round2_baseline/poop_emoji/003_a_toy_near_other_toys_42.png"
+    ],
+    "888": [
+        "round2_custom/poop_emoji/004_a_toy_on_a_colorful_rug_42.png"
+    ],
+    "889": [
+        "round2_baseline/poop_emoji/004_a_toy_on_a_colorful_rug_42.png"
+    ],
+    "890": [
+        "round2_custom/poop_emoji/005_a_toy_under_warm_light_42.png"
+    ],
+    "891": [
+        "round2_baseline/poop_emoji/005_a_toy_under_warm_light_42.png"
+    ],
+    "892": [
+        "round2_custom/poop_emoji/006_a_toy_beside_a_book_42.png"
+    ],
+    "893": [
+        "round2_baseline/poop_emoji/006_a_toy_beside_a_book_42.png"
+    ],
+    "894": [
+        "round2_custom/poop_emoji/007_a_toy_in_a_playroom_42.png"
+    ],
+    "895": [
+        "round2_baseline/poop_emoji/007_a_toy_in_a_playroom_42.png"
+    ],
+    "896": [
+        "round2_custom/poop_emoji/008_a_toy_on_a_shelf_42.png"
+    ],
+    "897": [
+        "round2_baseline/poop_emoji/008_a_toy_on_a_shelf_42.png"
+    ],
+    "898": [
+        "round2_custom/poop_emoji/009_a_toy_outdoors_on_grass_42.png"
+    ],
+    "899": [
+        "round2_baseline/poop_emoji/009_a_toy_outdoors_on_grass_42.png"
+    ],
+    "900": [
+        "round2_custom/poop_emoji/010_a_toy_next_to_building_blocks_42.png"
+    ],
+    "901": [
+        "round2_baseline/poop_emoji/010_a_toy_next_to_building_blocks_42.png"
+    ],
+    "902": [
+        "round2_custom/poop_emoji/011_a_toy_lying_on_sand_42.png"
+    ],
+    "903": [
+        "round2_baseline/poop_emoji/011_a_toy_lying_on_sand_42.png"
+    ],
+    "904": [
+        "round2_custom/poop_emoji/012_a_toy_in_a_bedroom_setting_42.png"
+    ],
+    "905": [
+        "round2_baseline/poop_emoji/012_a_toy_in_a_bedroom_setting_42.png"
+    ],
+    "906": [
+        "round2_custom/poop_emoji/013_a_toy_on_a_white_background_42.png"
+    ],
+    "907": [
+        "round2_baseline/poop_emoji/013_a_toy_on_a_white_background_42.png"
+    ],
+    "908": [
+        "round2_custom/poop_emoji/014_a_toy_near_a_window_with_sunlight_42.png"
+    ],
+    "909": [
+        "round2_baseline/poop_emoji/014_a_toy_near_a_window_with_sunlight_42.png"
+    ],
+    "910": [
+        "round2_custom/poop_emoji/015_a_toy_on_a_wooden_surface_42.png"
+    ],
+    "911": [
+        "round2_baseline/poop_emoji/015_a_toy_on_a_wooden_surface_42.png"
+    ],
+    "912": [
+        "round2_custom/poop_emoji/016_a_toy_under_dim_lighting_42.png"
+    ],
+    "913": [
+        "round2_baseline/poop_emoji/016_a_toy_under_dim_lighting_42.png"
+    ],
+    "914": [
+        "round2_custom/poop_emoji/017_a_toy_beside_a_lamp_42.png"
+    ],
+    "915": [
+        "round2_baseline/poop_emoji/017_a_toy_beside_a_lamp_42.png"
+    ],
+    "916": [
+        "round2_custom/poop_emoji/018_a_toy_reflected_on_glass_42.png"
+    ],
+    "917": [
+        "round2_baseline/poop_emoji/018_a_toy_reflected_on_glass_42.png"
+    ],
+    "918": [
+        "round2_custom/poop_emoji/019_a_toy_near_a_plant_pot_42.png"
+    ],
+    "919": [
+        "round2_baseline/poop_emoji/019_a_toy_near_a_plant_pot_42.png"
+    ],
+    "920": [
+        "round2_custom/rc_car/000_a_toy_on_a_carpeted_floor_42.png"
+    ],
+    "921": [
+        "round2_baseline/rc_car/000_a_toy_on_a_carpeted_floor_42.png"
+    ],
+    "922": [
+        "round2_custom/rc_car/001_a_toy_sitting_on_a_table_42.png"
+    ],
+    "923": [
+        "round2_baseline/rc_car/001_a_toy_sitting_on_a_table_42.png"
+    ],
+    "924": [
+        "round2_custom/rc_car/002_a_toy_in_a_childs_hand_42.png"
+    ],
+    "925": [
+        "round2_baseline/rc_car/002_a_toy_in_a_childs_hand_42.png"
+    ],
+    "926": [
+        "round2_custom/rc_car/003_a_toy_near_other_toys_42.png"
+    ],
+    "927": [
+        "round2_baseline/rc_car/003_a_toy_near_other_toys_42.png"
+    ],
+    "928": [
+        "round2_custom/rc_car/004_a_toy_on_a_colorful_rug_42.png"
+    ],
+    "929": [
+        "round2_baseline/rc_car/004_a_toy_on_a_colorful_rug_42.png"
+    ],
+    "930": [
+        "round2_custom/rc_car/005_a_toy_under_warm_light_42.png"
+    ],
+    "931": [
+        "round2_baseline/rc_car/005_a_toy_under_warm_light_42.png"
+    ],
+    "932": [
+        "round2_custom/rc_car/006_a_toy_beside_a_book_42.png"
+    ],
+    "933": [
+        "round2_baseline/rc_car/006_a_toy_beside_a_book_42.png"
+    ],
+    "934": [
+        "round2_custom/rc_car/007_a_toy_in_a_playroom_42.png"
+    ],
+    "935": [
+        "round2_baseline/rc_car/007_a_toy_in_a_playroom_42.png"
+    ],
+    "936": [
+        "round2_custom/rc_car/008_a_toy_on_a_shelf_42.png"
+    ],
+    "937": [
+        "round2_baseline/rc_car/008_a_toy_on_a_shelf_42.png"
+    ],
+    "938": [
+        "round2_custom/rc_car/009_a_toy_outdoors_on_grass_42.png"
+    ],
+    "939": [
+        "round2_baseline/rc_car/009_a_toy_outdoors_on_grass_42.png"
+    ],
+    "940": [
+        "round2_custom/rc_car/010_a_toy_next_to_building_blocks_42.png"
+    ],
+    "941": [
+        "round2_baseline/rc_car/010_a_toy_next_to_building_blocks_42.png"
+    ],
+    "942": [
+        "round2_custom/rc_car/011_a_toy_lying_on_sand_42.png"
+    ],
+    "943": [
+        "round2_baseline/rc_car/011_a_toy_lying_on_sand_42.png"
+    ],
+    "944": [
+        "round2_custom/rc_car/012_a_toy_in_a_bedroom_setting_42.png"
+    ],
+    "945": [
+        "round2_baseline/rc_car/012_a_toy_in_a_bedroom_setting_42.png"
+    ],
+    "946": [
+        "round2_custom/rc_car/013_a_toy_on_a_white_background_42.png"
+    ],
+    "947": [
+        "round2_baseline/rc_car/013_a_toy_on_a_white_background_42.png"
+    ],
+    "948": [
+        "round2_custom/rc_car/014_a_toy_near_a_window_with_sunlight_42.png"
+    ],
+    "949": [
+        "round2_baseline/rc_car/014_a_toy_near_a_window_with_sunlight_42.png"
+    ],
+    "950": [
+        "round2_custom/rc_car/015_a_toy_on_a_wooden_surface_42.png"
+    ],
+    "951": [
+        "round2_baseline/rc_car/015_a_toy_on_a_wooden_surface_42.png"
+    ],
+    "952": [
+        "round2_custom/rc_car/016_a_toy_under_dim_lighting_42.png"
+    ],
+    "953": [
+        "round2_baseline/rc_car/016_a_toy_under_dim_lighting_42.png"
+    ],
+    "954": [
+        "round2_custom/rc_car/017_a_toy_beside_a_lamp_42.png"
+    ],
+    "955": [
+        "round2_baseline/rc_car/017_a_toy_beside_a_lamp_42.png"
+    ],
+    "956": [
+        "round2_custom/rc_car/018_a_toy_reflected_on_glass_42.png"
+    ],
+    "957": [
+        "round2_baseline/rc_car/018_a_toy_reflected_on_glass_42.png"
+    ],
+    "958": [
+        "round2_custom/rc_car/019_a_toy_near_a_plant_pot_42.png"
+    ],
+    "959": [
+        "round2_baseline/rc_car/019_a_toy_near_a_plant_pot_42.png"
+    ],
+    "960": [
+        "round2_custom/red_cartoon/000_a_cartoon_character_drawn_on_paper_42.png"
+    ],
+    "961": [
+        "round2_baseline/red_cartoon/000_a_cartoon_character_drawn_on_paper_42.png"
+    ],
+    "962": [
+        "round2_custom/red_cartoon/001_a_cartoon_image_on_a_computer_screen_42.png"
+    ],
+    "963": [
+        "round2_baseline/red_cartoon/001_a_cartoon_image_on_a_computer_screen_42.png"
+    ],
+    "964": [
+        "round2_custom/red_cartoon/002_a_cartoon_scene_under_bright_colors_42.png"
+    ],
+    "965": [
+        "round2_baseline/red_cartoon/002_a_cartoon_scene_under_bright_colors_42.png"
+    ],
+    "966": [
+        "round2_custom/red_cartoon/003_a_cartoon_printed_on_fabric_42.png"
+    ],
+    "967": [
+        "round2_baseline/red_cartoon/003_a_cartoon_printed_on_fabric_42.png"
+    ],
+    "968": [
+        "round2_custom/red_cartoon/004_a_cartoon_poster_on_a_wall_42.png"
+    ],
+    "969": [
+        "round2_baseline/red_cartoon/004_a_cartoon_poster_on_a_wall_42.png"
+    ],
+    "970": [
+        "round2_custom/red_cartoon/005_a_cartoon_character_on_a_mug_42.png"
+    ],
+    "971": [
+        "round2_baseline/red_cartoon/005_a_cartoon_character_on_a_mug_42.png"
+    ],
+    "972": [
+        "round2_custom/red_cartoon/006_a_cartoon_drawing_on_a_notebook_42.png"
+    ],
+    "973": [
+        "round2_baseline/red_cartoon/006_a_cartoon_drawing_on_a_notebook_42.png"
+    ],
+    "974": [
+        "round2_custom/red_cartoon/007_a_cartoon_shown_on_a_television_42.png"
+    ],
+    "975": [
+        "round2_baseline/red_cartoon/007_a_cartoon_shown_on_a_television_42.png"
+    ],
+    "976": [
+        "round2_custom/red_cartoon/008_a_cartoon_painting_on_a_canvas_42.png"
+    ],
+    "977": [
+        "round2_baseline/red_cartoon/008_a_cartoon_painting_on_a_canvas_42.png"
+    ],
+    "978": [
+        "round2_custom/red_cartoon/009_a_cartoon_on_a_phone_screen_42.png"
+    ],
+    "979": [
+        "round2_baseline/red_cartoon/009_a_cartoon_on_a_phone_screen_42.png"
+    ],
+    "980": [
+        "round2_custom/red_cartoon/010_a_cartoon_on_a_childs_t-shirt_42.png"
+    ],
+    "981": [
+        "round2_baseline/red_cartoon/010_a_cartoon_on_a_childs_t-shirt_42.png"
+    ],
+    "982": [
+        "round2_custom/red_cartoon/011_a_cartoon_sticker_on_a_laptop_42.png"
+    ],
+    "983": [
+        "round2_baseline/red_cartoon/011_a_cartoon_sticker_on_a_laptop_42.png"
+    ],
+    "984": [
+        "round2_custom/red_cartoon/012_a_cartoon_image_reflected_on_glass_42.png"
+    ],
+    "985": [
+        "round2_baseline/red_cartoon/012_a_cartoon_image_reflected_on_glass_42.png"
+    ],
+    "986": [
+        "round2_custom/red_cartoon/013_a_cartoon_mural_on_a_building_wall_42.png"
+    ],
+    "987": [
+        "round2_baseline/red_cartoon/013_a_cartoon_mural_on_a_building_wall_42.png"
+    ],
+    "988": [
+        "round2_custom/red_cartoon/014_a_cartoon_illustration_beside_a_pencil_42.png"
+    ],
+    "989": [
+        "round2_baseline/red_cartoon/014_a_cartoon_illustration_beside_a_pencil_42.png"
+    ],
+    "990": [
+        "round2_custom/red_cartoon/015_a_cartoon_figure_under_bright_lighting_42.png"
+    ],
+    "991": [
+        "round2_baseline/red_cartoon/015_a_cartoon_figure_under_bright_lighting_42.png"
+    ],
+    "992": [
+        "round2_custom/red_cartoon/016_a_cartoon_on_a_comic_book_page_42.png"
+    ],
+    "993": [
+        "round2_baseline/red_cartoon/016_a_cartoon_on_a_comic_book_page_42.png"
+    ],
+    "994": [
+        "round2_custom/red_cartoon/017_a_cartoon_framed_in_a_room_42.png"
+    ],
+    "995": [
+        "round2_baseline/red_cartoon/017_a_cartoon_framed_in_a_room_42.png"
+    ],
+    "996": [
+        "round2_custom/red_cartoon/018_a_cartoon_displayed_in_an_art_studio_42.png"
+    ],
+    "997": [
+        "round2_baseline/red_cartoon/018_a_cartoon_displayed_in_an_art_studio_42.png"
+    ],
+    "998": [
+        "round2_custom/red_cartoon/019_a_cartoon_projected_on_a_screen_42.png"
+    ],
+    "999": [
+        "round2_baseline/red_cartoon/019_a_cartoon_projected_on_a_screen_42.png"
+    ],
+    "1000": [
+        "round2_custom/robot_toy/000_a_toy_on_a_carpeted_floor_42.png"
+    ],
+    "1001": [
+        "round2_baseline/robot_toy/000_a_toy_on_a_carpeted_floor_42.png"
+    ],
+    "1002": [
+        "round2_custom/robot_toy/001_a_toy_sitting_on_a_table_42.png"
+    ],
+    "1003": [
+        "round2_baseline/robot_toy/001_a_toy_sitting_on_a_table_42.png"
+    ],
+    "1004": [
+        "round2_custom/robot_toy/002_a_toy_in_a_childs_hand_42.png"
+    ],
+    "1005": [
+        "round2_baseline/robot_toy/002_a_toy_in_a_childs_hand_42.png"
+    ],
+    "1006": [
+        "round2_custom/robot_toy/003_a_toy_near_other_toys_42.png"
+    ],
+    "1007": [
+        "round2_baseline/robot_toy/003_a_toy_near_other_toys_42.png"
+    ],
+    "1008": [
+        "round2_custom/robot_toy/004_a_toy_on_a_colorful_rug_42.png"
+    ],
+    "1009": [
+        "round2_baseline/robot_toy/004_a_toy_on_a_colorful_rug_42.png"
+    ],
+    "1010": [
+        "round2_custom/robot_toy/005_a_toy_under_warm_light_42.png"
+    ],
+    "1011": [
+        "round2_baseline/robot_toy/005_a_toy_under_warm_light_42.png"
+    ],
+    "1012": [
+        "round2_custom/robot_toy/006_a_toy_beside_a_book_42.png"
+    ],
+    "1013": [
+        "round2_baseline/robot_toy/006_a_toy_beside_a_book_42.png"
+    ],
+    "1014": [
+        "round2_custom/robot_toy/007_a_toy_in_a_playroom_42.png"
+    ],
+    "1015": [
+        "round2_baseline/robot_toy/007_a_toy_in_a_playroom_42.png"
+    ],
+    "1016": [
+        "round2_custom/robot_toy/008_a_toy_on_a_shelf_42.png"
+    ],
+    "1017": [
+        "round2_baseline/robot_toy/008_a_toy_on_a_shelf_42.png"
+    ],
+    "1018": [
+        "round2_custom/robot_toy/009_a_toy_outdoors_on_grass_42.png"
+    ],
+    "1019": [
+        "round2_baseline/robot_toy/009_a_toy_outdoors_on_grass_42.png"
+    ],
+    "1020": [
+        "round2_custom/robot_toy/010_a_toy_next_to_building_blocks_42.png"
+    ],
+    "1021": [
+        "round2_baseline/robot_toy/010_a_toy_next_to_building_blocks_42.png"
+    ],
+    "1022": [
+        "round2_custom/robot_toy/011_a_toy_lying_on_sand_42.png"
+    ],
+    "1023": [
+        "round2_baseline/robot_toy/011_a_toy_lying_on_sand_42.png"
+    ],
+    "1024": [
+        "round2_custom/robot_toy/012_a_toy_in_a_bedroom_setting_42.png"
+    ],
+    "1025": [
+        "round2_baseline/robot_toy/012_a_toy_in_a_bedroom_setting_42.png"
+    ],
+    "1026": [
+        "round2_custom/robot_toy/013_a_toy_on_a_white_background_42.png"
+    ],
+    "1027": [
+        "round2_baseline/robot_toy/013_a_toy_on_a_white_background_42.png"
+    ],
+    "1028": [
+        "round2_custom/robot_toy/014_a_toy_near_a_window_with_sunlight_42.png"
+    ],
+    "1029": [
+        "round2_baseline/robot_toy/014_a_toy_near_a_window_with_sunlight_42.png"
+    ],
+    "1030": [
+        "round2_custom/robot_toy/015_a_toy_on_a_wooden_surface_42.png"
+    ],
+    "1031": [
+        "round2_baseline/robot_toy/015_a_toy_on_a_wooden_surface_42.png"
+    ],
+    "1032": [
+        "round2_custom/robot_toy/016_a_toy_under_dim_lighting_42.png"
+    ],
+    "1033": [
+        "round2_baseline/robot_toy/016_a_toy_under_dim_lighting_42.png"
+    ],
+    "1034": [
+        "round2_custom/robot_toy/017_a_toy_beside_a_lamp_42.png"
+    ],
+    "1035": [
+        "round2_baseline/robot_toy/017_a_toy_beside_a_lamp_42.png"
+    ],
+    "1036": [
+        "round2_custom/robot_toy/018_a_toy_reflected_on_glass_42.png"
+    ],
+    "1037": [
+        "round2_baseline/robot_toy/018_a_toy_reflected_on_glass_42.png"
+    ],
+    "1038": [
+        "round2_custom/robot_toy/019_a_toy_near_a_plant_pot_42.png"
+    ],
+    "1039": [
+        "round2_baseline/robot_toy/019_a_toy_near_a_plant_pot_42.png"
+    ],
+    "1040": [
+        "round2_custom/shiny_sneaker/000_a_sneaker_on_a_white_background_42.png"
+    ],
+    "1041": [
+        "round2_baseline/shiny_sneaker/000_a_sneaker_on_a_white_background_42.png"
+    ],
+    "1042": [
+        "round2_custom/shiny_sneaker/001_a_sneaker_beside_another_sneaker_42.png"
+    ],
+    "1043": [
+        "round2_baseline/shiny_sneaker/001_a_sneaker_beside_another_sneaker_42.png"
+    ],
+    "1044": [
+        "round2_custom/shiny_sneaker/002_a_sneaker_on_a_wooden_floor_42.png"
+    ],
+    "1045": [
+        "round2_baseline/shiny_sneaker/002_a_sneaker_on_a_wooden_floor_42.png"
+    ],
+    "1046": [
+        "round2_custom/shiny_sneaker/003_a_sneaker_placed_on_grass_42.png"
+    ],
+    "1047": [
+        "round2_baseline/shiny_sneaker/003_a_sneaker_placed_on_grass_42.png"
+    ],
+    "1048": [
+        "round2_custom/shiny_sneaker/004_a_sneaker_under_studio_lighting_42.png"
+    ],
+    "1049": [
+        "round2_baseline/shiny_sneaker/004_a_sneaker_under_studio_lighting_42.png"
+    ],
+    "1050": [
+        "round2_custom/shiny_sneaker/005_a_sneaker_near_a_wall_42.png"
+    ],
+    "1051": [
+        "round2_baseline/shiny_sneaker/005_a_sneaker_near_a_wall_42.png"
+    ],
+    "1052": [
+        "round2_custom/shiny_sneaker/006_a_sneaker_beside_a_backpack_42.png"
+    ],
+    "1053": [
+        "round2_baseline/shiny_sneaker/006_a_sneaker_beside_a_backpack_42.png"
+    ],
+    "1054": [
+        "round2_custom/shiny_sneaker/007_a_sneaker_on_a_marble_surface_42.png"
+    ],
+    "1055": [
+        "round2_baseline/shiny_sneaker/007_a_sneaker_on_a_marble_surface_42.png"
+    ],
+    "1056": [
+        "round2_custom/shiny_sneaker/008_a_sneaker_on_a_tiled_floor_42.png"
+    ],
+    "1057": [
+        "round2_baseline/shiny_sneaker/008_a_sneaker_on_a_tiled_floor_42.png"
+    ],
+    "1058": [
+        "round2_custom/shiny_sneaker/009_a_sneaker_reflecting_sunlight_42.png"
+    ],
+    "1059": [
+        "round2_baseline/shiny_sneaker/009_a_sneaker_reflecting_sunlight_42.png"
+    ],
+    "1060": [
+        "round2_custom/shiny_sneaker/010_a_sneaker_on_a_rug_near_a_bed_42.png"
+    ],
+    "1061": [
+        "round2_baseline/shiny_sneaker/010_a_sneaker_on_a_rug_near_a_bed_42.png"
+    ],
+    "1062": [
+        "round2_custom/shiny_sneaker/011_a_sneaker_on_a_metal_shelf_42.png"
+    ],
+    "1063": [
+        "round2_baseline/shiny_sneaker/011_a_sneaker_on_a_metal_shelf_42.png"
+    ],
+    "1064": [
+        "round2_custom/shiny_sneaker/012_a_sneaker_beside_a_water_bottle_42.png"
+    ],
+    "1065": [
+        "round2_baseline/shiny_sneaker/012_a_sneaker_beside_a_water_bottle_42.png"
+    ],
+    "1066": [
+        "round2_custom/shiny_sneaker/013_a_sneaker_in_a_store_display_42.png"
+    ],
+    "1067": [
+        "round2_baseline/shiny_sneaker/013_a_sneaker_in_a_store_display_42.png"
+    ],
+    "1068": [
+        "round2_custom/shiny_sneaker/014_a_sneaker_next_to_a_pair_of_socks_42.png"
+    ],
+    "1069": [
+        "round2_baseline/shiny_sneaker/014_a_sneaker_next_to_a_pair_of_socks_42.png"
+    ],
+    "1070": [
+        "round2_custom/shiny_sneaker/015_a_sneaker_outdoors_on_pavement_42.png"
+    ],
+    "1071": [
+        "round2_baseline/shiny_sneaker/015_a_sneaker_outdoors_on_pavement_42.png"
+    ],
+    "1072": [
+        "round2_custom/shiny_sneaker/016_a_sneaker_under_warm_lighting_42.png"
+    ],
+    "1073": [
+        "round2_baseline/shiny_sneaker/016_a_sneaker_under_warm_lighting_42.png"
+    ],
+    "1074": [
+        "round2_custom/shiny_sneaker/017_a_sneaker_beside_a_book_42.png"
+    ],
+    "1075": [
+        "round2_baseline/shiny_sneaker/017_a_sneaker_beside_a_book_42.png"
+    ],
+    "1076": [
+        "round2_custom/shiny_sneaker/018_a_sneaker_near_a_mirror_42.png"
+    ],
+    "1077": [
+        "round2_baseline/shiny_sneaker/018_a_sneaker_near_a_mirror_42.png"
+    ],
+    "1078": [
+        "round2_custom/shiny_sneaker/019_a_sneaker_on_a_concrete_surface_42.png"
+    ],
+    "1079": [
+        "round2_baseline/shiny_sneaker/019_a_sneaker_on_a_concrete_surface_42.png"
+    ],
+    "1080": [
+        "round2_custom/teapot/000_a_teapot_on_a_wooden_table_42.png"
+    ],
+    "1081": [
+        "round2_baseline/teapot/000_a_teapot_on_a_wooden_table_42.png"
+    ],
+    "1082": [
+        "round2_custom/teapot/001_a_teapot_beside_a_cup_42.png"
+    ],
+    "1083": [
+        "round2_baseline/teapot/001_a_teapot_beside_a_cup_42.png"
+    ],
+    "1084": [
+        "round2_custom/teapot/002_a_teapot_on_a_tray_42.png"
+    ],
+    "1085": [
+        "round2_baseline/teapot/002_a_teapot_on_a_tray_42.png"
+    ],
+    "1086": [
+        "round2_custom/teapot/003_a_teapot_near_a_window_42.png"
+    ],
+    "1087": [
+        "round2_baseline/teapot/003_a_teapot_near_a_window_42.png"
+    ],
+    "1088": [
+        "round2_custom/teapot/004_a_teapot_on_a_marble_surface_42.png"
+    ],
+    "1089": [
+        "round2_baseline/teapot/004_a_teapot_on_a_marble_surface_42.png"
+    ],
+    "1090": [
+        "round2_custom/teapot/005_a_teapot_under_warm_light_42.png"
+    ],
+    "1091": [
+        "round2_baseline/teapot/005_a_teapot_under_warm_light_42.png"
+    ],
+    "1092": [
+        "round2_custom/teapot/006_a_teapot_pouring_tea_42.png"
+    ],
+    "1093": [
+        "round2_baseline/teapot/006_a_teapot_pouring_tea_42.png"
+    ],
+    "1094": [
+        "round2_custom/teapot/007_a_teapot_beside_a_book_42.png"
+    ],
+    "1095": [
+        "round2_baseline/teapot/007_a_teapot_beside_a_book_42.png"
+    ],
+    "1096": [
+        "round2_custom/teapot/008_a_teapot_on_a_white_background_42.png"
+    ],
+    "1097": [
+        "round2_baseline/teapot/008_a_teapot_on_a_white_background_42.png"
+    ],
+    "1098": [
+        "round2_custom/teapot/009_a_teapot_reflecting_sunlight_42.png"
+    ],
+    "1099": [
+        "round2_baseline/teapot/009_a_teapot_reflecting_sunlight_42.png"
+    ],
+    "1100": [
+        "round2_custom/teapot/010_a_teapot_on_a_patterned_cloth_42.png"
+    ],
+    "1101": [
+        "round2_baseline/teapot/010_a_teapot_on_a_patterned_cloth_42.png"
+    ],
+    "1102": [
+        "round2_custom/teapot/011_a_teapot_beside_a_vase_42.png"
+    ],
+    "1103": [
+        "round2_baseline/teapot/011_a_teapot_beside_a_vase_42.png"
+    ],
+    "1104": [
+        "round2_custom/teapot/012_a_teapot_on_a_kitchen_counter_42.png"
+    ],
+    "1105": [
+        "round2_baseline/teapot/012_a_teapot_on_a_kitchen_counter_42.png"
+    ],
+    "1106": [
+        "round2_custom/teapot/013_a_teapot_near_a_plate_of_pastries_42.png"
+    ],
+    "1107": [
+        "round2_baseline/teapot/013_a_teapot_near_a_plate_of_pastries_42.png"
+    ],
+    "1108": [
+        "round2_custom/teapot/014_a_teapot_with_steam_rising_42.png"
+    ],
+    "1109": [
+        "round2_baseline/teapot/014_a_teapot_with_steam_rising_42.png"
+    ],
+    "1110": [
+        "round2_custom/teapot/015_a_teapot_in_a_caf\u00e9_setting_42.png"
+    ],
+    "1111": [
+        "round2_baseline/teapot/015_a_teapot_in_a_caf\u00e9_setting_42.png"
+    ],
+    "1112": [
+        "round2_custom/teapot/016_a_teapot_under_dim_lighting_42.png"
+    ],
+    "1113": [
+        "round2_baseline/teapot/016_a_teapot_under_dim_lighting_42.png"
+    ],
+    "1114": [
+        "round2_custom/teapot/017_a_teapot_beside_a_spoon_42.png"
+    ],
+    "1115": [
+        "round2_baseline/teapot/017_a_teapot_beside_a_spoon_42.png"
+    ],
+    "1116": [
+        "round2_custom/teapot/018_a_teapot_near_flowers_42.png"
+    ],
+    "1117": [
+        "round2_baseline/teapot/018_a_teapot_near_flowers_42.png"
+    ],
+    "1118": [
+        "round2_custom/teapot/019_a_teapot_on_a_concrete_surface_42.png"
+    ],
+    "1119": [
+        "round2_baseline/teapot/019_a_teapot_on_a_concrete_surface_42.png"
+    ],
+    "1120": [
+        "round2_custom/vase/000_a_vase_on_a_wooden_table_42.png"
+    ],
+    "1121": [
+        "round2_baseline/vase/000_a_vase_on_a_wooden_table_42.png"
+    ],
+    "1122": [
+        "round2_custom/vase/001_a_vase_filled_with_flowers_42.png"
+    ],
+    "1123": [
+        "round2_baseline/vase/001_a_vase_filled_with_flowers_42.png"
+    ],
+    "1124": [
+        "round2_custom/vase/002_a_vase_beside_a_window_42.png"
+    ],
+    "1125": [
+        "round2_baseline/vase/002_a_vase_beside_a_window_42.png"
+    ],
+    "1126": [
+        "round2_custom/vase/003_a_vase_on_a_shelf_42.png"
+    ],
+    "1127": [
+        "round2_baseline/vase/003_a_vase_on_a_shelf_42.png"
+    ],
+    "1128": [
+        "round2_custom/vase/004_a_vase_on_a_marble_countertop_42.png"
+    ],
+    "1129": [
+        "round2_baseline/vase/004_a_vase_on_a_marble_countertop_42.png"
+    ],
+    "1130": [
+        "round2_custom/vase/005_a_vase_near_a_lamp_42.png"
+    ],
+    "1131": [
+        "round2_baseline/vase/005_a_vase_near_a_lamp_42.png"
+    ],
+    "1132": [
+        "round2_custom/vase/006_a_vase_reflecting_light_42.png"
+    ],
+    "1133": [
+        "round2_baseline/vase/006_a_vase_reflecting_light_42.png"
+    ],
+    "1134": [
+        "round2_custom/vase/007_a_vase_in_a_living_room_42.png"
+    ],
+    "1135": [
+        "round2_baseline/vase/007_a_vase_in_a_living_room_42.png"
+    ],
+    "1136": [
+        "round2_custom/vase/008_a_vase_with_petals_scattered_nearby_42.png"
+    ],
+    "1137": [
+        "round2_baseline/vase/008_a_vase_with_petals_scattered_nearby_42.png"
+    ],
+    "1138": [
+        "round2_custom/vase/009_a_vase_on_a_white_surface_42.png"
+    ],
+    "1139": [
+        "round2_baseline/vase/009_a_vase_on_a_white_surface_42.png"
+    ],
+    "1140": [
+        "round2_custom/vase/010_a_vase_under_warm_lighting_42.png"
+    ],
+    "1141": [
+        "round2_baseline/vase/010_a_vase_under_warm_lighting_42.png"
+    ],
+    "1142": [
+        "round2_custom/vase/011_a_vase_beside_another_vase_42.png"
+    ],
+    "1143": [
+        "round2_baseline/vase/011_a_vase_beside_another_vase_42.png"
+    ],
+    "1144": [
+        "round2_custom/vase/012_a_vase_on_a_rug_42.png"
+    ],
+    "1145": [
+        "round2_baseline/vase/012_a_vase_on_a_rug_42.png"
+    ],
+    "1146": [
+        "round2_custom/vase/013_a_vase_in_a_modern_home_42.png"
+    ],
+    "1147": [
+        "round2_baseline/vase/013_a_vase_in_a_modern_home_42.png"
+    ],
+    "1148": [
+        "round2_custom/vase/014_a_vase_near_a_mirror_42.png"
+    ],
+    "1149": [
+        "round2_baseline/vase/014_a_vase_near_a_mirror_42.png"
+    ],
+    "1150": [
+        "round2_custom/vase/015_a_vase_in_soft_daylight_42.png"
+    ],
+    "1151": [
+        "round2_baseline/vase/015_a_vase_in_soft_daylight_42.png"
+    ],
+    "1152": [
+        "round2_custom/vase/016_a_vase_on_a_tiled_floor_42.png"
+    ],
+    "1153": [
+        "round2_baseline/vase/016_a_vase_on_a_tiled_floor_42.png"
+    ],
+    "1154": [
+        "round2_custom/vase/017_a_vase_beside_a_plant_pot_42.png"
+    ],
+    "1155": [
+        "round2_baseline/vase/017_a_vase_beside_a_plant_pot_42.png"
+    ],
+    "1156": [
+        "round2_custom/vase/018_a_vase_outdoors_on_a_patio_table_42.png"
+    ],
+    "1157": [
+        "round2_baseline/vase/018_a_vase_outdoors_on_a_patio_table_42.png"
+    ],
+    "1158": [
+        "round2_custom/vase/019_a_vase_in_front_of_a_curtain_42.png"
+    ],
+    "1159": [
+        "round2_baseline/vase/019_a_vase_in_front_of_a_curtain_42.png"
+    ],
+    "1160": [
+        "round2_custom/wolf_plushie/000_a_stuffed_animal_on_a_childs_bed_42.png"
+    ],
+    "1161": [
+        "round2_baseline/wolf_plushie/000_a_stuffed_animal_on_a_childs_bed_42.png"
+    ],
+    "1162": [
+        "round2_custom/wolf_plushie/001_a_stuffed_animal_sitting_on_a_shelf_42.png"
+    ],
+    "1163": [
+        "round2_baseline/wolf_plushie/001_a_stuffed_animal_sitting_on_a_shelf_42.png"
+    ],
+    "1164": [
+        "round2_custom/wolf_plushie/002_a_stuffed_animal_near_a_pillow_42.png"
+    ],
+    "1165": [
+        "round2_baseline/wolf_plushie/002_a_stuffed_animal_near_a_pillow_42.png"
+    ],
+    "1166": [
+        "round2_custom/wolf_plushie/003_a_stuffed_animal_in_soft_daylight_42.png"
+    ],
+    "1167": [
+        "round2_baseline/wolf_plushie/003_a_stuffed_animal_in_soft_daylight_42.png"
+    ],
+    "1168": [
+        "round2_custom/wolf_plushie/004_a_stuffed_animal_beside_a_book_42.png"
+    ],
+    "1169": [
+        "round2_baseline/wolf_plushie/004_a_stuffed_animal_beside_a_book_42.png"
+    ],
+    "1170": [
+        "round2_custom/wolf_plushie/005_a_stuffed_animal_lying_on_a_rug_42.png"
+    ],
+    "1171": [
+        "round2_baseline/wolf_plushie/005_a_stuffed_animal_lying_on_a_rug_42.png"
+    ],
+    "1172": [
+        "round2_custom/wolf_plushie/006_a_stuffed_animal_on_a_chair_42.png"
+    ],
+    "1173": [
+        "round2_baseline/wolf_plushie/006_a_stuffed_animal_on_a_chair_42.png"
+    ],
+    "1174": [
+        "round2_custom/wolf_plushie/007_a_stuffed_animal_outdoors_on_grass_42.png"
+    ],
+    "1175": [
+        "round2_baseline/wolf_plushie/007_a_stuffed_animal_outdoors_on_grass_42.png"
+    ],
+    "1176": [
+        "round2_custom/wolf_plushie/008_a_stuffed_animal_under_a_blanket_42.png"
+    ],
+    "1177": [
+        "round2_baseline/wolf_plushie/008_a_stuffed_animal_under_a_blanket_42.png"
+    ],
+    "1178": [
+        "round2_custom/wolf_plushie/009_a_stuffed_animal_in_a_nursery_room_42.png"
+    ],
+    "1179": [
+        "round2_baseline/wolf_plushie/009_a_stuffed_animal_in_a_nursery_room_42.png"
+    ],
+    "1180": [
+        "round2_custom/wolf_plushie/010_a_stuffed_animal_near_a_lamp_42.png"
+    ],
+    "1181": [
+        "round2_baseline/wolf_plushie/010_a_stuffed_animal_near_a_lamp_42.png"
+    ],
+    "1182": [
+        "round2_custom/wolf_plushie/011_a_stuffed_animal_on_a_wooden_table_42.png"
+    ],
+    "1183": [
+        "round2_baseline/wolf_plushie/011_a_stuffed_animal_on_a_wooden_table_42.png"
+    ],
+    "1184": [
+        "round2_custom/wolf_plushie/012_a_stuffed_animal_against_a_pastel_wall_42.png"
+    ],
+    "1185": [
+        "round2_baseline/wolf_plushie/012_a_stuffed_animal_against_a_pastel_wall_42.png"
+    ],
+    "1186": [
+        "round2_custom/wolf_plushie/013_a_stuffed_animal_under_warm_lighting_42.png"
+    ],
+    "1187": [
+        "round2_baseline/wolf_plushie/013_a_stuffed_animal_under_warm_lighting_42.png"
+    ],
+    "1188": [
+        "round2_custom/wolf_plushie/014_a_stuffed_animal_beside_a_toy_box_42.png"
+    ],
+    "1189": [
+        "round2_baseline/wolf_plushie/014_a_stuffed_animal_beside_a_toy_box_42.png"
+    ],
+    "1190": [
+        "round2_custom/wolf_plushie/015_a_stuffed_animal_on_a_sofa_arm_42.png"
+    ],
+    "1191": [
+        "round2_baseline/wolf_plushie/015_a_stuffed_animal_on_a_sofa_arm_42.png"
+    ],
+    "1192": [
+        "round2_custom/wolf_plushie/016_a_stuffed_animal_near_other_plush_toys_42.png"
+    ],
+    "1193": [
+        "round2_baseline/wolf_plushie/016_a_stuffed_animal_near_other_plush_toys_42.png"
+    ],
+    "1194": [
+        "round2_custom/wolf_plushie/017_a_stuffed_animal_on_a_white_background_42.png"
+    ],
+    "1195": [
+        "round2_baseline/wolf_plushie/017_a_stuffed_animal_on_a_white_background_42.png"
+    ],
+    "1196": [
+        "round2_custom/wolf_plushie/018_a_stuffed_animal_sitting_by_a_window_42.png"
+    ],
+    "1197": [
+        "round2_baseline/wolf_plushie/018_a_stuffed_animal_sitting_by_a_window_42.png"
+    ],
+    "1198": [
+        "round2_custom/wolf_plushie/019_a_stuffed_animal_beside_a_cup_of_coffee_42.png"
+    ],
+    "1199": [
+        "round2_baseline/wolf_plushie/019_a_stuffed_animal_beside_a_cup_of_coffee_42.png"
+    ]
+}

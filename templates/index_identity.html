@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Comparison Study</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            padding-bottom: 160px;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            text-align: center;
+            color: #333;
+        }
+
+        .progress {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .comparison-container {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .instance-group {
+            flex: 1;
+            border: 3px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            min-height: 700px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .instance-label {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+            color: #333;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Layout for horizontal primary image */
+        .instance-content.horizontal {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            flex: 1;
+        }
+
+        .instance-content.horizontal .primary-image-container {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .instance-content.horizontal .thumbnail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 8px;
+            flex-grow: 1;
+            align-content: start;
+        }
+
+        /* Layout for vertical primary image */
+        .instance-content.vertical {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            flex: 1;
+            gap: 15px;
+        }
+
+        .instance-content.vertical .primary-image-container {
+            flex: 0 0 60%;
+            text-align: center;
+        }
+
+        .instance-content.vertical .thumbnail-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 8px;
+            align-content: start;
+        }
+
+        /* Default layout before orientation is determined */
+        .instance-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            flex: 1;
+        }
+
+        .primary-image-container {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .primary-image {
+            max-width: 100%;
+            max-height: 400px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px;
+            border: 3px solid #007bff;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+        }
+
+        /* Larger primary image for vertical layout */
+        .instance-content.vertical .primary-image {
+            max-height: 600px;
+            max-width: 100%;
+        }
+
+        .primary-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+        }
+
+        .thumbnail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 8px;
+            align-content: start;
+        }
+
+        .thumbnail-image {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 2px solid #ddd;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* Maintain aspect ratio for thumbnail images in horizontal layout */
+        .instance-content.horizontal .thumbnail-image {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 150px;
+            object-fit: contain;
+            justify-self: center;
+        }
+
+        .thumbnail-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-color: #007bff;
+        }
+
+        .response-section {
+            text-align: center;
+            margin-top: 30px;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .response-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .response-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            min-width: 120px;
+        }
+
+        .response-button.same {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .response-button.same:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        .response-button.maybe {
+            background-color: #ffc107;
+            color: #212529;
+        }
+
+        .response-button.maybe:hover {
+            background-color: #e0a800;
+            transform: translateY(-2px);
+        }
+
+        .response-button.different {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .response-button.different:hover {
+            background-color: #c82333;
+            transform: translateY(-2px);
+        }
+
+        .instructions {
+            background-color: #e7f3ff;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .instructions h3 {
+            margin-top: 0;
+            color: #007bff;
+            font-size: 18px;
+        }
+
+        .instructions p {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .instructions ul {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 14px;
+        }
+
+        .instructions li {
+            margin-bottom: 4px;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .modal-content {
+            position: relative;
+            margin: auto;
+            padding: 20px;
+            width: 98%;
+            max-width: 1600px;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .modal-image {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 2001;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: #ff6b6b;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { 
+                opacity: 0;
+                transform: translateY(-60%);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(-50%);
+            }
+        }
+
+        .modal-instructions {
+            color: white;
+            font-size: 16px;
+            margin-top: 15px;
+            opacity: 0.9;
+        }
+
+        .primary-label {
+            font-size: 14px;
+            color: #007bff;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .thumbnail-label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        /* Reference images section */
+        .reference-section {
+            background-color: #fff9e6;
+            border: 3px solid #ffc107;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(255, 193, 7, 0.2);
+        }
+
+        .reference-header {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ff8c00;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .reference-grid {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .reference-image {
+            max-width: 200px;
+            max-height: 200px;
+            object-fit: contain;
+            border-radius: 8px;
+            border: 2px solid #ffc107;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 2px 8px rgba(255, 193, 7, 0.3);
+        }
+
+        .reference-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.5);
+        }
+
+        .text-prompt {
+            margin-top: 15px;
+            padding: 12px 20px;
+            background-color: #fff;
+            border-left: 4px solid #ffc107;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #333;
+            text-align: left;
+        }
+
+        .text-prompt strong {
+            color: #ff8c00;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Image Comparison Study</h2>
+        
+        <div class="progress">
+            Pair {{ current_pair_index + 1 }} of {{ total }}
+        </div>
+
+        <!-- Reference Images Section -->
+        {% if show_references and (reference_images|length > 0 or text_prompt) %}
+        <div class="reference-section">
+            {% if reference_images|length > 0 %}
+            <div class="reference-header">📸 Reference Images for This Pair</div>
+            <div class="reference-grid">
+                {% for ref_image in reference_images %}
+                    <img src="{{ url_for('static', filename=ref_image) }}" 
+                         alt="Reference Image {{ loop.index }}" 
+                         class="reference-image"
+                         onerror="this.style.display='none';">
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% if text_prompt %}
+            <div class="text-prompt">
+                <strong>Prompt:</strong> {{ text_prompt }}
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+
+        <div class="instructions">
+            <p style="font-size: 22px; font-weight: bold; margin: 15px 0;">{{ task_prompt }}</p>
+            <p style="font-size: 14px; color: #666; margin-top: 12px;"><strong>Tip:</strong> Click on images to enlarge or swap views.</p>
+        </div>
+
+        <div class="comparison-container">
+            <!-- Instance A -->
+            <div class="instance-group">
+                <div class="instance-label">Instance A</div>
+                <div class="instance-content" id="instance-a-content">
+                    {% if current_pair[0]|length > 0 %}
+                        <div class="primary-image-container">
+                            <div class="primary-label">Main View</div>
+                            <img src="{{ url_for('static', filename=current_pair[0][0]) }}" 
+                                 alt="Instance A Primary Image" 
+                                 class="primary-image"
+                                 id="primary-image-a"
+                                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlPC90ZXh0Pjwvc3ZnPg==';">
+                        </div>
+                        {% if current_pair[0]|length > 1 %}
+                            <div class="thumbnail-label">Additional Views</div>
+                            <div class="thumbnail-grid">
+                                {% for image_path in current_pair[0][1:] %}
+                                    <img src="{{ url_for('static', filename=image_path) }}" 
+                                         alt="Instance A Thumbnail {{ loop.index }}" 
+                                         class="thumbnail-image"
+                                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlPC90ZXh0Pjwvc3ZnPg==';">
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Instance B -->
+            <div class="instance-group">
+                <div class="instance-label">Instance B</div>
+                <div class="instance-content" id="instance-b-content">
+                    {% if current_pair[1]|length > 0 %}
+                        <div class="primary-image-container">
+                            <div class="primary-label">Main View</div>
+                            <img src="{{ url_for('static', filename=current_pair[1][0]) }}" 
+                                 alt="Instance B Primary Image" 
+                                 class="primary-image"
+                                 id="primary-image-b"
+                                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlPC90ZXh0Pjwvc3ZnPg==';">
+                        </div>
+                        {% if current_pair[1]|length > 1 %}
+                            <div class="thumbnail-label">Additional Views</div>
+                            <div class="thumbnail-grid">
+                                {% for image_path in current_pair[1][1:] %}
+                                    <img src="{{ url_for('static', filename=image_path) }}" 
+                                         alt="Instance B Thumbnail {{ loop.index }}" 
+                                         class="thumbnail-image"
+                                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlPC90ZXh0Pjwvc3ZnPg==';">
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="response-section">
+            <form method="post" action="/select">
+                <div class="response-buttons">
+                    {% for option in response_options %}
+                        <button type="submit" name="selected_response" value="{{ option }}" 
+                                class="response-button {{ option.lower() }}">
+                            {{ option }}
+                        </button>
+                    {% endfor %}
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for enlarged images -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalImage" class="modal-image" src="" alt="Enlarged Image">
+            <div class="modal-instructions">
+                Click anywhere or press ESC to close
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('imageModal');
+        var modalImg = document.getElementById('modalImage');
+        var closeBtn = document.getElementsByClassName('close')[0];
+
+        // Function to determine layout based on image aspect ratio
+        function setupLayout(imageElement, containerId) {
+            imageElement.onload = function() {
+                const aspectRatio = this.naturalWidth / this.naturalHeight;
+                const container = document.getElementById(containerId);
+                
+                // If aspect ratio < 1, it's vertical (portrait)
+                // If aspect ratio >= 1, it's horizontal (landscape)
+                if (aspectRatio < 1) {
+                    container.className = 'instance-content vertical';
+                } else {
+                    container.className = 'instance-content horizontal';
+                }
+            };
+            
+            // If image is already loaded (cached), trigger the onload
+            if (imageElement.complete) {
+                imageElement.onload();
+            }
+        }
+
+        // Function to swap images between main view and thumbnail
+        function swapImages(thumbnailImg) {
+            // Find the primary image in the same instance
+            const instanceContent = thumbnailImg.closest('.instance-content');
+            const primaryImg = instanceContent.querySelector('.primary-image');
+            
+            if (primaryImg && thumbnailImg) {
+                // Store the current sources and alt texts
+                const primarySrc = primaryImg.src;
+                const primaryAlt = primaryImg.alt;
+                const thumbnailSrc = thumbnailImg.src;
+                const thumbnailAlt = thumbnailImg.alt;
+                
+                // Swap the sources and alt texts
+                primaryImg.src = thumbnailSrc;
+                primaryImg.alt = thumbnailAlt;
+                thumbnailImg.src = primarySrc;
+                thumbnailImg.alt = primaryAlt;
+                
+                // Re-setup layout in case the new primary image has different orientation
+                const containerId = instanceContent.id;
+                setupLayout(primaryImg, containerId);
+            }
+        }
+
+        // Add click event listeners to all images and setup layouts
+        document.addEventListener('DOMContentLoaded', function() {
+            // Setup layouts for primary images
+            const primaryImageA = document.getElementById('primary-image-a');
+            const primaryImageB = document.getElementById('primary-image-b');
+            
+            if (primaryImageA) {
+                setupLayout(primaryImageA, 'instance-a-content');
+            }
+            if (primaryImageB) {
+                setupLayout(primaryImageB, 'instance-b-content');
+            }
+
+            // Add click event listeners for image swapping and modal
+            var primaryImages = document.querySelectorAll('.primary-image');
+            var thumbnailImages = document.querySelectorAll('.thumbnail-image');
+            var referenceImages = document.querySelectorAll('.reference-image');
+            
+            // Primary images open modal when clicked
+            primaryImages.forEach(function(img) {
+                img.addEventListener('click', function() {
+                    modal.style.display = 'block';
+                    modalImg.src = this.src;
+                    modalImg.alt = this.alt;
+                });
+            });
+            
+            // Reference images also open modal when clicked
+            referenceImages.forEach(function(img) {
+                img.addEventListener('click', function() {
+                    modal.style.display = 'block';
+                    modalImg.src = this.src;
+                    modalImg.alt = this.alt;
+                });
+            });
+            
+            // Thumbnail images swap with primary when clicked
+            thumbnailImages.forEach(function(img) {
+                img.addEventListener('click', function() {
+                    swapImages(this);
+                });
+            });
+        });
+
+        // Close modal when clicking the X
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside the image
+        modal.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Close modal with ESC key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.style.display === 'block') {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Comparison Study</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .container {
+            max-width: 50%;
+            margin: 10px;
+            min-height: 100vh;
+        }
+
+        .instructions {
+            margin-top: 20px;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .examples {
+            margin-top: 10px;
+            text-align: left;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            width: 85%;
+            max-height: 300px;
+            height: auto;
+            margin: 5px auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .examples img {
+            width: 95%;
+            max-height: 400px;
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .start-button {
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .start-button:hover {
+            background-color: #0056b3;
+        }
+
+        .important {
+            font-weight: bold;
+            color: red;
+            margin-bottom: 20px;
+        }
+
+        .image-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 10px 0;
+            align-items: center;
+        }
+
+        .instance-group {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .instance-label {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .highlight-identical {
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        .highlight-different {
+            font-weight: bold;
+            color: #dc3545;
+        }
+
+        .highlight-same {
+            font-weight: bold;
+            color: #000;
+            background-color: #d4edda;
+            padding: 2px 4px;
+            border-radius: 3px;
+            text-decoration: underline;
+            font-size: 1.1em;
+        }
+
+        .highlight-different-text {
+            font-weight: bold;
+            color: #000;
+            background-color: #f8d7da;
+            padding: 2px 4px;
+            border-radius: 3px;
+            text-decoration: underline;
+            font-size: 1.1em;
+        }
+
+        .highlight-maybe {
+            font-weight: bold;
+            color: #000;
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+            text-decoration: underline;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="instructions">
+            <h2>Your Prolific PID: {{ pid }}</h2>
+            <h3>Your assigned subset: {{ subset_id }} number {{ subset_number }}</h3>
+
+            <div class="important">
+                <strong>Please do not take this study on a mobile phone.</strong>
+                The text and images will not display correctly.
+            </div>
+            <div class="important">
+                <strong>Please do not take this study if you have already completed this task.</strong>
+            </div>
+
+            <h1>Welcome to the Image Comparison Study</h1>
+            <p>
+                Thank you for participating in this quick user study on generated images. You will be shown pairs of image groups and asked to compare them.
+                The study is expected to take <strong>10–20 minutes</strong>.
+            </p>
+            <p>
+                After you are finished, you will be <strong>redirected to Prolific</strong>.
+            </p>
+
+            <p><strong>Please note:</strong></p>
+            <ul>
+                <li>You will <strong>not</strong> be able to return to the previous page once you start.</li>
+                <li>Click on images to view them in detail or swap between different views.</li>
+            </ul>
+        </div>
+
+        
+        <div class="instructions">
+            <p>
+                <i>This task is part of an MIT scientific research project. Your decision to complete this task is voluntary. You may decline further participation, at any time, without adverse consequences. The researchers who have requested your participation will not receive any personal information about you. The only information we will have, in addition to your responses, is the time at which you completed the survey. The results of the research may be presented at scientific meetings or published in scientific journals. Clicking on the 'Start' button on the bottom of this page indicates that you are at least 18 years of age and agree to complete this task voluntarily.</i>
+            </p>
+            <form action="/index">
+                <button class="start-button" type="submit">Start</button>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
