@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generated Image Evaluation</title>
+    <title>Bumblebee Image Evaluation</title>
     <style>
         * {
             box-sizing: border-box;
@@ -12,36 +12,36 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: #f7f7f7;
-            color: #333;
-            line-height: 1.5;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f7fa;
+            color: #2c3e50;
+            line-height: 1.6;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 15px;
+            padding: 20px;
         }
 
         .header {
             background: white;
-            padding: 15px;
-            border-radius: 5px;
+            padding: 20px;
+            border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .progress-bar {
             background: #e0e0e0;
-            height: 6px;
-            border-radius: 3px;
+            height: 8px;
+            border-radius: 4px;
             overflow: hidden;
-            margin-top: 8px;
+            margin-top: 10px;
         }
 
         .progress-fill {
-            background: #007bff;
+            background: #3498db;
             height: 100%;
             transition: width 0.3s ease;
         }
@@ -49,8 +49,8 @@
         .main-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 15px;
+            gap: 20px;
+            margin-bottom: 20px;
         }
 
         @media (max-width: 968px) {
@@ -61,21 +61,21 @@
 
         .image-panel, .evaluation-panel {
             background: white;
-            padding: 15px;
-            border-radius: 5px;
+            padding: 20px;
+            border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .image-container {
             text-align: center;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .main-image {
             max-width: 100%;
-            max-height: 450px;
-            border-radius: 5px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            max-height: 500px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             cursor: pointer;
             transition: transform 0.2s;
         }
@@ -86,95 +86,80 @@
 
         .stage-indicator {
             display: inline-block;
-            padding: 6px 14px;
-            border-radius: 15px;
+            padding: 8px 16px;
+            border-radius: 20px;
             font-weight: 600;
-            font-size: 13px;
-            margin-bottom: 12px;
+            font-size: 14px;
+            margin-bottom: 15px;
         }
 
         .stage-1 {
-            background: #007bff;
+            background: #3498db;
             color: white;
         }
 
         .stage-2 {
-            background: #28a745;
+            background: #2ecc71;
             color: white;
         }
 
         .form-section {
-            margin-bottom: 18px;
+            margin-bottom: 25px;
         }
 
         .form-section h3 {
             color: #2c3e50;
-            margin-bottom: 10px;
-            padding-bottom: 6px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
             border-bottom: 2px solid #ecf0f1;
-            font-size: 16px;
         }
 
         .form-group {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
         label {
             display: block;
-            margin-bottom: 4px;
+            margin-bottom: 5px;
             font-weight: 500;
             color: #34495e;
-            font-size: 14px;
         }
 
         input[type="text"], select {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             border: 2px solid #e0e0e0;
-            border-radius: 3px;
+            border-radius: 4px;
             font-size: 14px;
             transition: border-color 0.3s;
         }
 
         input[type="text"]:focus, select:focus {
             outline: none;
-            border-color: #007bff;
+            border-color: #3498db;
         }
 
-        /* Compact slider styling - label and slider on same line */
+        /* Range slider styling */
         .slider-container {
-            display: grid;
-            grid-template-columns: 200px 1fr 40px 120px;
-            gap: 10px;
-            align-items: center;
-            margin-bottom: 8px;
-            padding: 4px 0;
+            margin-bottom: 20px;
         }
 
         .slider-label {
-            font-size: 13px;
-            font-weight: 500;
-            color: #34495e;
-        }
-
-        .slider-wrapper {
             display: flex;
-            flex-direction: column;
-            gap: 2px;
+            justify-content: space-between;
+            margin-bottom: 5px;
         }
 
         .slider-value {
             font-weight: 700;
-            color: #007bff;
-            font-size: 15px;
-            text-align: center;
-            min-width: 40px;
+            color: #3498db;
+            font-size: 18px;
         }
 
         input[type="range"] {
             width: 100%;
-            height: 6px;
-            border-radius: 3px;
+            height: 8px;
+            border-radius: 4px;
             background: #e0e0e0;
             outline: none;
             -webkit-appearance: none;
@@ -183,18 +168,18 @@
         input[type="range"]::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
-            width: 16px;
-            height: 16px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
-            background: #007bff;
+            background: #3498db;
             cursor: pointer;
         }
 
         input[type="range"]::-moz-range-thumb {
-            width: 16px;
-            height: 16px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
-            background: #007bff;
+            background: #3498db;
             cursor: pointer;
             border: none;
         }
@@ -202,29 +187,16 @@
         .slider-scale {
             display: flex;
             justify-content: space-between;
-            font-size: 9px;
+            font-size: 12px;
             color: #7f8c8d;
+            margin-top: 5px;
         }
 
-        .not-visible-checkbox {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 13px;
-            color: #555;
-        }
-
-        .not-visible-checkbox input[type="checkbox"] {
-            width: 16px;
-            height: 16px;
-            cursor: pointer;
-        }
-
-        /* Compact checkbox styling */
+        /* Checkbox styling */
         .checkbox-group {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 8px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
         }
 
         .checkbox-item {
@@ -233,9 +205,9 @@
         }
 
         .checkbox-item input[type="checkbox"] {
-            width: 16px;
-            height: 16px;
-            margin-right: 6px;
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
             cursor: pointer;
         }
 
@@ -243,36 +215,35 @@
             margin-bottom: 0;
             cursor: pointer;
             font-weight: normal;
-            font-size: 13px;
         }
 
         /* Buttons */
         .btn {
-            padding: 10px 20px;
+            padding: 12px 24px;
             border: none;
             border-radius: 4px;
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
         }
 
         .btn-primary {
-            background: #007bff;
+            background: #3498db;
             color: white;
         }
 
         .btn-primary:hover {
-            background: #0056b3;
+            background: #2980b9;
         }
 
         .btn-success {
-            background: #28a745;
+            background: #2ecc71;
             color: white;
         }
 
         .btn-success:hover {
-            background: #218838;
+            background: #27ae60;
         }
 
         .btn-block {
@@ -286,12 +257,11 @@
 
         /* Ground truth reveal */
         .ground-truth-panel {
-            background: #e8f4f8;
-            padding: 12px;
-            border-radius: 5px;
-            margin-bottom: 15px;
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
             display: none;
-            border-left: 4px solid #007bff;
         }
 
         .ground-truth-panel.visible {
@@ -300,35 +270,20 @@
 
         .ground-truth-panel h4 {
             color: #2c3e50;
-            margin-bottom: 8px;
-            font-size: 14px;
+            margin-bottom: 10px;
         }
 
         .ground-truth-item {
-            margin-bottom: 4px;
-            font-size: 13px;
+            margin-bottom: 5px;
         }
 
         .ground-truth-item strong {
             color: #2c3e50;
         }
 
-        .ground-truth-inline {
-            font-size: 13px;
-        }
-
-        .ground-truth-inline strong {
-            color: #2c3e50;
-            margin-left: 8px;
-        }
-
-        .ground-truth-inline strong:first-child {
-            margin-left: 0;
-        }
-
         /* Reference images */
         .reference-images {
-            margin-top: 15px;
+            margin-top: 20px;
             display: none;
         }
 
@@ -337,22 +292,21 @@
         }
 
         .reference-images h4 {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             color: #2c3e50;
-            font-size: 14px;
         }
 
         .reference-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 8px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
         }
 
         .reference-img {
             width: 100%;
-            height: 120px;
+            height: 150px;
             object-fit: cover;
-            border-radius: 3px;
+            border-radius: 4px;
             cursor: pointer;
             transition: transform 0.2s;
         }
@@ -389,7 +343,7 @@
             top: 20px;
             right: 40px;
             color: white;
-            font-size: 36px;
+            font-size: 40px;
             font-weight: bold;
             cursor: pointer;
         }
@@ -399,13 +353,13 @@
         }
 
         .help-text {
-            font-size: 12px;
+            font-size: 13px;
             color: #7f8c8d;
-            margin-top: 3px;
+            margin-top: 5px;
         }
 
         .required {
-            color: #dc3545;
+            color: #e74c3c;
         }
     </style>
 </head>
@@ -413,8 +367,8 @@
     <div class="container">
         <!-- Header with Progress -->
         <div class="header">
-            <h2 style="font-size: 18px;">Generated Image Evaluation</h2>
-            <p style="font-size: 14px;">Image {{ image_index + 1 }} of {{ total_images }}</p>
+            <h2>Bumblebee Image Evaluation</h2>
+            <p>Image {{ image_index + 1 }} of {{ total_images }}</p>
             <div class="progress-bar">
                 <div class="progress-fill" style="width: {{ ((image_index + 1) / total_images * 100)|round(1) }}%"></div>
             </div>
@@ -425,20 +379,27 @@
             <div class="image-panel">
                 <div class="image-container">
                     <img src="{{ url_for('static', filename=image_path) }}"
-                         alt="Generated image"
+                         alt="Bumblebee image"
                          class="main-image"
                          id="mainImage"
                          onclick="openModal('mainImage')">
                     <p class="help-text">Click image to view fullscreen</p>
                 </div>
 
-                <!-- Target Species Reveal (shown after Stage 1) -->
+                <!-- Ground Truth Reveal (shown after Stage 1) -->
                 <div class="ground-truth-panel" id="groundTruthPanel">
-                    <h4>Target Species</h4>
-                    <div class="ground-truth-inline">
-                        <strong>Family:</strong> <span id="gtFamily"></span> |
-                        <strong>Genus:</strong> <span id="gtGenus"></span> |
+                    <h4>Ground Truth Identification</h4>
+                    <div class="ground-truth-item">
+                        <strong>Family:</strong> <span id="gtFamily"></span>
+                    </div>
+                    <div class="ground-truth-item">
+                        <strong>Genus:</strong> <span id="gtGenus"></span>
+                    </div>
+                    <div class="ground-truth-item">
                         <strong>Species:</strong> <span id="gtSpecies"></span>
+                    </div>
+                    <div class="ground-truth-item">
+                        <strong>Common Name:</strong> <span id="gtCommonName"></span>
                     </div>
                 </div>
 
@@ -462,11 +423,12 @@
             <div class="evaluation-panel">
                 <!-- STAGE 1: Blind Species ID -->
                 <div id="stage1Panel">
-                    <span class="stage-indicator stage-1">Stage 1: Blind Identification</span>
+                    <span class="stage-indicator stage-1">Stage 1: Blind Species Identification</span>
 
                     <form id="stage1Form">
                         <div class="form-section">
                             <h3>Species Identification <span class="required">*</span></h3>
+                            <p class="help-text">Identify the species to the best of your ability without seeing references.</p>
 
                             <div class="form-group">
                                 <label for="family">Family <span class="required">*</span></label>
@@ -480,20 +442,20 @@
 
                             <div class="form-group">
                                 <label for="genus">Genus <span class="required">*</span></label>
-                                <select id="genus" name="genus" required disabled onchange="updateSpecies()">
+                                <select id="genus" name="genus" required disabled>
                                     <option value="">-- Select Family First --</option>
                                 </select>
                             </div>
 
                             <div class="form-group">
-                                <label for="species">Species <span class="required">*</span></label>
-                                <select id="species" name="species" required disabled>
-                                    <option value="">-- Select Genus First --</option>
-                                </select>
+                                <label for="species">Species</label>
+                                <input type="text" id="species" name="species"
+                                       placeholder="Enter species name or 'Unknown'">
+                                <p class="help-text">Enter the full species name (e.g., "Bombus impatiens") or "Unknown"</p>
                             </div>
 
                             <button type="submit" class="btn btn-primary btn-block" id="submitStage1Btn">
-                                Submit & Reveal Target Species
+                                Submit & Reveal Ground Truth
                             </button>
                         </div>
                     </form>
@@ -504,34 +466,27 @@
                     <span class="stage-indicator stage-2">Stage 2: Detailed Evaluation</span>
 
                     <form id="stage2Form" action="{{ url_for('submit_evaluation') }}" method="POST">
-                        <!-- Q2: Morphological Fidelity (Compact) -->
+                        <!-- Q2: Morphological Fidelity -->
                         <div class="form-section">
-                            <h3>Morphological Fidelity (1-5)</h3>
-                            <p class="help-text">Rate each feature: 1=Poor, 3=Fair, 5=Excellent</p>
+                            <h3>Q2: Morphological Fidelity</h3>
+                            <p class="help-text">Rate each feature from 1 (Poor) to 5 (Excellent)</p>
 
                             {% for feature_id, feature_name in morphological_features %}
                             <div class="slider-container">
-                                <label for="morph_{{ feature_id }}" class="slider-label">{{ feature_name }}</label>
-                                <div class="slider-wrapper">
-                                    <input type="range"
-                                           id="morph_{{ feature_id }}"
-                                           name="morph_{{ feature_id }}"
-                                           min="1" max="5" value="3"
-                                           oninput="updateSliderValue('{{ feature_id }}', this.value)">
-                                    <div class="slider-scale">
-                                        <span>1</span>
-                                        <span>3</span>
-                                        <span>5</span>
-                                    </div>
+                                <div class="slider-label">
+                                    <label for="morph_{{ feature_id }}">{{ feature_name }}</label>
+                                    <span class="slider-value" id="value_{{ feature_id }}">3</span>
                                 </div>
-                                <span class="slider-value" id="value_{{ feature_id }}">3</span>
-                                <div class="not-visible-checkbox">
-                                    <input type="checkbox"
-                                           id="notvisible_{{ feature_id }}"
-                                           name="notvisible_{{ feature_id }}"
-                                           value="1"
-                                           onchange="toggleNotVisible('{{ feature_id }}')">
-                                    <label for="notvisible_{{ feature_id }}">Not visible</label>
+                                <input type="range"
+                                       id="morph_{{ feature_id }}"
+                                       name="morph_{{ feature_id }}"
+                                       min="1" max="5" value="3"
+                                       oninput="updateSliderValue('{{ feature_id }}', this.value)"
+                                       required>
+                                <div class="slider-scale">
+                                    <span>1 (Poor)</span>
+                                    <span>3 (Fair)</span>
+                                    <span>5 (Excellent)</span>
                                 </div>
                             </div>
                             {% endfor %}
@@ -539,7 +494,9 @@
 
                         <!-- Q3: Diagnostic Completeness -->
                         <div class="form-section">
-                            <h3>Diagnostic Completeness <span class="required">*</span></h3>
+                            <h3>Q3: Diagnostic Completeness <span class="required">*</span></h3>
+                            <p class="help-text">What is the highest taxonomic level you could identify this specimen to?</p>
+
                             <div class="form-group">
                                 <select id="diagnostic_level" name="diagnostic_level" required>
                                     <option value="">-- Select Level --</option>
@@ -552,16 +509,16 @@
 
                         <!-- Q4: Failure Modes -->
                         <div class="form-section">
-                            <h3>Failure Modes <span class="required">*</span></h3>
-                            <p class="help-text">Select at least one option</p>
-                            <div class="checkbox-group" id="failureModes">
+                            <h3>Q4: Failure Modes</h3>
+                            <p class="help-text">Select all visual defects or artifacts present (if any)</p>
+
+                            <div class="checkbox-group">
                                 {% for mode_id, mode_desc in failure_mode_options %}
                                 <div class="checkbox-item">
                                     <input type="checkbox"
                                            id="failure_{{ mode_id }}"
                                            name="failure_modes[]"
-                                           value="{{ mode_id }}"
-                                           onchange="handleFailureModeChange('{{ mode_id }}')">
+                                           value="{{ mode_id }}">
                                     <label for="failure_{{ mode_id }}">{{ mode_desc }}</label>
                                 </div>
                                 {% endfor %}
@@ -569,7 +526,7 @@
                         </div>
 
                         <button type="submit" class="btn btn-success btn-block">
-                            Submit & Continue
+                            Submit Evaluation & Continue
                         </button>
                     </form>
                 </div>
@@ -586,19 +543,15 @@
     <script>
         // Taxonomy data for genus filtering
         const generaByFamily = {{ taxonomy_options.genera_by_family | tojson }};
-        const speciesByGenus = {{ taxonomy_options.species_by_genus | tojson }};
 
         // Update genus dropdown based on selected family
         function updateGenera() {
             const familySelect = document.getElementById('family');
             const genusSelect = document.getElementById('genus');
-            const speciesSelect = document.getElementById('species');
             const selectedFamily = familySelect.value;
 
-            // Clear genus and species options
+            // Clear genus options
             genusSelect.innerHTML = '<option value="">-- Select Genus --</option>';
-            speciesSelect.innerHTML = '<option value="">-- Select Genus First --</option>';
-            speciesSelect.disabled = true;
 
             if (selectedFamily && generaByFamily[selectedFamily]) {
                 genusSelect.disabled = false;
@@ -613,85 +566,9 @@
             }
         }
 
-        // Update species dropdown based on selected genus
-        function updateSpecies() {
-            const genusSelect = document.getElementById('genus');
-            const speciesSelect = document.getElementById('species');
-            const selectedGenus = genusSelect.value;
-
-            // Clear species options
-            speciesSelect.innerHTML = '<option value="">-- Select Species --</option>';
-
-            if (selectedGenus && speciesByGenus[selectedGenus]) {
-                speciesSelect.disabled = false;
-                
-                // Add Unknown option first
-                const unknownOption = document.createElement('option');
-                unknownOption.value = 'Unknown';
-                unknownOption.textContent = 'Unknown';
-                speciesSelect.appendChild(unknownOption);
-                
-                // Add all species for this genus
-                speciesByGenus[selectedGenus].forEach(species => {
-                    const option = document.createElement('option');
-                    option.value = species;
-                    option.textContent = species;
-                    speciesSelect.appendChild(option);
-                });
-            } else {
-                speciesSelect.disabled = true;
-            }
-        }
-
         // Update slider value display
         function updateSliderValue(featureId, value) {
             document.getElementById('value_' + featureId).textContent = value;
-        }
-
-        // Toggle "Not visible" option for morphological features
-        function toggleNotVisible(featureId) {
-            const checkbox = document.getElementById('notvisible_' + featureId);
-            const slider = document.getElementById('morph_' + featureId);
-            const valueDisplay = document.getElementById('value_' + featureId);
-
-            if (checkbox.checked) {
-                // Disable slider and set value to 0 (indicating not visible)
-                slider.disabled = true;
-                slider.value = 0;
-                valueDisplay.textContent = 'N/A';
-                slider.style.opacity = '0.3';
-            } else {
-                // Re-enable slider and reset to default
-                slider.disabled = false;
-                slider.value = 3;
-                valueDisplay.textContent = '3';
-                slider.style.opacity = '1';
-            }
-        }
-
-        // Handle failure mode checkbox logic
-        function handleFailureModeChange(modeId) {
-            const noFailureCheckbox = document.getElementById('failure_no_failure');
-            const currentCheckbox = document.getElementById('failure_' + modeId);
-
-            if (modeId === 'no_failure' && currentCheckbox.checked) {
-                // If "No failure" is checked, uncheck all others
-                const allCheckboxes = document.querySelectorAll('#failureModes input[type="checkbox"]');
-                allCheckboxes.forEach(cb => {
-                    if (cb.id !== 'failure_no_failure') {
-                        cb.checked = false;
-                    }
-                });
-            } else if (modeId !== 'no_failure' && currentCheckbox.checked && noFailureCheckbox) {
-                // If any other checkbox is checked, uncheck "No failure"
-                noFailureCheckbox.checked = false;
-            }
-        }
-
-        // Validate failure modes before submission
-        function validateFailureModes() {
-            const checkboxes = document.querySelectorAll('#failureModes input[type="checkbox"]:checked');
-            return checkboxes.length > 0;
         }
 
         // Stage 1 form submission (AJAX)
@@ -705,7 +582,7 @@
             const formData = {
                 family: document.getElementById('family').value,
                 genus: document.getElementById('genus').value,
-                species: document.getElementById('species').value
+                species: document.getElementById('species').value || 'Unknown'
             };
 
             try {
@@ -720,10 +597,11 @@
                 const result = await response.json();
 
                 if (result.success) {
-                    // Show target species
+                    // Show ground truth
                     document.getElementById('gtFamily').textContent = result.ground_truth.family;
                     document.getElementById('gtGenus').textContent = result.ground_truth.genus;
                     document.getElementById('gtSpecies').textContent = result.ground_truth.species;
+                    document.getElementById('gtCommonName').textContent = result.ground_truth.common_name;
 
                     document.getElementById('groundTruthPanel').classList.add('visible');
 
@@ -742,21 +620,12 @@
                 } else {
                     alert('Error submitting Stage 1: ' + result.error);
                     submitBtn.disabled = false;
-                    submitBtn.textContent = 'Submit & Reveal Target Species';
+                    submitBtn.textContent = 'Submit & Reveal Ground Truth';
                 }
             } catch (error) {
                 alert('Error submitting Stage 1: ' + error);
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Submit & Reveal Target Species';
-            }
-        });
-
-        // Stage 2 form validation
-        document.getElementById('stage2Form').addEventListener('submit', function(e) {
-            if (!validateFailureModes()) {
-                e.preventDefault();
-                alert('Please select at least one failure mode option (or "No Failure" if applicable).');
-                return false;
+                submitBtn.textContent = 'Submit & Reveal Ground Truth';
             }
         });
 
@@ -766,8 +635,10 @@
             const modalImg = document.getElementById('modalImage');
 
             if (typeof element === 'string') {
+                // Called with ID
                 modalImg.src = document.getElementById(element).src;
             } else {
+                // Called with element
                 modalImg.src = element.src;
             }
 

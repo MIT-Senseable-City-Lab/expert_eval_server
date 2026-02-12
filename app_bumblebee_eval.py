@@ -37,7 +37,7 @@ class InsectEvaluation(db.Model):
     id = db.Column(db.Integer, primary_key=True)
 
     # User tracking
-    prolific_pid = db.Column(db.String(255), nullable=False)
+    participant_id = db.Column(db.String(255), nullable=False)
     study_id = db.Column(db.String(255))
     session_id = db.Column(db.String(255))
     subset_id = db.Column(db.Integer, nullable=False)
@@ -85,7 +85,7 @@ class EvaluationUsers(db.Model):
     """Track users and their assigned subsets"""
     __tablename__ = 'evaluation_users'
 
-    prolific_pid = db.Column(db.String(255), primary_key=True)
+    participant_id = db.Column(db.String(255), primary_key=True)
     study_id = db.Column(db.String(255))
     session_id = db.Column(db.String(255))
     subset_id = db.Column(db.Integer)
@@ -212,7 +212,7 @@ def assign_user_to_subset(pid):
                 session['subset_number'] = users_per_subset[next_subset] + 1
 
                 new_user = EvaluationUsers(
-                    prolific_pid=str(pid),
+                    participant_id=str(pid),
                     study_id=str(session.get('study_id', '0')),
                     session_id=str(session.get('session_id', '0')),
                     subset_id=int(next_subset),
@@ -252,12 +252,12 @@ def assign_user_to_subset(pid):
 
 @app.route('/')
 def start():
-    """Landing page - capture Prolific parameters and assign user"""
-    pid = str(request.args.get('PROLIFIC_PID', '0'))
+    """Landing page - capture participant ID and assign user"""
+    pid = str(request.args.get('PARTICIPANT_ID', request.args.get('PROLIFIC_PID', '0')))
     study_id = str(request.args.get('STUDY_ID', '0'))
     session_id_param = str(request.args.get('SESSION_ID', '0'))
 
-    session['prolific_pid'] = pid
+    session['participant_id'] = pid
     session['study_id'] = study_id
     session['session_id'] = session_id_param
 
@@ -295,10 +295,10 @@ def evaluate():
 
     # Check if completed
     if current_index >= subset_length:
-        print(f"User {session['prolific_pid']} completed subset {subset_id}: "
+        print(f"User {session['participant_id']} completed subset {subset_id}: "
               f"{current_index}/{subset_length} images")
 
-        existing_user = EvaluationUsers.query.get(session['prolific_pid'])
+        existing_user = EvaluationUsers.query.get(session['participant_id'])
         existing_user.done = 1
         existing_user.datetime_completed = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         db.session.commit()
@@ -399,7 +399,7 @@ def submit_evaluation():
         # Create database entry
         evaluation = InsectEvaluation(
             # User tracking
-            prolific_pid=session['prolific_pid'],
+            participant_id=session['participant_id'],
             study_id=session.get('study_id', '0'),
             session_id=session.get('session_id', '0'),
             subset_id=session['subset_id'],
@@ -457,7 +457,7 @@ def submit_evaluation():
         session.pop('stage1_start_time', None)
         session.pop('stage2_start_time', None)
 
-        print(f"Evaluation saved: User {session['prolific_pid']}, Image {image_id}, "
+        print(f"Evaluation saved: User {session['participant_id']}, Image {image_id}, "
               f"Index {session['current_image_index']-1}")
 
         return redirect(url_for('evaluate'))

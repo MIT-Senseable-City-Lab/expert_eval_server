@@ -6,7 +6,7 @@
 # ============================================
 
 # Evaluation scope
-IMAGES_PER_USER = 50  # How many images each expert evaluates
+IMAGES_PER_USER = 5  # How many images each expert evaluates (set to 5 for testing)
 TOTAL_IMAGES = 146  # Total synthetic images (3 species: Bombus ashtoni, sandersoni, ternarius)
 MAX_USERS_PER_SUBSET = 3  # Maximum experts per subset
 
@@ -73,11 +73,31 @@ TAXONOMY_OPTIONS = {
             "Bombus",  # All 16 species are in this genus
             # Add other genera if you expand dataset
         ]
+    },
+    "species_by_genus": {
+        "Bombus": [
+            "Bombus affinis",
+            "Bombus ashtoni",
+            "Bombus bimaculatus",
+            "Bombus borealis",
+            "Bombus citrinus",
+            "Bombus fervidus",
+            "Bombus flavidus",
+            "Bombus griseocollis",
+            "Bombus impatiens",
+            "Bombus pensylvanicus",
+            "Bombus perplexus",
+            "Bombus rufocinctus",
+            "Bombus sandersoni",
+            "Bombus ternarius",
+            "Bombus terricola",
+            "Bombus vagans"
+        ]
     }
 }
 
 # ============================================
-# QUESTION 2: Morphological Fidelity (ALL 6 FEATURES)
+# QUESTION 2: Morphological Fidelity (5 FEATURES)
 # ============================================
 
 MORPHOLOGICAL_FEATURES = [
@@ -85,8 +105,7 @@ MORPHOLOGICAL_FEATURES = [
     ("wing_venation_texture", "Wing Venation/Texture"),
     ("head_antennae", "Head/Antennae"),
     ("abdomen_banding", "Abdomen Banding"),  # Critical for Bombus ID
-    ("thorax_coloration", "Thorax Coloration"),  # Critical for Bombus ID
-    ("wing_pit_markings", "Wing Pit Markings")  # Mentioned in your prompt
+    ("thorax_coloration", "Thorax Coloration")  # Critical for Bombus ID
 ]
 
 # ============================================
@@ -106,13 +125,14 @@ DIAGNOSTIC_LEVELS = [
 
 # Based on common image generation issues
 FAILURE_MODE_OPTIONS = [
+    ("no_failure", "No Failure"),
     ("extra_missing_limbs", "Extra/Missing Limbs"),
     ("impossible_geometry", "Impossible Geometry/Unnatural Pose"),
     ("wrong_coloration", "Wrong Coloration/Pattern"),
     ("blurry_artifacts", "Blurry/Visual Artifacts"),
     ("background_bleed", "Background Bleed/Contamination"),
-    ("flower_unrealistic", "Unrealistic Flower Geometry"),  # Your prompt concern
-    ("repetitive_pattern", "Repetitive/Cloned Patterns")  # Your prompt concern
+    ("flower_unrealistic", "Unrealistic Flower Geometry"),
+    ("repetitive_pattern", "Repetitive/Cloned Patterns")
 ]
 
 # ============================================
