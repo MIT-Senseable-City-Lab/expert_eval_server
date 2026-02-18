@@ -324,7 +324,8 @@ def evaluate():
                          taxonomy_options=TAXONOMY_OPTIONS,
                          morphological_features=MORPHOLOGICAL_FEATURES,
                          diagnostic_levels=DIAGNOSTIC_LEVELS,
-                         failure_mode_options=FAILURE_MODE_OPTIONS,
+                         failure_mode_species=FAILURE_MODE_SPECIES,
+                         failure_mode_quality=FAILURE_MODE_QUALITY,
                          reference_images=reference_images,
                          show_references=SHOW_REFERENCE_IMAGES)
 
@@ -388,9 +389,21 @@ def submit_evaluation():
         ground_truth = image_data.get('ground_truth', {})
         gen_metadata = image_data.get('generation_metadata', {})
 
-        # Parse failure modes (multi-select checkboxes)
-        failure_modes = form_data.getlist('failure_modes[]')
-        failure_modes_json = json.dumps(failure_modes)
+        # Parse failure modes (multi-select checkboxes) - two categories
+        failure_modes_species = form_data.getlist('failure_modes_species[]')
+        failure_modes_quality = form_data.getlist('failure_modes_quality[]')
+        # Include "other" text if provided
+        species_other_text = form_data.get('failure_species_other_text', '').strip()
+        quality_other_text = form_data.get('failure_quality_other_text', '').strip()
+        # Combine into structured JSON
+        failure_modes = failure_modes_species + failure_modes_quality
+        failure_modes_json = json.dumps({
+            'species': failure_modes_species,
+            'species_other_text': species_other_text,
+            'quality': failure_modes_quality,
+            'quality_other_text': quality_other_text,
+            'all': failure_modes
+        })
 
         # Get reference images
         reference_images = image_data.get('reference_images', [])

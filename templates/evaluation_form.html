@@ -550,21 +550,65 @@
                             </div>
                         </div>
 
-                        <!-- Q4: Failure Modes -->
+                        <!-- Q4a: Failure Modes - Species Fidelity -->
                         <div class="form-section">
-                            <h3>Failure Modes <span class="required">*</span></h3>
-                            <p class="help-text">Select at least one option</p>
-                            <div class="checkbox-group" id="failureModes">
-                                {% for mode_id, mode_desc in failure_mode_options %}
+                            <h3>Failure Modes: Species Fidelity <span class="required">*</span></h3>
+                            <p class="help-text">Issues with the correctness/fidelity of the species. Select at least one option.</p>
+                            <div class="checkbox-group" id="failureModesSpecies">
+                                {% for mode_id, mode_desc in failure_mode_species %}
+                                {% if mode_id != 'species_other' %}
                                 <div class="checkbox-item">
                                     <input type="checkbox"
                                            id="failure_{{ mode_id }}"
-                                           name="failure_modes[]"
+                                           name="failure_modes_species[]"
                                            value="{{ mode_id }}"
-                                           onchange="handleFailureModeChange('{{ mode_id }}')">
+                                           onchange="handleFailureModeChange('{{ mode_id }}', 'species')">
                                     <label for="failure_{{ mode_id }}">{{ mode_desc }}</label>
                                 </div>
+                                {% endif %}
                                 {% endfor %}
+                                <div class="checkbox-item">
+                                    <input type="checkbox"
+                                           id="failure_species_other"
+                                           name="failure_modes_species[]"
+                                           value="species_other"
+                                           onchange="handleFailureModeChange('species_other', 'species'); toggleOtherInput('species')">
+                                    <label for="failure_species_other">Other</label>
+                                </div>
+                            </div>
+                            <div id="speciesOtherInput" class="form-group hidden" style="margin-top: 8px;">
+                                <input type="text" id="failure_species_other_text" name="failure_species_other_text" placeholder="Please describe the species fidelity issue...">
+                            </div>
+                        </div>
+
+                        <!-- Q4b: Failure Modes - Image Quality -->
+                        <div class="form-section">
+                            <h3>Failure Modes: Image Quality <span class="required">*</span></h3>
+                            <p class="help-text">Issues with the overall image quality. Select at least one option.</p>
+                            <div class="checkbox-group" id="failureModesQuality">
+                                {% for mode_id, mode_desc in failure_mode_quality %}
+                                {% if mode_id != 'quality_other' %}
+                                <div class="checkbox-item">
+                                    <input type="checkbox"
+                                           id="failure_{{ mode_id }}"
+                                           name="failure_modes_quality[]"
+                                           value="{{ mode_id }}"
+                                           onchange="handleFailureModeChange('{{ mode_id }}', 'quality')">
+                                    <label for="failure_{{ mode_id }}">{{ mode_desc }}</label>
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                                <div class="checkbox-item">
+                                    <input type="checkbox"
+                                           id="failure_quality_other"
+                                           name="failure_modes_quality[]"
+                                           value="quality_other"
+                                           onchange="handleFailureModeChange('quality_other', 'quality'); toggleOtherInput('quality')">
+                                    <label for="failure_quality_other">Other</label>
+                                </div>
+                            </div>
+                            <div id="qualityOtherInput" class="form-group hidden" style="margin-top: 8px;">
+                                <input type="text" id="failure_quality_other_text" name="failure_quality_other_text" placeholder="Please describe the image quality issue...">
                             </div>
                         </div>
 
@@ -669,29 +713,54 @@
             }
         }
 
-        // Handle failure mode checkbox logic
-        function handleFailureModeChange(modeId) {
-            const noFailureCheckbox = document.getElementById('failure_no_failure');
+        // Handle failure mode checkbox logic (per category)
+        function handleFailureModeChange(modeId, category) {
+            const noFailureId = category + '_no_failure';
+            const noFailureCheckbox = document.getElementById('failure_' + noFailureId);
             const currentCheckbox = document.getElementById('failure_' + modeId);
+            const containerId = category === 'species' ? 'failureModesSpecies' : 'failureModesQuality';
 
-            if (modeId === 'no_failure' && currentCheckbox.checked) {
-                // If "No failure" is checked, uncheck all others
-                const allCheckboxes = document.querySelectorAll('#failureModes input[type="checkbox"]');
+            if (modeId === noFailureId && currentCheckbox.checked) {
+                // If "No failure" is checked, uncheck all others in this category
+                const allCheckboxes = document.querySelectorAll('#' + containerId + ' input[type="checkbox"]');
                 allCheckboxes.forEach(cb => {
-                    if (cb.id !== 'failure_no_failure') {
+                    if (cb.id !== 'failure_' + noFailureId) {
                         cb.checked = false;
                     }
                 });
-            } else if (modeId !== 'no_failure' && currentCheckbox.checked && noFailureCheckbox) {
+                // Also hide "other" text input
+                toggleOtherInput(category, true);
+            } else if (modeId !== noFailureId && currentCheckbox.checked && noFailureCheckbox) {
                 // If any other checkbox is checked, uncheck "No failure"
                 noFailureCheckbox.checked = false;
             }
         }
 
-        // Validate failure modes before submission
+        // Toggle "Other" text input visibility
+        function toggleOtherInput(category, forceHide) {
+            const otherCheckbox = document.getElementById('failure_' + category + '_other');
+            const inputDiv = document.getElementById(category + 'OtherInput');
+            if (forceHide || !otherCheckbox.checked) {
+                inputDiv.classList.add('hidden');
+            } else {
+                inputDiv.classList.remove('hidden');
+                inputDiv.querySelector('input').focus();
+            }
+        }
+
+        // Validate failure modes before submission (both categories required)
         function validateFailureModes() {
-            const checkboxes = document.querySelectorAll('#failureModes input[type="checkbox"]:checked');
-            return checkboxes.length > 0;
+            const speciesChecked = document.querySelectorAll('#failureModesSpecies input[type="checkbox"]:checked').length > 0;
+            const qualityChecked = document.querySelectorAll('#failureModesQuality input[type="checkbox"]:checked').length > 0;
+            if (!speciesChecked || !qualityChecked) return false;
+
+            // If "Other" is checked, require text input
+            const speciesOther = document.getElementById('failure_species_other');
+            if (speciesOther.checked && !document.getElementById('failure_species_other_text').value.trim()) return false;
+            const qualityOther = document.getElementById('failure_quality_other');
+            if (qualityOther.checked && !document.getElementById('failure_quality_other_text').value.trim()) return false;
+
+            return true;
         }
 
         // Stage 1 form submission (AJAX)
@@ -755,7 +824,7 @@
         document.getElementById('stage2Form').addEventListener('submit', function(e) {
             if (!validateFailureModes()) {
                 e.preventDefault();
-                alert('Please select at least one failure mode option (or "No Failure" if applicable).');
+                alert('Please select at least one option in each Failure Modes category (Species Fidelity and Image Quality). If "Other" is checked, please describe the issue.');
                 return false;
             }
         });

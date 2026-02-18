@@ -121,19 +121,30 @@ DIAGNOSTIC_LEVELS = [
 
 # ============================================
 # QUESTION 4: Failure Modes (MULTI-SELECT)
+# Split into two categories:
+#   A) Species Fidelity/Correctness
+#   B) Image Quality
 # ============================================
 
-# Based on common image generation issues
-FAILURE_MODE_OPTIONS = [
-    ("no_failure", "No Failure"),
+FAILURE_MODE_SPECIES = [
+    ("species_no_failure", "No Failure"),
     ("extra_missing_limbs", "Extra/Missing Limbs"),
-    ("impossible_geometry", "Impossible Geometry/Unnatural Pose"),
     ("wrong_coloration", "Wrong Coloration/Pattern"),
+    ("impossible_geometry", "Impossible Geometry/Unnatural Pose"),
+    ("species_other", "Other"),
+]
+
+FAILURE_MODE_QUALITY = [
+    ("quality_no_failure", "No Failure"),
     ("blurry_artifacts", "Blurry/Visual Artifacts"),
     ("background_bleed", "Background Bleed/Contamination"),
     ("flower_unrealistic", "Unrealistic Flower Geometry"),
-    ("repetitive_pattern", "Repetitive/Cloned Patterns")
+    ("repetitive_pattern", "Repetitive/Cloned Patterns"),
+    ("quality_other", "Other"),
 ]
+
+# Combined for backward compatibility
+FAILURE_MODE_OPTIONS = FAILURE_MODE_SPECIES + FAILURE_MODE_QUALITY
 
 # ============================================
 # PROLIFIC INTEGRATION
