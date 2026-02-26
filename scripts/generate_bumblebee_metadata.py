@@ -196,7 +196,7 @@ def main():
     print("1. Copy synthetic images to eval_server/static/bumblebees/")
     print("2. Copy reference images to eval_server/static/references/")
     print("3. Review the generated metadata JSON")
-    print("4. Update constants_BUMBLEBEE.py if needed")
+    print("4. Update constants.py if needed")
 
 
 if __name__ == "__main__":
