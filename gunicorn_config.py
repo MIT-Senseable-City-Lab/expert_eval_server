@@ -1,11 +1,9 @@
-# Gunicorn configuration for human identity evaluation app
-# This file configures Gunicorn to serve the Flask app
+# Gunicorn configuration for bumblebee evaluation app
 
 bind = "127.0.0.1:5001"
-workers = 4  # Reduced for stability
+workers = 2  # Local Mac doesn't need many workers
 worker_class = "sync"
-worker_connections = 1000
-timeout = 60  # Increased timeout for image processing
+timeout = 120
 keepalive = 2
 max_requests = 1000
 max_requests_jitter = 100
@@ -16,15 +14,12 @@ errorlog = "logs/error.log"
 loglevel = "info"
 
 # Process naming
-proc_name = "human_identity_eval"
+proc_name = "bumblebee_eval"
 
 # Security
 limit_request_line = 4094
 limit_request_fields = 100
 limit_request_field_size = 8190
-
-# Application
-module = "wsgi:app"
 
 # Preload app for better performance
 preload_app = True

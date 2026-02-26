@@ -1,53 +1,44 @@
 #!/usr/bin/env bash
-# set -euo pipefail
+# Hard reset: kill all processes, clear sessions/logs
+# Usage: bash reset_server.sh
 
-# ---- paths (EDIT THESE) ----
-APP_NAME="human_identity_eval"                    # for process matching
-NGX_ROOT="/data/vision/beery/scratch/julia/.config/nginx"
-CONF="$NGX_ROOT/nginx.conf"
-PID="$NGX_ROOT/nginx.pid"
-GUNICORN_PORT="5001"                               # your gunicorn bind
-NGINX_PORT="8080"                                  # your nginx listen
-SESSION_DIR="/data/vision/beery/fgg_ai/finegrained_metric_intern/server/human_identity_eval/flask_session"        # set this in Flask config (see below)
+APP_DIR="$(cd "$(dirname "$0")" && pwd)"
+GUNICORN_PID="$APP_DIR/logs/gunicorn.pid"
+SESSION_DIR="$APP_DIR/flask_session"
 
-# ---- stop nginx (user-space) ----
-if [[ -f "$PID" ]]; then
-  echo "[*] Stopping nginx via PID file"
-  kill -QUIT "$(cat "$PID")" || true
-  sleep 1
-fi
-# Fallback: any nginx owned by you
-pkill -QUIT -u "$USER" nginx || true
+# ---- stop nginx ----
+echo "[*] Stopping nginx"
+nginx -s stop 2>/dev/null || true
+pkill -QUIT -u "$USER" nginx 2>/dev/null || true
 sleep 1
-pkill -TERM -u "$USER" nginx || true
-sleep 1
-pkill -KILL -u "$USER" nginx || true
+pkill -KILL -u "$USER" nginx 2>/dev/null || true
 
-# ---- stop gunicorn cleanly ----
+# ---- stop gunicorn ----
 echo "[*] Stopping gunicorn"
-pkill -QUIT -f "gunicorn: master \[${APP_NAME}\]" || true
+if [[ -f "$GUNICORN_PID" ]]; then
+    kill "$(cat "$GUNICORN_PID")" 2>/dev/null || true
+    rm -f "$GUNICORN_PID"
+fi
+pkill -f "gunicorn.*wsgi:app" 2>/dev/null || true
 sleep 1
-pkill -TERM -f "gunicorn.*${APP_NAME}" || true
-sleep 1
-pkill -KILL -f "gunicorn.*${APP_NAME}" || true
+pkill -KILL -f "gunicorn.*wsgi:app" 2>/dev/null || true
 
 # ---- verify ports freed ----
-echo "[*] Checking ports"
-ss -ltnp "( sport = :${NGINX_PORT} )" | cat || true
-ss -ltnp "( sport = :${GUNICORN_PORT} )" | cat || true
+echo "[*] Checking ports 5001 and 8080"
+lsof -i :5001 2>/dev/null || echo "  Port 5001: free"
+lsof -i :8080 2>/dev/null || echo "  Port 8080: free"
 
-# ---- purge nginx temp/cache/logs ----
-echo "[*] Purging nginx temp/cache/logs under $NGX_ROOT"
-rm -f  "$PID"
-rm -rf "$NGX_ROOT/var/tmp/nginx"/* || true
-# If you configured a proxy_cache_path, also rm -rf that directory here.
-: > "$NGX_ROOT/var/log/nginx/access.log" 2>/dev/null || true
-: > "$NGX_ROOT/var/log/nginx/error.log"  2>/dev/null || true
+# ---- clear logs ----
+echo "[*] Clearing logs"
+: > "$APP_DIR/logs/access.log" 2>/dev/null || true
+: > "$APP_DIR/logs/error.log" 2>/dev/null || true
+: > "$APP_DIR/logs/nginx_access.log" 2>/dev/null || true
+: > "$APP_DIR/logs/nginx_error.log" 2>/dev/null || true
 
-# ---- purge Flask session store (optional but helpful during dev) ----
+# ---- purge Flask sessions ----
 if [[ -d "$SESSION_DIR" ]]; then
-  echo "[*] Clearing Flask-Session dir $SESSION_DIR"
-  rm -rf "${SESSION_DIR:?}/"* || true
+    echo "[*] Clearing Flask sessions in $SESSION_DIR"
+    rm -rf "${SESSION_DIR:?}/"* 2>/dev/null || true
 fi
 
 echo "[*] Reset complete."
