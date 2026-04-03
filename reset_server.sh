@@ -24,8 +24,8 @@ sleep 1
 pkill -KILL -f "gunicorn.*wsgi:app" 2>/dev/null || true
 
 # ---- verify ports freed ----
-echo "[*] Checking ports 5001 and 8080"
-lsof -i :5001 2>/dev/null || echo "  Port 5001: free"
+echo "[*] Checking ports 5002 and 8080"
+lsof -i :5002 2>/dev/null || echo "  Port 5002: free"
 lsof -i :8080 2>/dev/null || echo "  Port 8080: free"
 
 # ---- clear logs ----

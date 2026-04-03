@@ -21,9 +21,9 @@ MANIFEST_PATH = PROJECT_ROOT / "assets" / "expert_validation_manifest.json"
 OUTPUT_FILE = PROJECT_ROOT / "assets" / "bumblebee_images_metadata.json"
 
 # Mode: set via env var or defaults to "full"
-# calibration = first 5 per species (15 total), full = all 150
+# calibration = 10 images total (sampled evenly across species), full = all 150
 MODE = os.environ.get("EVAL_MODE", "full")
-CALIBRATION_PER_SPECIES = 5
+CALIBRATION_TOTAL = 10
 
 SPECIES_COMMON_NAMES = {
     "Bombus_ashtoni": "Ashton Cuckoo Bumble Bee",
@@ -75,8 +75,7 @@ def load_manifest_lookup():
 
 def generate_metadata():
     manifest_lookup = load_manifest_lookup()
-    all_metadata = {}
-    image_id = 0
+    all_entries = []
 
     for species_dir in sorted(IMAGES_DIR.iterdir()):
         if not species_dir.is_dir():
@@ -88,8 +87,6 @@ def generate_metadata():
         ref_images = find_reference_images(species_key)
 
         images = sorted(species_dir.glob("*.jpg"))
-        if MODE == "calibration":
-            images = images[:CALIBRATION_PER_SPECIES]
 
         for img_path in images:
             filename = img_path.name
@@ -120,8 +117,25 @@ def generate_metadata():
                 "llm_overall_pass": manifest_entry.get("overall_pass"),
                 "llm_matches_target": manifest_entry.get("matches_target"),
             }
-            all_metadata[str(image_id)] = entry
-            image_id += 1
+            all_entries.append(entry)
+
+    if MODE == "calibration":
+        # Sample evenly across species
+        by_species = {}
+        for entry in all_entries:
+            sp = entry["ground_truth"]["species"]
+            by_species.setdefault(sp, []).append(entry)
+        species_list = sorted(by_species.keys())
+        n_species = len(species_list)
+        base = CALIBRATION_TOTAL // n_species
+        remainder = CALIBRATION_TOTAL % n_species
+        sampled = []
+        for i, sp in enumerate(species_list):
+            count = base + (1 if i < remainder else 0)
+            sampled.extend(by_species[sp][:count])
+        all_entries = sampled
+
+    all_metadata = {str(i): entry for i, entry in enumerate(all_entries)}
 
     return all_metadata
 

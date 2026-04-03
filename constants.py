@@ -5,7 +5,7 @@
 # MODE CONFIGURATION
 # ============================================
 
-MODE = "calibration"  # "calibration" or "full"
+MODE = "full"  # "calibration" or "full"
 
 if MODE == "calibration":
     IMAGES_PER_USER = 10
@@ -26,7 +26,7 @@ SPECIES_WITH_SYNTHETIC = [
 ]
 
 # Asset paths
-METADATA_JSON = "assets/bumblebee_images_metadata.json"
+METADATA_JSON = f"assets/bumblebee_images_metadata_{MODE}.json"
 STATIC_IMAGES_DIR = "static/bumblebees"
 STATIC_REFERENCES_DIR = "static/references"
 

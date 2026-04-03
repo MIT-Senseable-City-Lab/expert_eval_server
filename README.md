@@ -96,7 +96,7 @@ bash deploy_server.sh status      # Show mode, running status
 bash deploy_server.sh switch-mode # Toggle calibration <-> full (clears sessions, restarts)
 ```
 
-The app runs on **http://localhost:5001** (Gunicorn direct).
+The app runs on **http://localhost:5002** (Gunicorn direct).
 If Nginx is installed, it also proxies on port 8080.
 
 ### Remote access (SSH tunnel)
@@ -104,10 +104,10 @@ If Nginx is installed, it also proxies on port 8080.
 If the server runs on a remote machine (e.g. MIT cluster), set up an SSH tunnel from your laptop:
 
 ```bash
-ssh -L 5001:localhost:5001 msun14@login007.mit.edu
+ssh -L 5002:localhost:5002 msun14@login007.mit.edu
 ```
 
-Then open `http://localhost:5001/?PARTICIPANT_ID=your_name` in your laptop browser.
+Then open `http://localhost:5002/?PARTICIPANT_ID=your_name` in your laptop browser.
 
 ### Switching modes
 
@@ -135,18 +135,58 @@ Kills all Gunicorn processes, clears logs and Flask sessions. Does **not** delet
 ```bash
 source venv/bin/activate
 python app.py
-# Runs on http://localhost:5001
+# Runs on http://localhost:5002
 ```
 
 ## Usage
 
-### Access the evaluation
+### URL Format
 
 ```
-http://localhost:5001/?PARTICIPANT_ID=expert_1
+http://<host>:<port>/?PARTICIPANT_ID=<id>&STUDY_ID=<study>&SESSION_ID=<session>
+```
+
+| Parameter | Required | Default | Description |
+|-----------|----------|---------|-------------|
+| `PARTICIPANT_ID` | Yes | `0` | Unique identifier for the participant |
+| `STUDY_ID` | No | `0` | Study identifier (useful for grouping) |
+| `SESSION_ID` | No | `0` | Session identifier |
+
+**Examples:**
+
+```
+http://localhost:5002/?PARTICIPANT_ID=expert_1
+http://localhost:5002/?PARTICIPANT_ID=expert_1&STUDY_ID=pilot&SESSION_ID=1
 ```
 
 Different `PARTICIPANT_ID` values create separate user entries in the same database. Use a new ID to start fresh without clearing the DB.
+
+### Public Access with ngrok
+
+Since the server runs on `localhost`, remote participants cannot access it directly. Use [ngrok](https://ngrok.com/) to create a public tunnel:
+
+1. Install ngrok:
+   ```bash
+   brew install ngrok    # macOS
+   ```
+
+2. Start the tunnel (while the server is running):
+   ```bash
+   ngrok http 8080       # if using Nginx
+   ngrok http 5002       # if using Gunicorn directly
+   ```
+
+3. ngrok will output a public URL like:
+   ```
+   Forwarding  https://abc123.ngrok-free.app -> http://localhost:8080
+   ```
+
+4. Send the public URL to participants:
+   ```
+   https://abc123.ngrok-free.app/?PARTICIPANT_ID=expert_1&STUDY_ID=pilot&SESSION_ID=1
+   ```
+
+> **Note:** The free ngrok tier generates a new URL each time. For a stable URL, use a paid plan or consider deploying to a cloud server.
 
 ### Admin endpoints
 

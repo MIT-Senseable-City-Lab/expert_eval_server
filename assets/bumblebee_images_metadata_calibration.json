@@ -1,0 +1,262 @@
+{
+  "0": {
+    "image_path": "bumblebees/Bombus_ashtoni/Bombus_ashtoni::0006::female::frontal_0.jpg",
+    "ground_truth": {
+      "family": "Apidae",
+      "genus": "Bombus",
+      "species": "Bombus ashtoni",
+      "common_name": "Ashton Cuckoo Bumble Bee"
+    },
+    "model": "bumblebee_synthetic_v2",
+    "generation_metadata": {
+      "angle": "frontal_0",
+      "gender": "female"
+    },
+    "reference_images": [
+      "references/Bombus_ashtoni/bombus_ashtoni.jpg",
+      "references/Bombus_ashtoni/bombus_ashtoni_s.jpg"
+    ],
+    "tier": "soft_fail",
+    "llm_morph_mean": 4.25,
+    "caste_ground_truth": "female",
+    "llm_blind_id_species": "Bombus ashtoni",
+    "llm_diag_level": "genus",
+    "llm_caste_correct": true,
+    "llm_overall_pass": true,
+    "llm_matches_target": true
+  },
+  "1": {
+    "image_path": "bumblebees/Bombus_ashtoni/Bombus_ashtoni::0012::female::three-quarter_posterior_0.jpg",
+    "ground_truth": {
+      "family": "Apidae",
+      "genus": "Bombus",
+      "species": "Bombus ashtoni",
+      "common_name": "Ashton Cuckoo Bumble Bee"
+    },
+    "model": "bumblebee_synthetic_v2",
+    "generation_metadata": {
+      "angle": "three-quarter_posterior_0",
+      "gender": "female"
+    },
+    "reference_images": [
+      "references/Bombus_ashtoni/bombus_ashtoni.jpg",
+      "references/Bombus_ashtoni/bombus_ashtoni_s.jpg"
+    ],
+    "tier": "strict_pass",
+    "llm_morph_mean": 4.2,
+    "caste_ground_truth": "female",
+    "llm_blind_id_species": "Bombus ashtoni",
+    "llm_diag_level": "species",
+    "llm_caste_correct": true,
+    "llm_overall_pass": true,
+    "llm_matches_target": true
+  },
+  "2": {
+    "image_path": "bumblebees/Bombus_ashtoni/Bombus_ashtoni::0013::female::frontal_0.jpg",
+    "ground_truth": {
+      "family": "Apidae",
+      "genus": "Bombus",
+      "species": "Bombus ashtoni",
+      "common_name": "Ashton Cuckoo Bumble Bee"
+    },
+    "model": "bumblebee_synthetic_v2",
+    "generation_metadata": {
+      "angle": "frontal_0",
+      "gender": "female"
+    },
+    "reference_images": [
+      "references/Bombus_ashtoni/bombus_ashtoni.jpg",
+      "references/Bombus_ashtoni/bombus_ashtoni_s.jpg"
+    ],
+    "tier": "strict_pass",
+    "llm_morph_mean": 4.4,
+    "caste_ground_truth": "female",
+    "llm_blind_id_species": "Bombus ashtoni",
+    "llm_diag_level": "species",
+    "llm_caste_correct": true,
+    "llm_overall_pass": true,
+    "llm_matches_target": true
+  },
+  "3": {
+    "image_path": "bumblebees/Bombus_ashtoni/Bombus_ashtoni::0017::female::dorsal_0.jpg",
+    "ground_truth": {
+      "family": "Apidae",
+      "genus": "Bombus",
+      "species": "Bombus ashtoni",
+      "common_name": "Ashton Cuckoo Bumble Bee"
+    },
+    "model": "bumblebee_synthetic_v2",
+    "generation_metadata": {
+      "angle": "dorsal_0",
+      "gender": "female"
+    },
+    "reference_images": [
+      "references/Bombus_ashtoni/bombus_ashtoni.jpg",
+      "references/Bombus_ashtoni/bombus_ashtoni_s.jpg"
+    ],
+    "tier": "borderline",
+    "llm_morph_mean": 3.6,
+    "caste_ground_truth": "female",
+    "llm_blind_id_species": "Bombus bohemicus",
+    "llm_diag_level": "species",
+    "llm_caste_correct": true,
+    "llm_overall_pass": true,
+    "llm_matches_target": true
+  },
+  "4": {
+    "image_path": "bumblebees/Bombus_flavidus/Bombus_flavidus::0009::female::frontal_0.jpg",
+    "ground_truth": {
+      "family": "Apidae",
+      "genus": "Bombus",
+      "species": "Bombus flavidus",
+      "common_name": "Fernald's Cuckoo Bumble Bee"
+    },
+    "model": "bumblebee_synthetic_v2",
+    "generation_metadata": {
+      "angle": "frontal_0",
+      "gender": "female"
+    },
+    "reference_images": [
+      "references/Bombus_flavidus/bombus-flavidus.png",
+      "references/Bombus_flavidus/bombus-flavidus_s.png"
+    ],
+    "tier": "soft_fail",
+    "llm_morph_mean": 4.25,
+    "caste_ground_truth": "female",
+    "llm_blind_id_species": "Bombus flavidus",
+    "llm_diag_level": "genus",
+    "llm_caste_correct": true,
+    "llm_overall_pass": true,
+    "llm_matches_target": true
+  },
+  "5": {
+    "image_path": "bumblebees/Bombus_flavidus/Bombus_flavidus::0025::female::lateral_0.jpg",
+    "ground_truth": {
+      "family": "Apidae",
+      "genus": "Bombus",
+      "species": "Bombus flavidus",
+      "common_name": "Fernald's Cuckoo Bumble Bee"
+    },
+    "model": "bumblebee_synthetic_v2",
+    "generation_metadata": {
+      "angle": "lateral_0",
+      "gender": "female"
+    },
+    "reference_images": [
+      "references/Bombus_flavidus/bombus-flavidus.png",
+      "references/Bombus_flavidus/bombus-flavidus_s.png"
+    ],
+    "tier": "hard_fail",
+    "llm_morph_mean": 3.6,
+    "caste_ground_truth": "female",
+    "llm_blind_id_species": "Bombus ternarius",
+    "llm_diag_level": "genus",
+    "llm_caste_correct": true,
+    "llm_overall_pass": true,
+    "llm_matches_target": false
+  },
+  "6": {
+    "image_path": "bumblebees/Bombus_flavidus/Bombus_flavidus::0028::female::three-quarter_posterior_0.jpg",
+    "ground_truth": {
+      "family": "Apidae",
+      "genus": "Bombus",
+      "species": "Bombus flavidus",
+      "common_name": "Fernald's Cuckoo Bumble Bee"
+    },
+    "model": "bumblebee_synthetic_v2",
+    "generation_metadata": {
+      "angle": "three-quarter_posterior_0",
+      "gender": "female"
+    },
+    "reference_images": [
+      "references/Bombus_flavidus/bombus-flavidus.png",
+      "references/Bombus_flavidus/bombus-flavidus_s.png"
+    ],
+    "tier": "hard_fail",
+    "llm_morph_mean": 3.6,
+    "caste_ground_truth": "female",
+    "llm_blind_id_species": "Bombus ternarius",
+    "llm_diag_level": "genus",
+    "llm_caste_correct": true,
+    "llm_overall_pass": true,
+    "llm_matches_target": false
+  },
+  "7": {
+    "image_path": "bumblebees/Bombus_sandersoni/Bombus_sandersoni::0019::worker::frontal_0.jpg",
+    "ground_truth": {
+      "family": "Apidae",
+      "genus": "Bombus",
+      "species": "Bombus sandersoni",
+      "common_name": "Sanderson's Bumble Bee"
+    },
+    "model": "bumblebee_synthetic_v2",
+    "generation_metadata": {
+      "angle": "frontal_0",
+      "gender": "worker"
+    },
+    "reference_images": [
+      "references/Bombus_sandersoni/Bombus-sandersoni.jpg",
+      "references/Bombus_sandersoni/sandersoni_photo.jpg"
+    ],
+    "tier": "soft_fail",
+    "llm_morph_mean": 4.5,
+    "caste_ground_truth": "worker",
+    "llm_blind_id_species": "Bombus sandersoni",
+    "llm_diag_level": "genus",
+    "llm_caste_correct": true,
+    "llm_overall_pass": true,
+    "llm_matches_target": true
+  },
+  "8": {
+    "image_path": "bumblebees/Bombus_sandersoni/Bombus_sandersoni::0026::queen::dorsal_0.jpg",
+    "ground_truth": {
+      "family": "Apidae",
+      "genus": "Bombus",
+      "species": "Bombus sandersoni",
+      "common_name": "Sanderson's Bumble Bee"
+    },
+    "model": "bumblebee_synthetic_v2",
+    "generation_metadata": {
+      "angle": "dorsal_0",
+      "gender": "queen"
+    },
+    "reference_images": [
+      "references/Bombus_sandersoni/Bombus-sandersoni.jpg",
+      "references/Bombus_sandersoni/sandersoni_photo.jpg"
+    ],
+    "tier": "strict_pass",
+    "llm_morph_mean": 4.4,
+    "caste_ground_truth": "queen",
+    "llm_blind_id_species": "Bombus sandersoni",
+    "llm_diag_level": "species",
+    "llm_caste_correct": true,
+    "llm_overall_pass": true,
+    "llm_matches_target": true
+  },
+  "9": {
+    "image_path": "bumblebees/Bombus_sandersoni/Bombus_sandersoni::0038::worker::three-quarter_posterior_0.jpg",
+    "ground_truth": {
+      "family": "Apidae",
+      "genus": "Bombus",
+      "species": "Bombus sandersoni",
+      "common_name": "Sanderson's Bumble Bee"
+    },
+    "model": "bumblebee_synthetic_v2",
+    "generation_metadata": {
+      "angle": "three-quarter_posterior_0",
+      "gender": "worker"
+    },
+    "reference_images": [
+      "references/Bombus_sandersoni/Bombus-sandersoni.jpg",
+      "references/Bombus_sandersoni/sandersoni_photo.jpg"
+    ],
+    "tier": "strict_pass",
+    "llm_morph_mean": 4.4,
+    "caste_ground_truth": "worker",
+    "llm_blind_id_species": "Bombus sandersoni",
+    "llm_diag_level": "species",
+    "llm_caste_correct": true,
+    "llm_overall_pass": true,
+    "llm_matches_target": true
+  }
+}

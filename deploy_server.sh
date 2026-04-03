@@ -52,7 +52,7 @@ start_nginx() {
         nginx -c "$NGINX_CONF"
         echo "Nginx started on http://localhost:8080"
     else
-        echo "Nginx not found, skipping (access Gunicorn directly on port 5001)"
+        echo "Nginx not found, skipping (access Gunicorn directly on port 5002)"
     fi
 }
 
@@ -114,14 +114,8 @@ case "${1:-start}" in
             NEW_MODE="calibration"
         fi
         echo "Switching mode: $CURRENT_MODE -> $NEW_MODE"
-        sed -i "s/^MODE = \"${CURRENT_MODE}\"/MODE = \"${NEW_MODE}\"/" "$APP_DIR/constants.py"
-        # Regenerate metadata for the new mode
-        if [ -f "$APP_DIR/venv/bin/python" ]; then
-            EVAL_MODE="$NEW_MODE" "$APP_DIR/venv/bin/python" "$APP_DIR/scripts/generate_expert_metadata.py"
-        else
-            EVAL_MODE="$NEW_MODE" python3 "$APP_DIR/scripts/generate_expert_metadata.py"
-        fi
-        echo "Metadata regenerated for $NEW_MODE mode."
+        sed -i '' "s/^MODE = \"${CURRENT_MODE}\"/MODE = \"${NEW_MODE}\"/" "$APP_DIR/constants.py"
+        echo "Using pre-generated metadata: assets/bumblebee_images_metadata_${NEW_MODE}.json"
         # Clear sessions (required — session stores subset/index from old mode)
         rm -rf "$APP_DIR/flask_session/"* 2>/dev/null || true
         echo "Sessions cleared."
