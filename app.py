@@ -18,7 +18,7 @@ import random
 app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'filesystem'
 app.config['SECRET_KEY'] = str(np.random.randint(sys.maxsize))
-app.config['SQLALCHEMY_DATABASE_URI'] = DB_PROD
+app.config['SQLALCHEMY_DATABASE_URI'] = ACTIVE_DB
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 Session(app)
 db = SQLAlchemy(app)
@@ -58,13 +58,20 @@ class InsectEvaluation(db.Model):
     blind_id_genus = db.Column(db.String(255))
     blind_id_species = db.Column(db.String(255))
 
+    # STAGE 2: Blind Caste ID
+    blind_id_caste = db.Column(db.String(50))
+    caste_ground_truth = db.Column(db.String(50))
+
+    # LLM judge metadata (for disagreement analysis)
+    tier = db.Column(db.String(50))
+    llm_morph_mean = db.Column(db.Float)
+
     # STAGE 2: Morphological Fidelity (1-5 scale)
     morph_legs_appendages = db.Column(db.Integer)
     morph_wing_venation_texture = db.Column(db.Integer)
     morph_head_antennae = db.Column(db.Integer)
     morph_abdomen_banding = db.Column(db.Integer)
     morph_thorax_coloration = db.Column(db.Integer)
-    morph_wing_pit_markings = db.Column(db.Integer)
 
     # STAGE 2: Diagnostic Completeness
     diagnostic_level = db.Column(db.String(50))  # "none", "family", "genus", "species"
@@ -277,7 +284,8 @@ def start():
                              pid=pid,
                              subset_id=session['subset_id'],
                              subset_number=session['subset_number'],
-                             total_images=len(subsets[session['subset_id']]))
+                             total_images=len(subsets[session['subset_id']]),
+                             mode=MODE)
 
 
 @app.route('/evaluate')
@@ -327,7 +335,8 @@ def evaluate():
                          failure_mode_species=FAILURE_MODE_SPECIES,
                          failure_mode_quality=FAILURE_MODE_QUALITY,
                          reference_images=reference_images,
-                         show_references=SHOW_REFERENCE_IMAGES)
+                         show_references=SHOW_REFERENCE_IMAGES,
+                         caste_options=CASTE_OPTIONS)
 
 
 @app.route('/submit_stage1', methods=['POST'])
@@ -433,13 +442,20 @@ def submit_evaluation():
             blind_id_genus=session.get('blind_id_genus', ''),
             blind_id_species=session.get('blind_id_species', ''),
 
+            # Stage 2: Blind Caste ID
+            blind_id_caste=form_data.get('blind_id_caste', ''),
+            caste_ground_truth=image_data.get('caste_ground_truth', ''),
+
+            # LLM judge metadata
+            tier=image_data.get('tier', ''),
+            llm_morph_mean=image_data.get('llm_morph_mean'),
+
             # Stage 2: Morphological Fidelity
             morph_legs_appendages=int(form_data.get('morph_legs_appendages', 0)),
             morph_wing_venation_texture=int(form_data.get('morph_wing_venation_texture', 0)),
             morph_head_antennae=int(form_data.get('morph_head_antennae', 0)),
             morph_abdomen_banding=int(form_data.get('morph_abdomen_banding', 0)),
             morph_thorax_coloration=int(form_data.get('morph_thorax_coloration', 0)),
-            morph_wing_pit_markings=int(form_data.get('morph_wing_pit_markings', 0)),
 
             # Stage 2: Diagnostic Completeness
             diagnostic_level=form_data.get('diagnostic_level', ''),
@@ -522,7 +538,8 @@ if __name__ == '__main__':
     print("\n" + "="*60)
     print("BUMBLEBEE EVALUATION SERVER")
     print("="*60)
-    print(f"Database: {DB_PROD}")
+    print(f"Mode: {MODE}")
+    print(f"Database: {ACTIVE_DB}")
     print(f"Total images: {len(metadata)}")
     print(f"Subsets: {len(subsets)}")
     print(f"Images per user: {IMAGES_PER_USER}")

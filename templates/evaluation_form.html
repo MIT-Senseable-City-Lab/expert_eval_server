@@ -504,6 +504,20 @@
                     <span class="stage-indicator stage-2">Stage 2: Detailed Evaluation</span>
 
                     <form id="stage2Form" action="{{ url_for('submit_evaluation') }}" method="POST">
+                        <!-- Caste Identification (Blind) -->
+                        <div class="form-section">
+                            <h3>Caste Identification <span class="required">*</span></h3>
+                            <p class="help-text">Based on morphological features, identify the caste of this specimen.</p>
+                            <div class="form-group">
+                                <select id="blind_id_caste" name="blind_id_caste" required>
+                                    <option value="">-- Select Caste --</option>
+                                    {% for caste_id, caste_name in caste_options %}
+                                    <option value="{{ caste_id }}">{{ caste_name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+
                         <!-- Q2: Morphological Fidelity (Compact) -->
                         <div class="form-section">
                             <h3>Morphological Fidelity (1-5)</h3>
@@ -669,13 +683,7 @@
             if (selectedGenus && speciesByGenus[selectedGenus]) {
                 speciesSelect.disabled = false;
                 
-                // Add Unknown option first
-                const unknownOption = document.createElement('option');
-                unknownOption.value = 'Unknown';
-                unknownOption.textContent = 'Unknown';
-                speciesSelect.appendChild(unknownOption);
-                
-                // Add all species for this genus
+                // Add all species for this genus (includes "No match" from config)
                 speciesByGenus[selectedGenus].forEach(species => {
                     const option = document.createElement('option');
                     option.value = species;
