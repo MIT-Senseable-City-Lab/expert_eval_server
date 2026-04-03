@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # ============================================
-# Deploy bumblebee eval server (local Mac)
+# Deploy bumblebee eval server
 # Usage: bash deploy_server.sh [start|stop|restart|status]
 # ============================================
 

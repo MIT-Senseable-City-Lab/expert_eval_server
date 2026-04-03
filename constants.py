@@ -8,8 +8,8 @@
 MODE = "calibration"  # "calibration" or "full"
 
 if MODE == "calibration":
-    IMAGES_PER_USER = 15
-    TOTAL_IMAGES = 15
+    IMAGES_PER_USER = 10
+    TOTAL_IMAGES = 10
     MAX_USERS_PER_SUBSET = 1
     ACTIVE_DB = "sqlite:///bumblebee_evaluation_calibration.db"
 else:  # full
