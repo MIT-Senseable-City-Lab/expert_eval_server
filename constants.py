@@ -2,24 +2,28 @@
 # Based on 16 Bombus species from GBIF_MA_BUMBLEBEES dataset
 
 # ============================================
-# DATASET CONFIGURATION
+# MODE CONFIGURATION
 # ============================================
 
-# Evaluation scope
-IMAGES_PER_USER = 5  # How many images each expert evaluates (set to 5 for testing)
-TOTAL_IMAGES = 146  # Total synthetic images (3 species: Bombus ashtoni, sandersoni, ternarius)
-MAX_USERS_PER_SUBSET = 3  # Maximum experts per subset
+MODE = "calibration"  # "calibration" or "full"
 
-# Species with synthetic images (as of generation date)
+if MODE == "calibration":
+    IMAGES_PER_USER = 15
+    TOTAL_IMAGES = 15
+    MAX_USERS_PER_SUBSET = 1
+    ACTIVE_DB = "sqlite:///bumblebee_evaluation_calibration.db"
+else:  # full
+    IMAGES_PER_USER = 150
+    TOTAL_IMAGES = 150
+    MAX_USERS_PER_SUBSET = 1
+    ACTIVE_DB = "sqlite:///bumblebee_evaluation_full.db"
+
+# Species with synthetic images (expert validation set)
 SPECIES_WITH_SYNTHETIC = [
-    "Bombus_ashtoni",      # 46 images
+    "Bombus_ashtoni",      # 50 images
     "Bombus_sandersoni",   # 50 images
-    "Bombus_ternarius_Say" # 50 images
+    "Bombus_flavidus"      # 50 images
 ]
-
-# Database configuration
-DB_DEBUG = "sqlite:///bumblebee_evaluation_debug.db"
-DB_PROD = "sqlite:///bumblebee_evaluation_prod.db"
 
 # Asset paths
 METADATA_JSON = "assets/bumblebee_images_metadata.json"
@@ -42,7 +46,7 @@ REFERENCE_IMAGE_LAYOUT = "grid"  # "grid" or "carousel"
 # QUESTION 1: Blind Species ID with Dropdowns
 # ============================================
 
-# All 16 bumblebee species from GBIF_MA_BUMBLEBEES
+# All 16 bumblebee species from GBIF_MA_BUMBLEBEES + "No match"
 BUMBLEBEE_SPECIES = [
     "Bombus affinis",
     "Bombus ashtoni",
@@ -50,28 +54,27 @@ BUMBLEBEE_SPECIES = [
     "Bombus borealis",
     "Bombus citrinus",
     "Bombus fervidus",
-    "Bombus flavidus",  # The 16th species!
+    "Bombus flavidus",
     "Bombus griseocollis",
     "Bombus impatiens",
     "Bombus pensylvanicus",
     "Bombus perplexus",
     "Bombus rufocinctus",
     "Bombus sandersoni",
-    "Bombus ternarius",  # Note: stored as "Bombus_ternarius_Say" in files
+    "Bombus ternarius",
     "Bombus terricola",
-    "Bombus vagans"  # Note: stored as "Bombus_vagans_Smith" in files
+    "Bombus vagans",
+    "No match"  # Expert cannot identify to any known species
 ]
 
 # Taxonomy options for dropdowns
 TAXONOMY_OPTIONS = {
     "families": [
-        "Apidae",  # All bumblebees are in this family
-        # Add other families if you expand to other insects later
+        "Apidae",
     ],
     "genera_by_family": {
         "Apidae": [
-            "Bombus",  # All 16 species are in this genus
-            # Add other genera if you expand dataset
+            "Bombus",
         ]
     },
     "species_by_genus": {
@@ -91,7 +94,8 @@ TAXONOMY_OPTIONS = {
             "Bombus sandersoni",
             "Bombus ternarius",
             "Bombus terricola",
-            "Bombus vagans"
+            "Bombus vagans",
+            "No match"
         ]
     }
 }
@@ -106,6 +110,18 @@ MORPHOLOGICAL_FEATURES = [
     ("head_antennae", "Head/Antennae"),
     ("abdomen_banding", "Abdomen Banding"),  # Critical for Bombus ID
     ("thorax_coloration", "Thorax Coloration")  # Critical for Bombus ID
+]
+
+# ============================================
+# QUESTION 2B: Blind Caste Identification
+# ============================================
+
+CASTE_OPTIONS = [
+    ("worker", "Worker"),
+    ("queen", "Queen"),
+    ("male", "Male"),
+    ("female", "Female (unspecified)"),
+    ("uncertain", "Uncertain"),
 ]
 
 # ============================================
@@ -180,12 +196,10 @@ SPECIES_COMMON_NAMES = {
 }
 
 # Critical morphological features per species (for reference)
-# This helps experts know what to look for
 SPECIES_KEY_FEATURES = {
     "Bombus impatiens": "Yellow and black banding, fuzzy thorax, very common",
     "Bombus sandersoni": "Smaller, T1-2 yellow, T3-5 black, some black between wing bases",
-    "Bombus ternarius": "Yellow face (distinctive!), tri-color abdomen pattern",
     "Bombus ashtoni": "Hair on head almost entirely black, white on abdomen end",
+    "Bombus flavidus": "Cuckoo bee, variable coloration, often yellowish pile on thorax",
     "Bombus affinis": "Rusty patch on abdomen, critically endangered",
-    # Add more as needed
 }
