@@ -115,6 +115,13 @@ case "${1:-start}" in
         fi
         echo "Switching mode: $CURRENT_MODE -> $NEW_MODE"
         sed -i "s/^MODE = \"${CURRENT_MODE}\"/MODE = \"${NEW_MODE}\"/" "$APP_DIR/constants.py"
+        # Regenerate metadata for the new mode
+        if [ -f "$APP_DIR/venv/bin/python" ]; then
+            EVAL_MODE="$NEW_MODE" "$APP_DIR/venv/bin/python" "$APP_DIR/scripts/generate_expert_metadata.py"
+        else
+            EVAL_MODE="$NEW_MODE" python3 "$APP_DIR/scripts/generate_expert_metadata.py"
+        fi
+        echo "Metadata regenerated for $NEW_MODE mode."
         # Clear sessions (required — session stores subset/index from old mode)
         rm -rf "$APP_DIR/flask_session/"* 2>/dev/null || true
         echo "Sessions cleared."

@@ -10,21 +10,17 @@ import sys
 from datetime import datetime
 import os
 from flask_sqlalchemy import SQLAlchemy
-import numpy as np
 from constants import *
-from threading import Lock
 import random
 
 app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'filesystem'
-app.config['SECRET_KEY'] = str(np.random.randint(sys.maxsize))
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'bumblebee-eval-2025-stable-key')
 app.config['SQLALCHEMY_DATABASE_URI'] = ACTIVE_DB
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 Session(app)
 db = SQLAlchemy(app)
 
-# Thread-safe user assignment
-transaction_lock = Lock()
 
 # ============================================
 # DATABASE MODELS
@@ -181,76 +177,88 @@ with app.app_context():
 
 def assign_user_to_subset(pid):
     """Assign user to a subset for evaluation. Returns True if user already completed."""
-    with transaction_lock:
-        try:
-            existing_user = EvaluationUsers.query.get(pid)
+    try:
+        existing_user = EvaluationUsers.query.get(pid)
 
-            if existing_user is None:
-                # New user - assign to subset
-                users = EvaluationUsers.query.all()
+        if existing_user is None:
+            # New user - assign to subset
+            users = EvaluationUsers.query.all()
 
-                # Get available subsets (excluding omitted)
-                available_subsets = [sid for sid in subsets.keys() if sid not in OMIT_SUBSETS]
+            # Get available subsets (excluding omitted)
+            available_subsets = [sid for sid in subsets.keys() if sid not in OMIT_SUBSETS]
 
-                if not available_subsets:
-                    raise ValueError("No available subsets for assignment")
+            if not available_subsets:
+                raise ValueError("No available subsets for assignment")
 
-                # Count users per subset
-                users_per_subset = {sid: 0 for sid in available_subsets}
-                for user in users:
-                    if user.subset_id in available_subsets:
-                        users_per_subset[user.subset_id] += 1
+            # Count users per subset
+            users_per_subset = {sid: 0 for sid in available_subsets}
+            for user in users:
+                if user.subset_id in available_subsets:
+                    users_per_subset[user.subset_id] += 1
 
-                # Find next available subset
-                next_subset = None
-                for subset_id, count in users_per_subset.items():
-                    if count < MAX_USERS_PER_SUBSET:
-                        next_subset = subset_id
-                        break
+            # Find next available subset
+            next_subset = None
+            for subset_id, count in users_per_subset.items():
+                if count < MAX_USERS_PER_SUBSET:
+                    next_subset = subset_id
+                    break
 
-                if next_subset is None:
-                    # All full, use round-robin
-                    min_count = min(users_per_subset.values())
-                    subsets_with_min = [sid for sid, count in users_per_subset.items()
-                                       if count == min_count]
-                    next_subset = min(subsets_with_min)
+            if next_subset is None:
+                # All full, use round-robin
+                min_count = min(users_per_subset.values())
+                subsets_with_min = [sid for sid, count in users_per_subset.items()
+                                   if count == min_count]
+                next_subset = min(subsets_with_min)
 
-                session['subset_id'] = next_subset
-                session['subset_number'] = users_per_subset[next_subset] + 1
+            session['subset_id'] = next_subset
+            session['subset_number'] = users_per_subset[next_subset] + 1
 
-                new_user = EvaluationUsers(
-                    participant_id=str(pid),
-                    study_id=str(session.get('study_id', '0')),
-                    session_id=str(session.get('session_id', '0')),
-                    subset_id=int(next_subset),
-                    subset_number=int(session['subset_number']),
-                    done=0,
-                    datetime_started=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                )
-                db.session.add(new_user)
-                db.session.commit()
+            new_user = EvaluationUsers(
+                participant_id=str(pid),
+                study_id=str(session.get('study_id', '0')),
+                session_id=str(session.get('session_id', '0')),
+                subset_id=int(next_subset),
+                subset_number=int(session['subset_number']),
+                done=0,
+                datetime_started=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            )
+            db.session.add(new_user)
+            db.session.commit()
 
-                timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                print(f"[{timestamp}] USER_ASSIGNED: PID={pid}, subset={next_subset}, "
-                      f"subset_number={session['subset_number']}")
+            timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            print(f"[{timestamp}] USER_ASSIGNED: PID={pid}, subset={next_subset}, "
+                  f"subset_number={session['subset_number']}")
 
-                return False
+            return False
+        else:
+            # Returning user
+            session['subset_id'] = existing_user.subset_id
+            session['subset_number'] = existing_user.subset_number
+
+            if existing_user.done == 1:
+                print(f"USER_RETURNING: PID={pid}, status=completed")
+                return True
             else:
-                # Returning user
-                session['subset_id'] = existing_user.subset_id
-                session['subset_number'] = existing_user.subset_number
+                print(f"USER_RETURNING: PID={pid}, status=in_progress, "
+                      f"subset={existing_user.subset_id}")
+                return False
 
-                if existing_user.done == 1:
-                    print(f"USER_RETURNING: PID={pid}, status=completed")
-                    return True
-                else:
-                    print(f"USER_RETURNING: PID={pid}, status=in_progress, "
-                          f"subset={existing_user.subset_id}")
-                    return False
+    except Exception as e:
+        db.session.rollback()
+        raise e
 
-        except Exception as e:
-            db.session.rollback()
-            raise e
+
+# ============================================
+# HELPERS
+# ============================================
+
+def _morph_val(form_data, key):
+    """Parse morphological score: 0 ('not visible') → None/NULL, 1-5 → int."""
+    try:
+        v = int(form_data.get(key, 0))
+        return None if v == 0 else v
+    except (ValueError, TypeError):
+        return None
 
 
 # ============================================
@@ -291,6 +299,9 @@ def start():
 @app.route('/evaluate')
 def evaluate():
     """Main evaluation interface - two-stage workflow"""
+    if 'subset_id' not in session or session['subset_id'] not in subsets:
+        return redirect(url_for('start'))
+
     # Initialize session variables
     if 'current_image_index' not in session:
         session['current_image_index'] = 0
@@ -387,6 +398,8 @@ def submit_stage1():
 @app.route('/submit_evaluation', methods=['POST'])
 def submit_evaluation():
     """Submit complete evaluation (Stage 1 + Stage 2)"""
+    if 'participant_id' not in session or 'subset_id' not in session:
+        return redirect(url_for('start'))
     try:
         # Calculate Stage 2 time
         stage2_end = datetime.now().timestamp()
@@ -454,12 +467,12 @@ def submit_evaluation():
             tier=image_data.get('tier', ''),
             llm_morph_mean=image_data.get('llm_morph_mean'),
 
-            # Stage 2: Morphological Fidelity
-            morph_legs_appendages=int(form_data.get('morph_legs_appendages', 0)),
-            morph_wing_venation_texture=int(form_data.get('morph_wing_venation_texture', 0)),
-            morph_head_antennae=int(form_data.get('morph_head_antennae', 0)),
-            morph_abdomen_banding=int(form_data.get('morph_abdomen_banding', 0)),
-            morph_thorax_coloration=int(form_data.get('morph_thorax_coloration', 0)),
+            # Stage 2: Morphological Fidelity (0 = "not visible" → store as NULL)
+            morph_legs_appendages=_morph_val(form_data, 'morph_legs_appendages'),
+            morph_wing_venation_texture=_morph_val(form_data, 'morph_wing_venation_texture'),
+            morph_head_antennae=_morph_val(form_data, 'morph_head_antennae'),
+            morph_abdomen_banding=_morph_val(form_data, 'morph_abdomen_banding'),
+            morph_thorax_coloration=_morph_val(form_data, 'morph_thorax_coloration'),
 
             # Stage 2: Diagnostic Completeness
             diagnostic_level=form_data.get('diagnostic_level', ''),
