@@ -127,11 +127,14 @@ def create_image_subsets(metadata, images_per_user=IMAGES_PER_USER):
     """
     # Convert metadata dict to list of (image_id, data) tuples
     all_images = [(int(img_id), data) for img_id, data in metadata.items()]
-    all_images.sort(key=lambda x: x[0])  # Sort by image_id
 
     # Exclude omitted images
     all_images = [(img_id, data) for img_id, data in all_images
                   if img_id not in OMIT_IMAGE_IDS]
+
+    # Shuffle globally so species are mixed (not grouped sequentially)
+    random.seed(42)  # Reproducible shuffle
+    random.shuffle(all_images)
 
     total_images = len(all_images)
 
@@ -148,9 +151,6 @@ def create_image_subsets(metadata, images_per_user=IMAGES_PER_USER):
         end_idx = min(start_idx + images_per_user, total_images)
 
         subset_images = all_images[start_idx:end_idx]
-
-        # Shuffle images within subset for variety
-        random.shuffle(subset_images)
 
         subsets[subset_id] = subset_images
         print(f"  Subset {subset_id}: {len(subset_images)} images (IDs {subset_images[0][0]}-{subset_images[-1][0]})")
