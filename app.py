@@ -3,7 +3,7 @@ Bumblebee Synthetic Image Evaluation Server
 Multi-stage expert evaluation for AI-generated bumblebee images
 """
 
-from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify, Response
 import json
 from flask_session import Session
 import sys
@@ -549,6 +549,30 @@ def status():
         'total_evaluations': total_evaluations,
         'users_per_subset': users_per_subset
     })
+
+
+@app.route('/export')
+def export_csv():
+    """Export all evaluation results as a CSV download"""
+    import csv
+    import io
+
+    rows = InsectEvaluation.query.order_by(InsectEvaluation.id).all()
+    if not rows:
+        return "No evaluation data to export", 404
+
+    columns = [c.name for c in InsectEvaluation.__table__.columns]
+    output = io.StringIO()
+    writer = csv.writer(output)
+    writer.writerow(columns)
+    for row in rows:
+        writer.writerow([getattr(row, col) for col in columns])
+
+    return Response(
+        output.getvalue(),
+        mimetype='text/csv',
+        headers={'Content-Disposition': f'attachment; filename=bumblebee_evaluations_{MODE}.csv'}
+    )
 
 
 if __name__ == '__main__':

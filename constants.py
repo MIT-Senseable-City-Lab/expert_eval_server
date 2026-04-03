@@ -5,7 +5,7 @@
 # MODE CONFIGURATION
 # ============================================
 
-MODE = "full"  # "calibration" or "full"
+MODE = "calibration"  # "calibration" or "full"
 
 if MODE == "calibration":
     IMAGES_PER_USER = 10

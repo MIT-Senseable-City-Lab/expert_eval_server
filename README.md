@@ -191,6 +191,7 @@ Since the server runs on `localhost`, remote participants cannot access it direc
 ### Admin endpoints
 
 - `GET /status` — JSON with evaluation statistics (mode, users, completions)
+- `GET /export` — Download all evaluation results as CSV
 
 ## Database
 
