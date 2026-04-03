@@ -557,9 +557,6 @@
                             <div class="form-group">
                                 <select id="blind_id_caste" name="blind_id_caste" required>
                                     <option value="">-- Select Caste --</option>
-                                    {% for caste_id, caste_name in caste_options %}
-                                    <option value="{{ caste_id }}">{{ caste_name }}</option>
-                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
@@ -808,6 +805,18 @@
                     const refPanel = document.getElementById('referenceImagesPanel');
                     if (refPanel) {
                         refPanel.classList.add('visible');
+                    }
+
+                    // Populate caste dropdown with species-specific options
+                    const casteSelect = document.getElementById('blind_id_caste');
+                    casteSelect.innerHTML = '<option value="">-- Select Caste --</option>';
+                    if (result.caste_options) {
+                        result.caste_options.forEach(([casteId, casteName]) => {
+                            const option = document.createElement('option');
+                            option.value = casteId;
+                            option.textContent = casteName;
+                            casteSelect.appendChild(option);
+                        });
                     }
 
                     // Hide Stage 1, show Stage 2

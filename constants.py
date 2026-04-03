@@ -116,11 +116,19 @@ MORPHOLOGICAL_FEATURES = [
 # QUESTION 2B: Blind Caste Identification
 # ============================================
 
-CASTE_OPTIONS = [
+# Per-species caste options (cuckoo vs eusocial have different castes)
+CASTE_OPTIONS_BY_SPECIES = {
+    "Bombus ashtoni":    [("female", "Female"), ("male", "Male"), ("uncertain", "Uncertain")],
+    "Bombus flavidus":   [("female", "Female"), ("male", "Male"), ("uncertain", "Uncertain")],
+    "Bombus sandersoni": [("worker", "Worker"), ("queen", "Queen"), ("male", "Male"), ("uncertain", "Uncertain")],
+}
+
+# Fallback for unknown species
+CASTE_OPTIONS_DEFAULT = [
     ("worker", "Worker"),
     ("queen", "Queen"),
     ("male", "Male"),
-    ("female", "Female (unspecified)"),
+    ("female", "Female"),
     ("uncertain", "Uncertain"),
 ]
 

@@ -22,8 +22,8 @@ expert_eval_server/
 ├── wsgi.py                 # Gunicorn entry point
 ├── requirements.txt        # Python dependencies
 ├── gunicorn_config.py      # Gunicorn settings (workers, ports, logging)
-├── nginx.conf              # Nginx reverse proxy config
-├── deploy_server.sh        # Start/stop/restart server
+├── nginx.conf              # Nginx reverse proxy config (optional)
+├── deploy_server.sh        # Start/stop/restart/switch-mode server
 ├── reset_server.sh         # Hard reset (kill processes, clear sessions)
 ├── templates/
 │   ├── start_evaluation.html       # Landing page
@@ -39,7 +39,7 @@ expert_eval_server/
 │   ├── bumblebees/         # 150 synthetic images (50 per species)
 │   └── references/         # Reference images for each species
 ├── instance/               # SQLite databases (auto-created)
-├── logs/                   # Gunicorn/Nginx logs (auto-created)
+├── logs/                   # Gunicorn logs (auto-created)
 └── flask_session/          # Server-side session files (auto-created)
 ```
 
@@ -48,7 +48,7 @@ expert_eval_server/
 ### Prerequisites
 
 - Python 3.10+
-- Nginx (optional, for production deployment)
+- Nginx is optional (Gunicorn alone is sufficient for single-user evaluation)
 
 ### 1. Create virtual environment and install dependencies
 
@@ -78,15 +78,57 @@ This scans `static/bumblebees/` and reads `assets/expert_validation_manifest.jso
 Edit `constants.py`:
 
 ```python
-MODE = "calibration"  # 10 images, calibration DB
-MODE = "full"         # 150 images, production DB
+MODE = "calibration"  # 10 images, calibration DB (for practice)
+MODE = "full"         # 150 images, production DB (real evaluation)
 ```
 
-Other settings:
-- `COMPLETION_CODE` — Prolific completion code
-- `OMIT_SUBSETS` / `OMIT_IMAGE_IDS` — exclude specific subsets or images
+Or use the CLI to switch (see below).
 
 ## Running the Server
+
+### Start / stop
+
+```bash
+bash deploy_server.sh start       # Start Gunicorn (skips Nginx if not installed)
+bash deploy_server.sh stop        # Stop server
+bash deploy_server.sh restart     # Restart server
+bash deploy_server.sh status      # Show mode, running status
+bash deploy_server.sh switch-mode # Toggle calibration <-> full (clears sessions, restarts)
+```
+
+The app runs on **http://localhost:5001** (Gunicorn direct).
+If Nginx is installed, it also proxies on port 8080.
+
+### Remote access (SSH tunnel)
+
+If the server runs on a remote machine (e.g. MIT cluster), set up an SSH tunnel from your laptop:
+
+```bash
+ssh -L 5001:localhost:5001 msun14@login007.mit.edu
+```
+
+Then open `http://localhost:5001/?PARTICIPANT_ID=your_name` in your laptop browser.
+
+### Switching modes
+
+```bash
+# Start in calibration mode (10 images, practice)
+bash deploy_server.sh start
+
+# When ready for real evaluation:
+bash deploy_server.sh switch-mode   # switches to full (150 images)
+```
+
+Each mode has its own database — switching does not affect the other mode's data.
+Sessions are cleared automatically on switch (required because session stores progress).
+
+### Hard reset
+
+```bash
+bash reset_server.sh
+```
+
+Kills all Gunicorn processes, clears logs and Flask sessions. Does **not** delete databases.
 
 ### Development (Flask dev server)
 
@@ -96,57 +138,32 @@ python app.py
 # Runs on http://localhost:5001
 ```
 
-### Production (Gunicorn + Nginx)
-
-```bash
-bash deploy_server.sh start      # Start both Gunicorn and Nginx
-bash deploy_server.sh stop       # Stop both
-bash deploy_server.sh restart    # Restart both
-bash deploy_server.sh status     # Check running status
-```
-
-The app is served at **http://localhost:8080**.
-
-Architecture: `Nginx (:8080) → Gunicorn (:5001) → Flask app`
-
-### Hard reset
-
-```bash
-bash reset_server.sh
-```
-
-Kills all Gunicorn/Nginx processes, clears logs and Flask sessions.
-
 ## Usage
 
-### For participants
+### Access the evaluation
 
 ```
-http://localhost:8080/?PARTICIPANT_ID=expert_1
+http://localhost:5001/?PARTICIPANT_ID=expert_1
 ```
 
-Or with Prolific integration:
-
-```
-http://localhost:8080/?PROLIFIC_PID={pid}&STUDY_ID={study_id}&SESSION_ID={session_id}
-```
+Different `PARTICIPANT_ID` values create separate user entries in the same database. Use a new ID to start fresh without clearing the DB.
 
 ### Admin endpoints
 
-- `GET /status` — JSON with evaluation statistics
+- `GET /status` — JSON with evaluation statistics (mode, users, completions)
 
 ## Database
 
 SQLite databases are stored in `instance/`:
 
-| Mode | Database file |
-|------|--------------|
-| calibration | `bumblebee_evaluation_calibration.db` |
-| full | `bumblebee_evaluation_full.db` |
+| Mode | Database file | Purpose |
+|------|--------------|---------|
+| calibration | `bumblebee_evaluation_calibration.db` | Practice/testing (safe to delete) |
+| full | `bumblebee_evaluation_full.db` | Real evaluation data (keep this) |
 
 Two tables:
 
-- **insect_evaluation** — all evaluation responses
+- **insect_evaluation** — all evaluation responses (blind ID, morphology scores, caste, failure modes, timing)
 - **evaluation_users** — user tracking and subset assignment
 
 ## Evaluation Questions

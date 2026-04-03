@@ -335,8 +335,7 @@ def evaluate():
                          failure_mode_species=FAILURE_MODE_SPECIES,
                          failure_mode_quality=FAILURE_MODE_QUALITY,
                          reference_images=reference_images,
-                         show_references=SHOW_REFERENCE_IMAGES,
-                         caste_options=CASTE_OPTIONS)
+                         show_references=SHOW_REFERENCE_IMAGES)
 
 
 @app.route('/submit_stage1', methods=['POST'])
@@ -364,6 +363,10 @@ def submit_stage1():
         # Get reference images
         reference_images = image_data.get('reference_images', []) if SHOW_REFERENCE_IMAGES else []
 
+        # Get species-specific caste options
+        species_name = ground_truth.get('species', '')
+        caste_options = CASTE_OPTIONS_BY_SPECIES.get(species_name, CASTE_OPTIONS_DEFAULT)
+
         return jsonify({
             'success': True,
             'ground_truth': {
@@ -372,7 +375,8 @@ def submit_stage1():
                 'species': ground_truth.get('species', ''),
                 'common_name': ground_truth.get('common_name', '')
             },
-            'reference_images': reference_images
+            'reference_images': reference_images,
+            'caste_options': caste_options
         })
 
     except Exception as e:
