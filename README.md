@@ -96,7 +96,7 @@ bash deploy_server.sh status      # Show mode, running status
 bash deploy_server.sh switch-mode # Toggle calibration <-> full (clears sessions, restarts)
 ```
 
-The app runs on **http://localhost:5002** (Gunicorn direct).
+The app runs on **http://localhost:5050** (Gunicorn direct).
 If Nginx is installed, it also proxies on port 8080.
 
 ### Remote access (SSH tunnel)
@@ -104,10 +104,10 @@ If Nginx is installed, it also proxies on port 8080.
 If the server runs on a remote machine (e.g. MIT cluster), set up an SSH tunnel from your laptop:
 
 ```bash
-ssh -L 5002:localhost:5002 msun14@login007.mit.edu
+ssh -L 5050:localhost:5050 msun14@login007.mit.edu
 ```
 
-Then open `http://localhost:5002/?PARTICIPANT_ID=your_name` in your laptop browser.
+Then open `http://localhost:5050/?PARTICIPANT_ID=your_name` in your laptop browser.
 
 ### Switching modes
 
@@ -135,7 +135,7 @@ Kills all Gunicorn processes, clears logs and Flask sessions. Does **not** delet
 ```bash
 source venv/bin/activate
 python app.py
-# Runs on http://localhost:5002
+# Runs on http://localhost:5050
 ```
 
 ## Usage
@@ -155,8 +155,8 @@ http://<host>:<port>/?PARTICIPANT_ID=<id>&STUDY_ID=<study>&SESSION_ID=<session>
 **Examples:**
 
 ```
-http://localhost:5002/?PARTICIPANT_ID=expert_1
-http://localhost:5002/?PARTICIPANT_ID=expert_1&STUDY_ID=pilot&SESSION_ID=1
+http://localhost:5050/?PARTICIPANT_ID=expert_1
+http://localhost:5050/?PARTICIPANT_ID=expert_1&STUDY_ID=pilot&SESSION_ID=1
 ```
 
 Different `PARTICIPANT_ID` values create separate user entries in the same database. Use a new ID to start fresh without clearing the DB.
@@ -173,7 +173,7 @@ Since the server runs on `localhost`, remote participants cannot access it direc
 2. Start the tunnel (while the server is running):
    ```bash
    ngrok http 8080       # if using Nginx
-   ngrok http 5002       # if using Gunicorn directly
+   ngrok http 5050       # if using Gunicorn directly
    ```
 
 3. ngrok will output a public URL like:
@@ -217,6 +217,127 @@ Two tables:
 | 2 | Caste identification (blind) | Dropdown (worker / queen / male / female / uncertain) |
 | 2 | Failure modes: Species fidelity | Multi-select checkboxes + "Other" free text |
 | 2 | Failure modes: Image quality | Multi-select checkboxes + "Other" free text |
+
+## EC2 Deployment Guide
+
+### What is this?
+
+A web app for **expert evaluation of AI-generated bumblebee images**. 2–3 entomology experts visit a URL, view synthetic images, and provide structured ratings (species identification, morphological fidelity, failure modes). Results are stored in a local SQLite database and can be exported as CSV via `/export`.
+
+### Tech Stack
+
+| Component | Technology |
+|-----------|-----------|
+| Backend | Python 3.10+, Flask |
+| WSGI server | Gunicorn |
+| Reverse proxy | Nginx |
+| Database | SQLite (file-based, no external DB needed) |
+| Sessions | Server-side filesystem sessions |
+| Frontend | Jinja2 templates, vanilla JS |
+
+No external databases, no Redis, no Docker required. Everything runs on a single server.
+
+### What You Need on AWS
+
+For 2–3 concurrent experts, this is a lightweight app:
+
+- **EC2 instance**: `t3.micro` (free tier eligible) or `t3.small`
+- **OS**: Ubuntu 22.04 LTS (Amazon AMI works too)
+- **Storage**: Default 8 GB EBS is enough
+- **Elastic IP**: Assign one for a stable public address
+- **Security Group**: Open port 80 (HTTP) and 22 (SSH only from your IP)
+- **No RDS, no ElastiCache, no load balancer** — SQLite handles everything
+
+### Step-by-step Deployment
+
+**1. Launch EC2 and SSH in**
+
+```bash
+ssh -i your-key.pem ubuntu@<EC2_PUBLIC_IP>
+```
+
+**2. Install system dependencies**
+
+```bash
+sudo apt update && sudo apt install -y python3.10 python3.10-venv python3-pip nginx
+```
+
+**3. Upload the project**
+
+From your local machine:
+```bash
+scp -i your-key.pem -r eval_server/ ubuntu@<EC2_PUBLIC_IP>:/home/ubuntu/eval_server
+```
+
+**4. Set up the app**
+
+```bash
+cd /home/ubuntu/eval_server
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+**5. Configure nginx**
+
+```bash
+# Edit nginx.conf: change paths from /Users/mingyang/... to /home/ubuntu/eval_server/...
+# Then:
+sudo cp nginx.conf /etc/nginx/nginx.conf
+sudo systemctl restart nginx
+```
+
+**6. Create a systemd service** (keeps the server running and auto-restarts on reboot)
+
+```bash
+sudo tee /etc/systemd/system/bumblebee-eval.service <<EOF
+[Unit]
+Description=Bumblebee Evaluation Server
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/eval_server
+ExecStart=/home/ubuntu/eval_server/venv/bin/gunicorn -c gunicorn_config.py wsgi:app
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo systemctl daemon-reload
+sudo systemctl enable bumblebee-eval
+sudo systemctl start bumblebee-eval
+```
+
+**7. Send the URL to experts**
+
+```
+http://<EC2_PUBLIC_IP>/?PARTICIPANT_ID=expert_1&STUDY_ID=main&SESSION_ID=1
+```
+
+### Useful Commands on EC2
+
+```bash
+sudo systemctl status bumblebee-eval    # check if running
+sudo systemctl restart bumblebee-eval   # restart after code changes
+sudo journalctl -u bumblebee-eval -f    # live logs
+curl http://localhost:8080/status        # check evaluation progress
+curl http://localhost:8080/export -o results.csv  # download results
+```
+
+### Cost Estimate
+
+| Resource | Cost |
+|----------|------|
+| t3.micro (free tier, 1st year) | $0/mo |
+| t3.micro (after free tier) | ~$8/mo |
+| Elastic IP (while instance running) | $0 |
+| EBS 8 GB | ~$0.80/mo |
+| **Total** | **$0–9/mo** |
+
+> Tip: Stop the instance when not in use to avoid charges. Data on disk persists when stopped.
 
 ## LLM Judge Metadata
 

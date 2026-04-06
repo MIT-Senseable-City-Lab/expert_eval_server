@@ -1,6 +1,6 @@
 # Gunicorn configuration for bumblebee evaluation app
 
-bind = "127.0.0.1:5002"
+bind = "127.0.0.1:5050"
 workers = 2  # Local Mac doesn't need many workers
 worker_class = "sync"
 timeout = 120

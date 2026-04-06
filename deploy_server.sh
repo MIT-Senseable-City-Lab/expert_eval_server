@@ -38,10 +38,10 @@ stop_gunicorn() {
         echo "Stopping Gunicorn..."
         kill "$(cat "$GUNICORN_PID")" 2>/dev/null || true
         rm -f "$GUNICORN_PID"
-        echo "Gunicorn stopped."
-    else
-        echo "Gunicorn not running (no PID file)."
     fi
+    # Also kill any orphaned gunicorn processes
+    pkill -f "gunicorn.*wsgi:app" 2>/dev/null || true
+    echo "Gunicorn stopped."
 }
 
 start_nginx() {
@@ -52,7 +52,7 @@ start_nginx() {
         nginx -c "$NGINX_CONF"
         echo "Nginx started on http://localhost:8080"
     else
-        echo "Nginx not found, skipping (access Gunicorn directly on port 5002)"
+        echo "Nginx not found, skipping (access Gunicorn directly on port 5050)"
     fi
 }
 
@@ -114,7 +114,12 @@ case "${1:-start}" in
             NEW_MODE="calibration"
         fi
         echo "Switching mode: $CURRENT_MODE -> $NEW_MODE"
-        sed -i '' "s/^MODE = \"${CURRENT_MODE}\"/MODE = \"${NEW_MODE}\"/" "$APP_DIR/constants.py"
+        # macOS uses sed -i '', Linux uses sed -i
+        if [[ "$OSTYPE" == "darwin"* ]]; then
+            sed -i '' "s/^MODE = \"${CURRENT_MODE}\"/MODE = \"${NEW_MODE}\"/" "$APP_DIR/constants.py"
+        else
+            sed -i "s/^MODE = \"${CURRENT_MODE}\"/MODE = \"${NEW_MODE}\"/" "$APP_DIR/constants.py"
+        fi
         echo "Using pre-generated metadata: assets/bumblebee_images_metadata_${NEW_MODE}.json"
         # Clear sessions (required — session stores subset/index from old mode)
         rm -rf "$APP_DIR/flask_session/"* 2>/dev/null || true

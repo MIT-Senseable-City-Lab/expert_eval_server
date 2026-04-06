@@ -231,7 +231,12 @@ def assign_user_to_subset(pid):
 
             return False
         else:
-            # Returning user
+            # Returning user — validate subset still exists (may be stale after mode switch)
+            if existing_user.subset_id not in subsets:
+                db.session.delete(existing_user)
+                db.session.commit()
+                return assign_user_to_subset(pid)
+
             session['subset_id'] = existing_user.subset_id
             session['subset_number'] = existing_user.subset_number
 
@@ -278,10 +283,17 @@ def start():
 
     is_done = assign_user_to_subset(pid)
 
+    # Clear stale session if subset no longer exists (e.g. after mode switch)
+    if session.get('subset_id') not in subsets:
+        session.clear()
+        session['participant_id'] = pid
+        session['study_id'] = study_id
+        session['session_id'] = session_id_param
+        is_done = assign_user_to_subset(pid)
+
     # Check if user already completed
     if 'current_image_index' in session:
-        subset_id = session.get('subset_id', 0)
-        subset_length = len(subsets[subset_id])
+        subset_length = len(subsets[session['subset_id']])
         is_done = session['current_image_index'] >= subset_length
 
     if is_done:
@@ -587,4 +599,4 @@ if __name__ == '__main__':
     print(f"Max users per subset: {MAX_USERS_PER_SUBSET}")
     print("="*60 + "\n")
 
-    app.run(debug=True, host='0.0.0.0', port=5002)
+    app.run(debug=True, host='0.0.0.0', port=5050)
