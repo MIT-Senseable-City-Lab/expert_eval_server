@@ -5,7 +5,8 @@
 # MODE CONFIGURATION
 # ============================================
 
-MODE = "calibration"  # "calibration" or "full"
+import os
+MODE = os.environ.get("EVAL_MODE", "calibration")  # "calibration" or "full"
 
 if MODE == "calibration":
     IMAGES_PER_USER = 10

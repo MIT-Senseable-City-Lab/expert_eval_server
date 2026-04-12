@@ -1,7 +1,7 @@
-# Gunicorn configuration for full mode (port 5050)
+# Gunicorn configuration for calibration mode (port 5051)
 
-bind = "127.0.0.1:5050"
-workers = 2
+bind = "127.0.0.1:5051"
+workers = 1
 worker_class = "sync"
 timeout = 120
 keepalive = 2
@@ -9,12 +9,12 @@ max_requests = 1000
 max_requests_jitter = 100
 
 # Logging
-accesslog = "logs/access.log"
-errorlog = "logs/error.log"
+accesslog = "logs/access_calibration.log"
+errorlog = "logs/error_calibration.log"
 loglevel = "info"
 
 # Process naming
-proc_name = "bumblebee_eval"
+proc_name = "bumblebee_eval_calibration"
 
 # Security
 limit_request_line = 4094
