@@ -148,18 +148,20 @@ def create_image_subsets(metadata, images_per_user=IMAGES_PER_USER):
     for species in by_species:
         random.shuffle(by_species[species])
 
-    # Deal images round-robin across subsets, cycling through species
+    # Deal images across subsets, rotating remainder so each subset gets exactly images_per_user
     subsets = {sid: [] for sid in range(num_subsets)}
     species_list = sorted(by_species.keys())
 
-    for species in species_list:
+    for sp_idx, species in enumerate(species_list):
         images = by_species[species]
         per_subset = len(images) // num_subsets
         remainder = len(images) % num_subsets
 
         idx = 0
         for sid in range(num_subsets):
-            count = per_subset + (1 if sid < remainder else 0)
+            # Rotate which subsets get the extra image per species
+            gets_extra = (sid - sp_idx) % num_subsets < remainder
+            count = per_subset + (1 if gets_extra else 0)
             subsets[sid].extend(images[idx:idx + count])
             idx += count
 

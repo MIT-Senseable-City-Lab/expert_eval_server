@@ -159,9 +159,9 @@ curl http://localhost:8080/status
 SESSION_ID determines which subset the researcher evaluates:
 
 ```
-Researcher 1: http://<ELASTIC_IP>/?PARTICIPANT_ID=researcher_1&SESSION_ID=0   → subset 0 (51 images)
-Researcher 2: http://<ELASTIC_IP>/?PARTICIPANT_ID=researcher_2&SESSION_ID=1   → subset 1 (51 images)
-Researcher 3: http://<ELASTIC_IP>/?PARTICIPANT_ID=researcher_3&SESSION_ID=2   → subset 2 (48 images)
+Researcher 1: http://<ELASTIC_IP>/?PARTICIPANT_ID=researcher_1&SESSION_ID=0   → subset 0 (50 images)
+Researcher 2: http://<ELASTIC_IP>/?PARTICIPANT_ID=researcher_2&SESSION_ID=1   → subset 1 (50 images)
+Researcher 3: http://<ELASTIC_IP>/?PARTICIPANT_ID=researcher_3&SESSION_ID=2   → subset 2 (50 images)
 ```
 
 The same researcher can evaluate a second subset by changing SESSION_ID:
