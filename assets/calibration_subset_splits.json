@@ -1,0 +1,97 @@
+{
+  "0": {
+    "count": 15,
+    "images": [
+      {
+        "image_id": 2,
+        "image_path": "bumblebees/Bombus_ashtoni/Bombus_ashtoni::0006::female::frontal_0.jpg",
+        "species": "Bombus ashtoni",
+        "tier": "soft_fail"
+      },
+      {
+        "image_id": 12,
+        "image_path": "bumblebees/Bombus_sandersoni/Bombus_sandersoni::0241::worker::dorsal_0.jpg",
+        "species": "Bombus sandersoni",
+        "tier": "hard_fail"
+      },
+      {
+        "image_id": 6,
+        "image_path": "bumblebees/Bombus_flavidus/Bombus_flavidus::0038::male::three-quarter_posterior_0.jpg",
+        "species": "Bombus flavidus",
+        "tier": "borderline"
+      },
+      {
+        "image_id": 5,
+        "image_path": "bumblebees/Bombus_flavidus/Bombus_flavidus::0032::female::three-quarter_anterior_0.jpg",
+        "species": "Bombus flavidus",
+        "tier": "strict_pass"
+      },
+      {
+        "image_id": 0,
+        "image_path": "bumblebees/Bombus_ashtoni/Bombus_ashtoni::0012::female::three-quarter_posterior_0.jpg",
+        "species": "Bombus ashtoni",
+        "tier": "strict_pass"
+      },
+      {
+        "image_id": 7,
+        "image_path": "bumblebees/Bombus_flavidus/Bombus_flavidus::0009::female::frontal_0.jpg",
+        "species": "Bombus flavidus",
+        "tier": "soft_fail"
+      },
+      {
+        "image_id": 8,
+        "image_path": "bumblebees/Bombus_flavidus/Bombus_flavidus::0025::female::lateral_0.jpg",
+        "species": "Bombus flavidus",
+        "tier": "hard_fail"
+      },
+      {
+        "image_id": 13,
+        "image_path": "bumblebees/Bombus_sandersoni/Bombus_sandersoni::0064::worker::frontal_0.jpg",
+        "species": "Bombus sandersoni",
+        "tier": "soft_fail"
+      },
+      {
+        "image_id": 10,
+        "image_path": "bumblebees/Bombus_sandersoni/Bombus_sandersoni::0026::queen::dorsal_0.jpg",
+        "species": "Bombus sandersoni",
+        "tier": "strict_pass"
+      },
+      {
+        "image_id": 9,
+        "image_path": "bumblebees/Bombus_flavidus/Bombus_flavidus::0039::female::frontal_0.jpg",
+        "species": "Bombus flavidus",
+        "tier": "soft_fail"
+      },
+      {
+        "image_id": 11,
+        "image_path": "bumblebees/Bombus_sandersoni/Bombus_sandersoni::0019::worker::frontal_0.jpg",
+        "species": "Bombus sandersoni",
+        "tier": "soft_fail"
+      },
+      {
+        "image_id": 4,
+        "image_path": "bumblebees/Bombus_ashtoni/Bombus_ashtoni::0130::female::frontal_0.jpg",
+        "species": "Bombus ashtoni",
+        "tier": "soft_fail"
+      },
+      {
+        "image_id": 1,
+        "image_path": "bumblebees/Bombus_ashtoni/Bombus_ashtoni::0017::female::dorsal_0.jpg",
+        "species": "Bombus ashtoni",
+        "tier": "borderline"
+      },
+      {
+        "image_id": 14,
+        "image_path": "bumblebees/Bombus_sandersoni/Bombus_sandersoni::0139::worker::frontal_0.jpg",
+        "species": "Bombus sandersoni",
+        "tier": "soft_fail"
+      },
+      {
+        "image_id": 3,
+        "image_path": "bumblebees/Bombus_ashtoni/Bombus_ashtoni::0020::male::three-quarter_anterior_0.jpg",
+        "species": "Bombus ashtoni",
+        "tier": "hard_fail"
+      }
+    ]
+  }
+}

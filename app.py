@@ -89,8 +89,8 @@ class EvaluationUsers(db.Model):
     __tablename__ = 'evaluation_users'
 
     participant_id = db.Column(db.String(255), primary_key=True)
+    session_id = db.Column(db.String(255), primary_key=True)  # composite PK: same user, different sessions
     study_id = db.Column(db.String(255))
-    session_id = db.Column(db.String(255))
     subset_id = db.Column(db.Integer)
     subset_number = db.Column(db.Integer)
     done = db.Column(db.Integer, default=0)
@@ -118,8 +118,8 @@ def load_bumblebee_metadata():
 
 def create_image_subsets(metadata, images_per_user=IMAGES_PER_USER):
     """
-    Create overlapping subsets of images for multiple annotators.
-    Each subset has exactly images_per_user images.
+    Create species-balanced subsets of images.
+    Each subset has exactly images_per_user images with equal species representation.
     """
     # Convert metadata dict to list of (image_id, data) tuples
     all_images = [(int(img_id), data) for img_id, data in metadata.items()]
@@ -128,10 +128,6 @@ def create_image_subsets(metadata, images_per_user=IMAGES_PER_USER):
     all_images = [(img_id, data) for img_id, data in all_images
                   if img_id not in OMIT_IMAGE_IDS]
 
-    # Shuffle globally so species are mixed (not grouped sequentially)
-    random.seed(42)  # Reproducible shuffle
-    random.shuffle(all_images)
-
     total_images = len(all_images)
 
     if total_images < images_per_user:
@@ -139,17 +135,46 @@ def create_image_subsets(metadata, images_per_user=IMAGES_PER_USER):
         images_per_user = total_images
 
     # Calculate number of subsets
-    num_subsets = (total_images + images_per_user - 1) // images_per_user
+    num_subsets = max(1, (total_images + images_per_user - 1) // images_per_user)
 
-    subsets = {}
-    for subset_id in range(num_subsets):
-        start_idx = subset_id * images_per_user
-        end_idx = min(start_idx + images_per_user, total_images)
+    # Group images by species
+    by_species = {}
+    for img_id, data in all_images:
+        species = data['ground_truth']['species']
+        by_species.setdefault(species, []).append((img_id, data))
 
-        subset_images = all_images[start_idx:end_idx]
+    # Shuffle within each species (reproducible)
+    random.seed(42)
+    for species in by_species:
+        random.shuffle(by_species[species])
 
-        subsets[subset_id] = subset_images
-        print(f"  Subset {subset_id}: {len(subset_images)} images (IDs {subset_images[0][0]}-{subset_images[-1][0]})")
+    # Deal images round-robin across subsets, cycling through species
+    subsets = {sid: [] for sid in range(num_subsets)}
+    species_list = sorted(by_species.keys())
+
+    for species in species_list:
+        images = by_species[species]
+        per_subset = len(images) // num_subsets
+        remainder = len(images) % num_subsets
+
+        idx = 0
+        for sid in range(num_subsets):
+            count = per_subset + (1 if sid < remainder else 0)
+            subsets[sid].extend(images[idx:idx + count])
+            idx += count
+
+    # Shuffle within each subset so species are interleaved (not grouped)
+    for sid in subsets:
+        random.shuffle(subsets[sid])
+
+    # Print summary
+    for sid, images in subsets.items():
+        species_counts = {}
+        for _, data in images:
+            sp = data['ground_truth']['species']
+            species_counts[sp] = species_counts.get(sp, 0) + 1
+        counts_str = ", ".join(f"{sp}: {c}" for sp, c in sorted(species_counts.items()))
+        print(f"  Subset {sid}: {len(images)} images ({counts_str})")
 
     return subsets
 
@@ -175,49 +200,29 @@ with app.app_context():
 # USER ASSIGNMENT
 # ============================================
 
-def assign_user_to_subset(pid):
-    """Assign user to a subset for evaluation. Returns True if user already completed."""
+def assign_user_to_subset(pid, sid):
+    """Assign user to a subset based on SESSION_ID. Returns True if user already completed."""
     try:
-        existing_user = EvaluationUsers.query.get(pid)
+        # Composite PK lookup: (participant_id, session_id)
+        existing_user = EvaluationUsers.query.get((pid, sid))
+
+        # Map SESSION_ID to subset_id explicitly
+        subset_id = int(sid) if sid.isdigit() else 0
+        if subset_id not in subsets:
+            subset_id = 0  # fallback to first subset
 
         if existing_user is None:
-            # New user - assign to subset
-            users = EvaluationUsers.query.all()
+            # New user-session pair
+            count_in_subset = EvaluationUsers.query.filter_by(subset_id=subset_id).count()
 
-            # Get available subsets (excluding omitted)
-            available_subsets = [sid for sid in subsets.keys() if sid not in OMIT_SUBSETS]
-
-            if not available_subsets:
-                raise ValueError("No available subsets for assignment")
-
-            # Count users per subset
-            users_per_subset = {sid: 0 for sid in available_subsets}
-            for user in users:
-                if user.subset_id in available_subsets:
-                    users_per_subset[user.subset_id] += 1
-
-            # Find next available subset
-            next_subset = None
-            for subset_id, count in users_per_subset.items():
-                if count < MAX_USERS_PER_SUBSET:
-                    next_subset = subset_id
-                    break
-
-            if next_subset is None:
-                # All full, use round-robin
-                min_count = min(users_per_subset.values())
-                subsets_with_min = [sid for sid, count in users_per_subset.items()
-                                   if count == min_count]
-                next_subset = min(subsets_with_min)
-
-            session['subset_id'] = next_subset
-            session['subset_number'] = users_per_subset[next_subset] + 1
+            session['subset_id'] = subset_id
+            session['subset_number'] = count_in_subset + 1
 
             new_user = EvaluationUsers(
                 participant_id=str(pid),
+                session_id=str(sid),
                 study_id=str(session.get('study_id', '0')),
-                session_id=str(session.get('session_id', '0')),
-                subset_id=int(next_subset),
+                subset_id=subset_id,
                 subset_number=int(session['subset_number']),
                 done=0,
                 datetime_started=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -226,25 +231,24 @@ def assign_user_to_subset(pid):
             db.session.commit()
 
             timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            print(f"[{timestamp}] USER_ASSIGNED: PID={pid}, subset={next_subset}, "
-                  f"subset_number={session['subset_number']}")
+            print(f"[{timestamp}] USER_ASSIGNED: PID={pid}, SESSION={sid}, subset={subset_id}")
 
             return False
         else:
-            # Returning user — validate subset still exists (may be stale after mode switch)
+            # Returning user — validate subset still exists
             if existing_user.subset_id not in subsets:
                 db.session.delete(existing_user)
                 db.session.commit()
-                return assign_user_to_subset(pid)
+                return assign_user_to_subset(pid, sid)
 
             session['subset_id'] = existing_user.subset_id
             session['subset_number'] = existing_user.subset_number
 
             if existing_user.done == 1:
-                print(f"USER_RETURNING: PID={pid}, status=completed")
+                print(f"USER_RETURNING: PID={pid}, SESSION={sid}, status=completed")
                 return True
             else:
-                print(f"USER_RETURNING: PID={pid}, status=in_progress, "
+                print(f"USER_RETURNING: PID={pid}, SESSION={sid}, status=in_progress, "
                       f"subset={existing_user.subset_id}")
                 return False
 
@@ -277,19 +281,16 @@ def start():
     study_id = str(request.args.get('STUDY_ID', '0'))
     session_id_param = str(request.args.get('SESSION_ID', '0'))
 
+    # Clear session if user switched SESSION_ID or subset is stale
+    prev_session_id = session.get('session_id')
+    if prev_session_id != session_id_param or session.get('subset_id') not in subsets:
+        session.clear()
+
     session['participant_id'] = pid
     session['study_id'] = study_id
     session['session_id'] = session_id_param
 
-    is_done = assign_user_to_subset(pid)
-
-    # Clear stale session if subset no longer exists (e.g. after mode switch)
-    if session.get('subset_id') not in subsets:
-        session.clear()
-        session['participant_id'] = pid
-        session['study_id'] = study_id
-        session['session_id'] = session_id_param
-        is_done = assign_user_to_subset(pid)
+    is_done = assign_user_to_subset(pid, session_id_param)
 
     # Check if user already completed
     if 'current_image_index' in session:
@@ -329,7 +330,7 @@ def evaluate():
         print(f"User {session['participant_id']} completed subset {subset_id}: "
               f"{current_index}/{subset_length} images")
 
-        existing_user = EvaluationUsers.query.get(session['participant_id'])
+        existing_user = EvaluationUsers.query.get((session['participant_id'], session['session_id']))
         existing_user.done = 1
         existing_user.datetime_completed = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         db.session.commit()

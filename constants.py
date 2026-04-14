@@ -9,14 +9,14 @@ import os
 MODE = os.environ.get("EVAL_MODE", "calibration")  # "calibration" or "full"
 
 if MODE == "calibration":
-    IMAGES_PER_USER = 10
-    TOTAL_IMAGES = 10
-    MAX_USERS_PER_SUBSET = 1
+    IMAGES_PER_USER = 15       # 5 per species, all researchers see same set (IRR)
+    TOTAL_IMAGES = 15
+    MAX_USERS_PER_SUBSET = 3   # all 3 researchers share subset 0
     ACTIVE_DB = "sqlite:///bumblebee_evaluation_calibration.db"
 else:  # full
-    IMAGES_PER_USER = 150
+    IMAGES_PER_USER = 50       # 150 images / 3 subsets = 50 per researcher
     TOTAL_IMAGES = 150
-    MAX_USERS_PER_SUBSET = 1
+    MAX_USERS_PER_SUBSET = 3   # allow multiple researchers per subset
     ACTIVE_DB = "sqlite:///bumblebee_evaluation_full.db"
 
 # Species with synthetic images (expert validation set)

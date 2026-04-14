@@ -154,9 +154,63 @@ curl http://localhost:8080/status
 
 ## URLs for Experts
 
+### Full Mode (port 80) — 150 images split into 3 subsets of ~50
+
+SESSION_ID determines which subset the researcher evaluates:
+
 ```
-Full:        http://<ELASTIC_IP>/?PARTICIPANT_ID=expert_1&STUDY_ID=main&SESSION_ID=1
-Calibration: http://<ELASTIC_IP>:8080/?PARTICIPANT_ID=expert_1&STUDY_ID=pilot&SESSION_ID=1
+Researcher 1: http://<ELASTIC_IP>/?PARTICIPANT_ID=researcher_1&SESSION_ID=0   → subset 0 (51 images)
+Researcher 2: http://<ELASTIC_IP>/?PARTICIPANT_ID=researcher_2&SESSION_ID=1   → subset 1 (51 images)
+Researcher 3: http://<ELASTIC_IP>/?PARTICIPANT_ID=researcher_3&SESSION_ID=2   → subset 2 (48 images)
+```
+
+The same researcher can evaluate a second subset by changing SESSION_ID:
+```
+http://<ELASTIC_IP>/?PARTICIPANT_ID=researcher_1&SESSION_ID=1   → now evaluates subset 1
+```
+
+### Calibration Mode (port 8080) — 15 shared images for inter-rater reliability
+
+All 3 researchers evaluate the same 15 images (5 per species, tier-balanced):
+
+```
+Researcher 1: http://<ELASTIC_IP>:8080/?PARTICIPANT_ID=researcher_1&SESSION_ID=0
+Researcher 2: http://<ELASTIC_IP>:8080/?PARTICIPANT_ID=researcher_2&SESSION_ID=0
+Researcher 3: http://<ELASTIC_IP>:8080/?PARTICIPANT_ID=researcher_3&SESSION_ID=0
+```
+
+### Subset Reference
+
+Subset splits are saved in `assets/` for reference:
+- `full_subset_splits.json` — which images are in each of the 3 full subsets
+- `calibration_subset_splits.json` — which 15 images are in the calibration set
+
+---
+
+## Updating Code (Redeploy)
+
+After making code changes locally:
+
+```bash
+# 1. Push from your Mac
+git add -A && git commit -m "description of changes" && git push
+
+# 2. SSH into EC2
+ssh -i ~/Downloads/<your-key>.pem ubuntu@<ELASTIC_IP>
+
+# 3. Pull and restart
+cd /home/ubuntu/eval_server
+git pull
+sudo systemctl restart bumblebee-eval-full
+sudo systemctl restart bumblebee-eval-calibration
+```
+
+If database schema changed (model fields added/removed):
+```bash
+rm -f instance/*.db
+rm -rf flask_session/*
+sudo systemctl restart bumblebee-eval-full
+sudo systemctl restart bumblebee-eval-calibration
 ```
 
 ---
@@ -178,15 +232,6 @@ sudo systemctl stop bumblebee-eval-calibration
 # Live logs
 sudo journalctl -u bumblebee-eval-full -f
 sudo journalctl -u bumblebee-eval-calibration -f
-```
-
-## Updating Code
-
-```bash
-cd /home/ubuntu/eval_server
-git pull
-sudo systemctl restart bumblebee-eval-full
-sudo systemctl restart bumblebee-eval-calibration
 ```
 
 ## Export Results

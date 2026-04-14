@@ -21,9 +21,10 @@ MANIFEST_PATH = PROJECT_ROOT / "assets" / "expert_validation_manifest.json"
 OUTPUT_FILE = PROJECT_ROOT / "assets" / "bumblebee_images_metadata.json"
 
 # Mode: set via env var or defaults to "full"
-# calibration = 10 images total (sampled evenly across species), full = all 150
+# calibration = 15 images (5 per species, tier-balanced for IRR), full = all 150
 MODE = os.environ.get("EVAL_MODE", "full")
-CALIBRATION_TOTAL = 10
+CALIBRATION_PER_SPECIES = 5
+TIER_PRIORITY = ["strict_pass", "borderline", "soft_fail", "hard_fail"]
 
 SPECIES_COMMON_NAMES = {
     "Bombus_ashtoni": "Ashton Cuckoo Bumble Bee",
@@ -120,19 +121,37 @@ def generate_metadata():
             all_entries.append(entry)
 
     if MODE == "calibration":
-        # Sample evenly across species
+        # Sample 5 per species, tier-balanced for inter-rater reliability
         by_species = {}
         for entry in all_entries:
             sp = entry["ground_truth"]["species"]
             by_species.setdefault(sp, []).append(entry)
-        species_list = sorted(by_species.keys())
-        n_species = len(species_list)
-        base = CALIBRATION_TOTAL // n_species
-        remainder = CALIBRATION_TOTAL % n_species
+
         sampled = []
-        for i, sp in enumerate(species_list):
-            count = base + (1 if i < remainder else 0)
-            sampled.extend(by_species[sp][:count])
+        for sp in sorted(by_species.keys()):
+            entries = by_species[sp]
+            # Group by tier within this species
+            by_tier = {}
+            for e in entries:
+                tier = e.get("tier", "")
+                by_tier.setdefault(tier, []).append(e)
+
+            # Pick one from each available tier first, then fill remaining
+            selected = []
+            for tier in TIER_PRIORITY:
+                if tier in by_tier and by_tier[tier] and len(selected) < CALIBRATION_PER_SPECIES:
+                    selected.append(by_tier[tier].pop(0))
+
+            # Fill remaining slots from whatever is left
+            remaining = [e for tier_entries in by_tier.values() for e in tier_entries]
+            for e in remaining:
+                if len(selected) >= CALIBRATION_PER_SPECIES:
+                    break
+                if e not in selected:
+                    selected.append(e)
+
+            sampled.extend(selected)
+
         all_entries = sampled
 
     all_metadata = {str(i): entry for i, entry in enumerate(all_entries)}
