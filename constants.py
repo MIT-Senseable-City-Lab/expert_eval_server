@@ -72,10 +72,12 @@ BUMBLEBEE_SPECIES = [
 TAXONOMY_OPTIONS = {
     "families": [
         "Apidae",
+        "No match",
     ],
     "genera_by_family": {
         "Apidae": [
             "Bombus",
+            "No match",
         ]
     },
     "species_by_genus": {
@@ -156,6 +158,7 @@ FAILURE_MODE_SPECIES = [
     ("extra_missing_limbs", "Extra/Missing Limbs"),
     ("wrong_coloration", "Wrong Coloration/Pattern"),
     ("impossible_geometry", "Impossible Geometry/Unnatural Pose"),
+    ("wrong_scale", "Unrealistic Scale Relative to Environment"),
     ("species_other", "Other"),
 ]
 
